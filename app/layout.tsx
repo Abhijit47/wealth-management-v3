@@ -1,3 +1,5 @@
+import Footer from '@/components/shared/footer';
+import Navbar from '@/components/shared/navbar';
 import { ThemeProvider } from '@/providers/theme-provider';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -32,7 +34,9 @@ export default function RootLayout({
           defaultTheme='system'
           enableSystem
           disableTransitionOnChange>
+          <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

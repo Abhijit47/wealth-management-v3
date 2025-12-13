@@ -1,0 +1,107 @@
+'use client';
+
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
+import { useRef } from 'react';
+
+export default function Blog() {
+  return (
+    <div
+      id='blogs'
+      className='max-w-(--breakpoint-xl) mx-auto py-16 px-6 xl:px-0 space-y-8'>
+      <div className='flex items-end justify-between'>
+        <h2 className='text-3xl font-semibold tracking-tight'>
+          Today&apos;s Posts
+        </h2>
+        <Select defaultValue='recommended'>
+          <SelectTrigger className='w-45'>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value='recommended'>Recommended</SelectItem>
+            <SelectItem value='latest'>Latest</SelectItem>
+            <SelectItem value='popular'>Popular</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <CarouselDemo />
+      {/* <div className='mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-10'>
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <BlogCard key={i} i={i} />
+        ))}
+      </div> */}
+    </div>
+  );
+}
+
+function BlogCard({ i }: { i: number }) {
+  return (
+    <Card key={i} className='shadow-none py-0 gap-3'>
+      <CardHeader className='p-2 pb-0'>
+        <div className='aspect-video bg-muted rounded-lg w-full' />
+      </CardHeader>
+      <CardContent className='pt-0 pb-5 px-5'>
+        <Badge variant='secondary'>Technology</Badge>
+
+        <h3 className='mt-4 text-2xl text-[1.4rem] font-semibold tracking-[-0.015em]'>
+          What is the future of web development?
+        </h3>
+        <div className='mt-6 flex items-center justify-between'>
+          <div className='flex items-center gap-2'>
+            <div className='size-8 rounded-full bg-muted'></div>
+            <span className='text-muted-foreground font-medium'>John Doe</span>
+          </div>
+
+          <span className='text-muted-foreground text-sm'>Nov 30, 2024</span>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+export function CarouselDemo() {
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+
+  return (
+    <Carousel
+      plugins={[plugin.current]}
+      onMouseEnter={plugin.current.stop}
+      onMouseLeave={plugin.current.reset}
+      className='w-full'>
+      <CarouselContent className='-ml-1'>
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/3'>
+            <div className='p-1'>
+              <Card>
+                <CardContent
+                // className='flex aspect-square items-center justify-center p-6'
+                >
+                  <BlogCard i={index} />
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+  );
+}
