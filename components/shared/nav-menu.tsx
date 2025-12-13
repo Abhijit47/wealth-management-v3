@@ -7,13 +7,16 @@ import {
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
 import { navlinks } from '@/constants';
-import { useHash } from '@/hooks/use-read-hash';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { type ComponentProps } from 'react';
 
 export default function NavMenu(props: ComponentProps<typeof NavigationMenu>) {
-  const hash = useHash();
+  const hash =
+    '#' +
+    (typeof window !== 'undefined'
+      ? window.location.hash.replace('#', '')
+      : '');
 
   return (
     <NavigationMenu {...props}>

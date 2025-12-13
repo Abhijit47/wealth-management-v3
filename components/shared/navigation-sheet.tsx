@@ -1,5 +1,5 @@
 import { Logo } from '@/components/shared/logo';
-import { NavMenu } from '@/components/shared/nav-menu';
+import NavMenu from '@/components/shared/nav-menu';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
