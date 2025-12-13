@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 import dynamic from 'next/dynamic';
@@ -29,6 +29,8 @@ interface PixelImageProps {
   pixelFadeInDuration?: number; // in ms
   maxAnimationDelay?: number; // in ms
   colorRevealDelay?: number; // in ms
+  inView?: boolean;
+  ref?: (node?: Element | null | undefined) => void;
 }
 
 export const PixelImage = ({
@@ -39,9 +41,13 @@ export const PixelImage = ({
   maxAnimationDelay = 1200,
   colorRevealDelay = 1300,
   customGrid,
+  inView = false,
+  ref,
 }: PixelImageProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [showColor, setShowColor] = useState(false);
+  const hasTriggeredOnceRef = useRef(false);
+  const prevInViewRef = useRef(inView);
 
   const MIN_GRID = 1;
   const MAX_GRID = 16;
@@ -64,12 +70,116 @@ export const PixelImage = ({
   }, [customGrid, grid]);
 
   useEffect(() => {
-    const colorTimeout = setTimeout(() => {
-      setIsVisible(true);
-      setShowColor(true);
-    }, colorRevealDelay);
-    return () => clearTimeout(colorTimeout);
-  }, [colorRevealDelay]);
+    let colorTimeout: NodeJS.Timeout;
+
+    // If inView is not provided (undefined), trigger animation once on mount
+    if (inView === undefined) {
+      if (!hasTriggeredOnceRef.current) {
+        hasTriggeredOnceRef.current = true;
+        colorTimeout = setTimeout(() => {
+          setIsVisible(true);
+          setShowColor(true);
+        }, colorRevealDelay);
+      }
+    }
+    // If inView transitions from false to true, trigger animation
+    else if (inView === true && prevInViewRef.current !== true) {
+      colorTimeout = setTimeout(() => {
+        setIsVisible(true);
+        setShowColor(true);
+      }, colorRevealDelay);
+    }
+    // If inView becomes false, reset animation
+    else if (inView === false) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setIsVisible(false);
+      setShowColor(false);
+    }
+
+    prevInViewRef.current = inView;
+
+    return () => {
+      if (colorTimeout) {
+        clearTimeout(colorTimeout);
+      }
+    };
+  }, [inView, colorRevealDelay]);
+
+  // useEffect(() => {
+  //   let colorTimeout: NodeJS.Timeout;
+
+  //   // If inView is not provided (undefined), trigger animation once on mount
+  //   if (inView === undefined) {
+  //     if (!hasTriggeredOnceRef.current) {
+  //       hasTriggeredOnceRef.current = true;
+  //       colorTimeout = setTimeout(() => {
+  //         setIsVisible(true);
+  //         setShowColor(true);
+  //       }, colorRevealDelay);
+  //     }
+  //   }
+  //   // If inView is provided and transitions from false to true, trigger animation
+  //   else if (inView === true && prevInViewRef.current === false) {
+  //     colorTimeout = setTimeout(() => {
+  //       setIsVisible(true);
+  //       setShowColor(true);
+  //     }, colorRevealDelay);
+  //   }
+  //   // If inView is false, reset the animation
+  //   else if (inView === false) {
+  //     setIsVisible(false);
+  //     setShowColor(false);
+  //   }
+
+  //   prevInViewRef.current = inView;
+
+  //   return () => {
+  //     if (colorTimeout) {
+  //       clearTimeout(colorTimeout);
+  //     }
+  //   };
+  // }, [inView, colorRevealDelay]);
+
+  // useEffect(() => {
+  //   let colorTimeout: NodeJS.Timeout;
+
+  //   // If inView is not provided (undefined), trigger animation once on mount
+  //   if (inView === undefined) {
+  //     if (!hasTriggeredOnceRef.current) {
+  //       hasTriggeredOnceRef.current = true;
+  //       colorTimeout = setTimeout(() => {
+  //         setIsVisible(true);
+  //         setShowColor(true);
+  //       }, colorRevealDelay);
+  //     }
+  //   }
+  //   // If inView is provided and true, trigger animation every time it becomes true
+  //   else if (inView === true) {
+  //     colorTimeout = setTimeout(() => {
+  //       setIsVisible(true);
+  //       setShowColor(true);
+  //     }, colorRevealDelay);
+  //   }
+  //   // If inView is false, reset the animation
+  //   else if (inView === false) {
+  //     setIsVisible(false);
+  //     setShowColor(false);
+  //   }
+
+  //   return () => {
+  //     if (colorTimeout) {
+  //       clearTimeout(colorTimeout);
+  //     }
+  //   };
+  // }, [inView, colorRevealDelay]);
+
+  // useEffect(() => {
+  //   const colorTimeout = setTimeout(() => {
+  //     setIsVisible(true);
+  //     setShowColor(true);
+  //   }, colorRevealDelay);
+  //   return () => clearTimeout(colorTimeout);
+  // }, [colorRevealDelay]);
 
   const pieces = useMemo(() => {
     const total = rows * cols;
@@ -95,7 +205,12 @@ export const PixelImage = ({
   }, [rows, cols, maxAnimationDelay]);
 
   return (
-    <div className='relative h-full w-full select-none bg-muted rounded-xl'>
+    <div
+      ref={ref}
+      className={cn(
+        'relative h-full w-full select-none bg-muted rounded-xl',
+        !inView && 'animate-pulse'
+      )}>
       {pieces.map((piece, index) => (
         <div
           key={index}
@@ -109,6 +224,7 @@ export const PixelImage = ({
             transitionDelay: `${piece.delay}ms`,
             transitionDuration: `${pixelFadeInDuration}ms`,
           }}>
+          {/*  eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={src}
             alt={`Pixel image piece ${index + 1}`}

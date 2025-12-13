@@ -5,7 +5,7 @@ import CTABanner from '@/components/cta-banner';
 import { ScrollProgress } from '@/components/extends/scroll-progress';
 import FAQ from '@/components/faq';
 import Hero from '@/components/hero';
-import LogoCloud from '@/components/logo-cloud';
+// import LogoCloud from '@/components/logo-cloud';
 import Planning from '@/components/planning';
 import { MarqueeDemo } from '@/components/reviews';
 import Services from '@/components/services';
@@ -26,7 +26,7 @@ export default function Home() {
       <Testimonials />
       <MarqueeDemo />
       <Contact />
-      <LogoCloud />
+      {/* <LogoCloud /> */}
       <ScrollProgress />
     </main>
   );

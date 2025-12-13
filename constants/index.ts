@@ -208,6 +208,61 @@ export const footerLinks = {
   ],
 };
 
+export const stats = [
+  {
+    id: crypto.randomUUID(),
+    label: 'Years of Experience',
+    value: 10,
+    suffix: '+',
+  },
+  {
+    id: crypto.randomUUID(),
+    label: 'Families Advised',
+    value: 100,
+    suffix: '+',
+  },
+  {
+    id: crypto.randomUUID(),
+    label: 'Investment Solutions Offered',
+    value: 15,
+    suffix: '+',
+  },
+  {
+    id: crypto.randomUUID(),
+    label: 'Assets Under Management',
+    value: 30,
+    suffix: '+ Cr',
+  },
+  { id: crypto.randomUUID(), label: 'Countries Served', value: 8, suffix: '+' },
+];
+
+export const plannings = [
+  {
+    id: crypto.randomUUID(),
+    category: 'Dream Planning',
+    title: "It's Time To Begin Your Ascent!",
+    details:
+      "Ready to take control of your financial future? We help you transform dreams into actionable plans—whether it's buying a home, funding education, or retiring comfortably. Let's design a personalized strategy that works for your life.",
+    tutorialLink: '#free-consultation',
+  },
+  {
+    id: crypto.randomUUID(),
+    category: 'Smart Investing',
+    title: 'Goal-Based Investments Planning',
+    details:
+      "Every rupee you invest should have a purpose. We guide you to set clear financial goals, understand your risk appetite, and choose investments that align with your timeline and needs. Because smart investing starts with knowing what you're working towards.",
+    tutorialLink: '#free-consultation',
+  },
+  {
+    id: crypto.randomUUID(),
+    category: 'Peace of Mind',
+    title: 'Why Risk Profiling Matters for Your Peace of Mind',
+    details:
+      "Feeling uncertain about the right investment moves? Our personalized risk profiling takes the guesswork out of the equation. We help you find that sweet spot between your goals, your comfort level, and what's realistic for your situation. No jargon, just clarity.",
+    tutorialLink: '#free-consultation',
+  },
+];
+
 export const calculators = [
   {
     icon: IconMathSymbols,
