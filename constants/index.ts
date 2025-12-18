@@ -1,10 +1,16 @@
 import {
   IconBeach,
+  IconBook2,
+  IconBrandZapier,
   IconChartInfographic,
+  IconChartPie2,
   IconConfetti,
+  IconFolderCheck,
+  IconGridGoldenratio,
   IconMathSymbols,
   IconTimeDuration45,
   IconTimeline,
+  IconUsersGroup,
 } from '@tabler/icons-react';
 
 export const navlinks = [
@@ -263,6 +269,110 @@ export const plannings = [
       "Feeling uncertain about the right investment moves? Our personalized risk profiling takes the guesswork out of the equation. We help you find that sweet spot between your goals, your comfort level, and what's realistic for your situation. No jargon, just clarity.",
     tutorialLink: '#free-consultation',
     image: '/assets/8.jpg',
+  },
+];
+
+export const services = [
+  {
+    id: crypto.randomUUID(),
+    title: 'Mutual Fund',
+    subtitle: 'Salutations from Ascent Wealth!',
+    description: [
+      `At Ascent Wealth, we are dedicated to providing you with individualized assistance and services support as you navigate the world of mutual funds.`,
+      `The smarter way to achieve higher returns and beat inflation will beinvesting in mutual funds through Systematic Investment Plan (SIP).`,
+      `Equity Mutual Funds over a stretched period of years with flawless goal based financial plan gives us back inflation adjusted returns.`,
+      `SIP is a way of investing through which Investors can be benefited by rupee cost averaging and power of compounding in the long term. There are benefits such as tax saving and other tax concessions available in investing through mutual funds.
+      We provide regular updates on your investments and provide rapid and effective customer support throughout your investing journey with us. As your trusted Mutual Funds Distributor, Ascent Wealth can assist you with our long-term actionable solutions that will help you achieve targeted wealth and financial freedom.
+      Mutual funds are the only investment option which provides you with the ability to invest across different asset classes with minimum to moderate to elevated risk depending upon your risk-taking ability.`,
+    ],
+    icon: IconChartPie2,
+    cover:
+      'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/176mfa.jpg',
+    quote: `"The doorstep to the temple of wisdom is a knowledge of our own ignorance" – Benjamin Franklin`,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Life and Health Insurance',
+    subtitle: 'Secure the future of your loved ones!',
+    description: [
+      `At Ascent Wealth, we remain committed to serve families with Healthcare and Life Insurance covers to protect them from hard times as these are compulsory choice to insulate from unknown risks.`,
+      `We are dedicated to delivering both life and health Insurance protection and serving customers in their hard times these become a perfect choice for your family's health and wellness coupled with strong social relevance by securing our customers' financial future.`,
+      `Super Term Plan - A term plan is a life insurance product that covers your family's needs and gives you an increasing Sum Assured option to cope with the rising inflation.`,
+      `Associated with leading Health Insurance companies and with our customer centric approach for the satisfaction and smiles of our clients we stretch ourselves and go beyond the ordinary whenever they face medical challenges.We assist clients with good health insurance cover that gives peace of mind and the freedom to protect from the ever increasing medical costs.
+      Consider Ascent Wealth as your trusted insurance advisor for your Life and Healt Insurance requirements for protection and financial security.`,
+    ],
+    icon: IconBook2,
+    cover:
+      'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/507insurance.jpg',
+    quote: `""Luck is the flip side of risk. You cannot understand one without appreciating the other" - Morgan Housel`,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Corporate FDs, Bonds and NCDs',
+    subtitle: 'An alternative to Traditional Investments!',
+    description: [
+      `We at Ascent Wealth recognize the value of consistent & dependable investment options. From the traditional fixed income products, we handpick reliable businesses with reliable ratings and suggest to clients.`,
+      `We suggest clients Debt funds which are schemes with an investment objective that limits the fund house to investments in debt securities like Treasury Bills, Government securities, Bonds and Debentures etc.`,
+      `It comprises of interest income and capital appreciation, due to changes in market dynamics. Debt funds are minimal risk profile funds that seek to generate fixed current income to investors.
+      While we strive to reduce risks for our investors, we also strive to provide diversity, active credit risk management, and liquidity.
+      We thank you for your trust in Ascent Wealth for your fixed income requirements.`,
+    ],
+    icon: IconFolderCheck,
+    cover:
+      'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/301eqa.jpg',
+    quote: `"When it's obvious that the goals cannot be reached, don't adjust the goals, adjust the action steps" - Confucius`,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Estate Planning Solutions',
+    subtitle: 'Secure & Safeguard Your Next Generation!',
+    description: [
+      `Ascent Wealth assist our clients through Estate Planning to preserve their assets and wealth built over the years and help them in transfer of their wealth to next generation.`,
+      `Everyone needs an estate plan – not just the wealthy. Your situation’s complexity will determine which documents your plan requires.`,
+      `For many people, estate planning is simple – with professional help.`,
+      `A Will is a legal document you draw up to declare your wishes for your loved ones as to how you want your assets to be distributed after you.`,
+      `Estate Plan allows you to Protect and Provide for those you care about after you have passed away, or for yourself if you become incapacitated.`,
+      `Significant life events may also compel you to make changes to your plan. It’s important to regularly review your plan to ensure it continues to meet your needs and objectives.`,
+      `"Ultimately the decisions you make about your estate are yours alone".`,
+    ],
+    icon: IconUsersGroup,
+    cover:
+      'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/729eee.jpg',
+    quote: `"It's not how much money you make but how much money you can keep, how hard it works for you and how many generations you keep it for" - Robert Kiyosaki`,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Equity - De-mat Accounts',
+    subtitle: 'Know Your Optimal Level of Investment Risks!',
+    description: [
+      `Without a doubt, equity is the best method for accumulating wealth. Almost every investment portfolio needs stocks.`,
+      `Due to increased demand and advancements in trading technology, it is now extremely simple for anyone to transact.
+      Opening a Demat Account provides numerous advantages, including the elimination of the need to preserve physical documents, the saving of time, and the ability for investors and traders to track their portfolio on a regular basis.`,
+      `During the earlier days shares/stocks were kept in physical form. This made it impossible for investors to preserve the physical documents for an indefinite period of time.`,
+      `The introduction of the DEMAT account made it possible for investors and traders to trade instantaneously and hold shares for as long as they desired.`,
+      `Historically, Investments in equities has offered higher real returns compared to fixed income products. Hence, it is seen as good hedge against inflation.`,
+      `Ascent Wealth assists clients with onboarding into a trading platform, completing KYC requirements, offering trading platform training, and effectively and quickly resolving difficulties that may arise.`,
+    ],
+    icon: IconBrandZapier,
+    cover:
+      'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/384eq.jpg',
+    quote: `"The single greatest challenge you face as an investor is handling the truth about yourself" - Jason Zweig`,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Goal Based Financial Planning',
+    subtitle: 'Your future is created by what you do today, not tomorrow',
+    description: [
+      `In Mutual Funds a goal oriented Systematic Investment Plan (SIP) is indeed a financial stress buster and wealth creation vehicle in the long term.`,
+      `When we mention about long term which means one being really patient for a stretched period of years and investing should be like watching plants grow.`,
+      `Accomplishment of goal set: Planning for children’s higher education or wedding expenses or foreign visits or buying a house or retirement corpus, a disciplined investment plays critical role where you continue in a systematic way towards your financial goals set.`,
+      `While we discuss about discipline in investments, it is also equally or more important to steadily invest for a considerably long term to achieve the desired results or outcome. That’s why goal-based investments assume significance will deliver better results.`,
+      `Ascent Wealth helps clients with varying risk profiles accomplish their medium to long-term wealth creation goals.`,
+    ],
+    icon: IconGridGoldenratio,
+    cover:
+      'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/664goalf.jpg',
+    quote: `"The best decisions draw on the dual strength of your investing brain: intuition and analysis. Feeling and thinking." - Jason Zweig`,
   },
 ];
 

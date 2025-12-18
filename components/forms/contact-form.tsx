@@ -63,17 +63,19 @@ export default function ContactForm() {
             We&apos;d love to hear from you. Please fill out this form.
           </CardDescription>
 
-          <CardAction>
-            <Button
-              size={'icon-sm'}
-              variant='destructive'
-              type='button'
-              onClick={() => form.reset()}
-              aria-label='Reset form'
-              disabled={!isDev}>
-              <IconReload className={' size-4'} />
-            </Button>
-          </CardAction>
+          {isDev && (
+            <CardAction>
+              <Button
+                size={'icon-sm'}
+                variant='destructive'
+                type='button'
+                onClick={() => form.reset()}
+                aria-label='Reset form'
+                disabled={!isDev}>
+                <IconReload className={' size-4'} />
+              </Button>
+            </CardAction>
+          )}
         </CardHeader>
         <CardContent className='mt-2'>
           <form onSubmit={form.handleSubmit(onSubmit, onError)}>
