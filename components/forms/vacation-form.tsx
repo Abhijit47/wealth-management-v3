@@ -2,6 +2,7 @@ import { useMediaQuery } from '@/hooks/use-media-query';
 import { cn } from '@/lib/utils';
 import type { VacationCalculatorValues } from '@/lib/zod.schemas';
 import { Trash2Icon } from 'lucide-react';
+import Image from 'next/image';
 import { useState } from 'react';
 import {
   useForm,
@@ -70,9 +71,9 @@ export default function VacationForm({
                 <Field>
                   <FieldLabel>Vacation Image Preview</FieldLabel>
                   <div className={'size-36 mx-auto relative'}>
-                    <img
+                    <Image
                       src={previewUrl}
-                      alt='Vacation Preview'
+                      alt='Vacation cover Preview'
                       width={500}
                       height={500}
                       className='mt-2 w-full h-full object-contain'

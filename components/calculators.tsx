@@ -1,5 +1,6 @@
 import { calculators } from '@/constants';
-import { LazyCaclculatorDrawerDialog } from './forms/caclculator-drawer-dialog';
+
+import { LazyCaclculatorDrawerDialog } from './forms/lazy-components';
 import {
   Card,
   CardDescription,

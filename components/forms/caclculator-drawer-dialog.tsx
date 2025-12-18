@@ -2,7 +2,6 @@
 
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { SparklesIcon } from 'lucide-react';
-import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { Button } from '../ui/button';
 import {
@@ -23,7 +22,6 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '../ui/drawer';
-import { Skeleton } from '../ui/skeleton';
 import EducationForm from './education-form';
 import LumpsumForm from './lumpsum-form';
 import RetirementForm from './retirement-form';
@@ -95,11 +93,3 @@ export default function CaclculatorDrawerDialog(
     </Drawer>
   );
 }
-
-export const LazyCaclculatorDrawerDialog = dynamic(
-  () => import('./caclculator-drawer-dialog').then((mod) => mod.default),
-  {
-    ssr: false,
-    loading: () => <Skeleton className='h-10 w-full rounded-md' />,
-  }
-);

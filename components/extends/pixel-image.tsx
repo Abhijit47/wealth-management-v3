@@ -3,9 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { cn } from '@/lib/utils';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { Skeleton } from '../ui/skeleton';
 
 type Grid = {
   rows: number;
@@ -248,13 +246,3 @@ export const PixelImage = ({
     </div>
   );
 };
-
-export const LazyPixelImage = dynamic(
-  () => import('./pixel-image').then((mod) => mod.PixelImage),
-  {
-    ssr: false,
-    loading: () => (
-      <Skeleton className='w-full h-full aspect-4/3 basis-1/2 animate-pulse' />
-    ),
-  }
-);

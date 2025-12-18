@@ -88,7 +88,7 @@ export default function ConsultationForm() {
                       <FieldError errors={[fieldState.error]} />
                     ) : (
                       <FieldDescription>
-                        We'll never share your email with anyone else.
+                        We&apos;ll never share your email with anyone else.
                       </FieldDescription>
                     )}
                   </Field>

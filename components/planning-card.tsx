@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
 
 import { plannings } from '@/constants';
-import { LazyPixelImage } from './extends/pixel-image';
+import { LazyPixelImage } from './extends/lazy-components';
 import { Button } from './ui/button';
 
 export default function PlanningCard({
