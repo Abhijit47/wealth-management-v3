@@ -1,7 +1,7 @@
+import { BlogCarousel } from './blog-carousel';
 import BlogFilter from './blog-filter';
-import { CarouselDemo } from './carousel-demo';
 
-export default function Blog() {
+export default function Blogs() {
   return (
     <section
       id='blogs'
@@ -13,7 +13,7 @@ export default function Blog() {
         <BlogFilter />
       </div>
 
-      <CarouselDemo />
+      <BlogCarousel />
     </section>
   );
 }

@@ -1,5 +1,6 @@
 'use client';
 
+import { allPosts } from 'content-collections';
 import type { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { useCallback, useState } from 'react';
@@ -7,6 +8,7 @@ import { useCallback, useState } from 'react';
 import { useDotButton } from '@/hooks/use-dot-button';
 import { cn } from '@/lib/utils';
 
+import BlogCard from './blog-card';
 import { Card, CardContent } from './ui/card';
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 
@@ -14,7 +16,7 @@ const OPTIONS: EmblaOptionsType = {};
 
 const isDev = process.env.NODE_ENV === 'development';
 
-export function CarouselDemo() {
+export function BlogCarousel() {
   const [api, setApi] = useState<EmblaCarouselType>();
   // const plugins = useMemo(
   //   () => (isDev ? undefined : [Autoplay({ playOnInit: true })]),
@@ -45,15 +47,12 @@ export function CarouselDemo() {
       plugins={isDev ? undefined : [Autoplay({ playOnInit: true })]}
       className='w-full'>
       <CarouselContent className='-ml-1'>
-        {Array.from({ length: 5 }).map((_, index) => (
+        {allPosts.map((post, index) => (
           <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/3'>
             <div className='p-1'>
-              <Card>
-                <CardContent
-                // className='flex aspect-square items-center justify-center p-6'
-                >
-                  {index + 1}
-                  {/* <BlogCard i={index} /> */}
+              <Card className={'p-0'}>
+                <CardContent className='p-0'>
+                  <BlogCard i={index} post={post} />
                 </CardContent>
               </Card>
             </div>

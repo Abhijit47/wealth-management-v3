@@ -1,4 +1,4 @@
-import Blog from '@/components/blog';
+import Blogs from '@/components/blogs';
 import Calculators from '@/components/calculators';
 import CompanyLogos from '@/components/company-logos';
 import Contact from '@/components/contact';
@@ -14,34 +14,15 @@ import Services from '@/components/services';
 import Stats from '@/components/stats';
 import TestimonialMarquee from '@/components/testimonial-marquee';
 // import Testimonials from '@/components/testimonials';
-import { MDXContent } from '@content-collections/mdx/react';
-import { allPosts } from 'content-collections';
-import Link from 'next/link';
 
 export default function Home() {
-  const posts = allPosts;
-  console.log('Posts:', posts);
   return (
     <main>
       <Hero />
       <Stats />
       <Planning />
       <Services />
-      <ul>
-        {allPosts.map((post) => (
-          <li key={post._meta.path}>
-            <Link
-              href={`/blogs/${post.title
-                .toLocaleLowerCase()
-                .replace(/\s+/g, '-')}`}>
-              <h3>{post.title}</h3>
-              <p>{post.summary}</p>
-              <MDXContent code={post.mdx} />
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <Blog />
+      <Blogs />
       <Calculators />
       <CTABanner />
       <FAQ />

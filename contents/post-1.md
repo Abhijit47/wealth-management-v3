@@ -1,15 +1,16 @@
 ---
+title: '7 Common Investment Mistakes And How To Avoid Them'
+slug: '7-common-investment-mistakes-and-how-to-avoid-them'
+image: '/assets/8.jpg'
+summary: 'Learn about the most common investment mistakes that can derail your financial goals and discover practical strategies to avoid them.'
 categories:
   - Financial Planning
   - Investing
   - Risk Management
   - Mutual Funds
   - Equity
-createdAt: "2025-08-28"
-image: /img/7-common-investment-mistakes.jpg
-slug: 7-common-investment-mistakes-and-how-to-avoid-them
-summary: Learn about the most common investment mistakes that can derail your financial goals and discover practical strategies to avoid them.
-title: 7 Common Investment Mistakes And How To Avoid Them
+author: Wealth Management Expert
+createdAt: '2025-08-28'
 ---
 
 ## Don't Panic Sell
