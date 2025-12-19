@@ -1,3 +1,5 @@
+import { useMediaQuery } from '@/hooks/use-media-query';
+import { cn } from '@/lib/utils';
 import type { RetirementCalculatorValues } from '@/lib/zod.schemas';
 import { useState } from 'react';
 import {
@@ -7,6 +9,7 @@ import {
 } from 'react-hook-form';
 import { Button } from '../ui/button';
 import { DialogClose, DialogFooter } from '../ui/dialog';
+import { DrawerClose, DrawerFooter } from '../ui/drawer';
 import {
   Field,
   FieldDescription,
@@ -40,6 +43,8 @@ export default function RetirementForm({
   const [existingInvestment, setExistingInvestment] = useState([2]);
   const [newInvestment, setNewInvestment] = useState([2]);
 
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+
   const form = useForm<RetirementCalculatorValues>();
 
   const onError: SubmitErrorHandler<RetirementCalculatorValues> = (errors) => {
@@ -55,9 +60,14 @@ export default function RetirementForm({
       className={'space-y-4'}
       onSubmit={form.handleSubmit(onSubmit, onError)}>
       <FieldSet>
-        <FieldLegend>{title}</FieldLegend>
-        <FieldDescription>{desc}</FieldDescription>
-        <FieldSeparator />
+        <FieldLegend className={cn(isDesktop ? '' : 'sr-only')}>
+          {title}
+        </FieldLegend>
+        <FieldDescription className={cn(isDesktop ? '' : 'sr-only')}>
+          {desc}
+        </FieldDescription>
+
+        {isDesktop ? <FieldSeparator /> : null}
 
         <ScrollArea className='h-96 w-full'>
           <div className={'space-y-4 pl-2 pr-4 pb-4'}>
@@ -256,13 +266,24 @@ export default function RetirementForm({
           </div>
         </ScrollArea>
       </FieldSet>
+
       <Separator />
-      <DialogFooter>
-        <DialogClose asChild>
-          <Button variant='outline'>Cancel</Button>
-        </DialogClose>
-        <Button type='submit'>Calculate</Button>
-      </DialogFooter>
+
+      {!isDesktop ? (
+        <DrawerFooter className='pt-2'>
+          <Button type='submit'>Calculate</Button>
+          <DrawerClose asChild>
+            <Button variant='outline'>Cancel</Button>
+          </DrawerClose>
+        </DrawerFooter>
+      ) : (
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button variant='outline'>Cancel</Button>
+          </DialogClose>
+          <Button type='submit'>Calculate</Button>
+        </DialogFooter>
+      )}
     </form>
   );
 }

@@ -1,3 +1,5 @@
+import { useMediaQuery } from '@/hooks/use-media-query';
+import { cn } from '@/lib/utils';
 import type { SIPCalculatorValues } from '@/lib/zod.schemas';
 import { useState } from 'react';
 import {
@@ -7,6 +9,7 @@ import {
 } from 'react-hook-form';
 import { Button } from '../ui/button';
 import { DialogClose, DialogFooter } from '../ui/dialog';
+import { DrawerClose, DrawerFooter } from '../ui/drawer';
 import {
   Field,
   FieldDescription,
@@ -30,6 +33,8 @@ export default function SIPForm({
   const [noOfYears, setNoOfYears] = useState([0]);
   const [expectedReturn, setExpectedReturn] = useState([0]);
 
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+
   const form = useForm<SIPCalculatorValues>();
 
   const onError: SubmitErrorHandler<SIPCalculatorValues> = (errors) => {
@@ -45,9 +50,14 @@ export default function SIPForm({
       className={'space-y-4'}
       onSubmit={form.handleSubmit(onSubmit, onError)}>
       <FieldSet className={'pb-2'}>
-        <FieldLegend>{title}</FieldLegend>
-        <FieldDescription>{desc}</FieldDescription>
-        <FieldSeparator />
+        <FieldLegend className={cn(isDesktop ? '' : 'sr-only')}>
+          {title}
+        </FieldLegend>
+        <FieldDescription className={cn(isDesktop ? '' : 'sr-only')}>
+          {desc}
+        </FieldDescription>
+
+        {isDesktop ? <FieldSeparator /> : null}
 
         <FieldGroup className={'grid grid-cols-1 lg:grid-cols-2 gap-4'}>
           <Field>
@@ -99,12 +109,22 @@ export default function SIPForm({
         </FieldGroup>
       </FieldSet>
       <Separator />
-      <DialogFooter>
-        <DialogClose asChild>
-          <Button variant='outline'>Cancel</Button>
-        </DialogClose>
-        <Button type='submit'>Calculate</Button>
-      </DialogFooter>
+
+      {!isDesktop ? (
+        <DrawerFooter className='pt-2'>
+          <Button type='submit'>Calculate</Button>
+          <DrawerClose asChild>
+            <Button variant='outline'>Cancel</Button>
+          </DrawerClose>
+        </DrawerFooter>
+      ) : (
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button variant='outline'>Cancel</Button>
+          </DialogClose>
+          <Button type='submit'>Calculate</Button>
+        </DialogFooter>
+      )}
     </form>
   );
 }

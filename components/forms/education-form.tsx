@@ -1,3 +1,5 @@
+import { useMediaQuery } from '@/hooks/use-media-query';
+import { cn } from '@/lib/utils';
 import type { EducationCalculatorValues } from '@/lib/zod.schemas';
 import { useState } from 'react';
 import {
@@ -7,6 +9,7 @@ import {
 } from 'react-hook-form';
 import { Button } from '../ui/button';
 import { DialogClose, DialogFooter } from '../ui/dialog';
+import { DrawerClose, DrawerFooter } from '../ui/drawer';
 import {
   Field,
   FieldDescription,
@@ -34,6 +37,8 @@ export default function EducationForm({
   const [existingInvestment, setExistingInvestment] = useState([2]);
   const [newInvestment, setNewInvestment] = useState([2]);
 
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+
   const form = useForm<EducationCalculatorValues>();
 
   const onError: SubmitErrorHandler<EducationCalculatorValues> = (errors) => {
@@ -46,12 +51,17 @@ export default function EducationForm({
 
   return (
     <form
-      className={'space-y-4'}
+      className={'space-y-4 h-full'}
       onSubmit={form.handleSubmit(onSubmit, onError)}>
       <FieldSet>
-        <FieldLegend>{title}</FieldLegend>
-        <FieldDescription>{desc}</FieldDescription>
-        <FieldSeparator />
+        <FieldLegend className={cn(isDesktop ? '' : 'sr-only')}>
+          {title}
+        </FieldLegend>
+        <FieldDescription className={cn(isDesktop ? '' : 'sr-only')}>
+          {desc}
+        </FieldDescription>
+
+        {isDesktop ? <FieldSeparator /> : null}
         <ScrollArea className='h-96 w-full'>
           <div className={'space-y-4 pl-2 pr-4 pb-4'}>
             <FieldGroup className={'grid grid-cols-1 lg:grid-cols-2 gap-4'}>
@@ -112,11 +122,7 @@ export default function EducationForm({
                 <FieldLabel htmlFor='current-cost'>
                   Current cost of higher education
                 </FieldLabel>
-                <Input
-                  id='current-cost'
-                  placeholder='e.g., 25,00,000'
-                  required
-                />
+                <Input id='current-cost' placeholder='e.g., 25,00,000' />
                 <FieldDescription>
                   Provide details about current education cost
                 </FieldDescription>
@@ -125,11 +131,7 @@ export default function EducationForm({
                 <FieldLabel htmlFor='current-investment'>
                   Current investment for the goal
                 </FieldLabel>
-                <Input
-                  id='current-investment'
-                  placeholder='e.g., 5,00,000'
-                  required
-                />
+                <Input id='current-investment' placeholder='e.g., 5,00,000' />
                 <FieldDescription>
                   Provide details about your current investment
                 </FieldDescription>
@@ -201,12 +203,22 @@ export default function EducationForm({
       </FieldSet>
 
       <Separator />
-      <DialogFooter>
-        <DialogClose asChild>
-          <Button variant='outline'>Cancel</Button>
-        </DialogClose>
-        <Button type='submit'>Calculate</Button>
-      </DialogFooter>
+
+      {!isDesktop ? (
+        <DrawerFooter className='pt-2'>
+          <Button type='submit'>Calculate</Button>
+          <DrawerClose asChild>
+            <Button variant='outline'>Cancel</Button>
+          </DrawerClose>
+        </DrawerFooter>
+      ) : (
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button variant='outline'>Cancel</Button>
+          </DialogClose>
+          <Button type='submit'>Calculate</Button>
+        </DialogFooter>
+      )}
     </form>
   );
 }

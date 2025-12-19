@@ -11,6 +11,7 @@ import {
 } from 'react-hook-form';
 import { Button } from '../ui/button';
 import { DialogClose, DialogFooter } from '../ui/dialog';
+import { DrawerClose, DrawerFooter } from '../ui/drawer';
 import {
   Field,
   FieldDescription,
@@ -36,9 +37,10 @@ export default function VacationForm({
   const [existingInvestment, setExistingInvestment] = useState([2]);
   const [newInvestment, setNewInvestment] = useState([2]);
   const [afterHowManyYears, setAfterHowManyYears] = useState([0]);
-  const isDesktop = useMediaQuery('(min-width: 768px)');
   const [photo, setPhoto] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+
+  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const form = useForm<VacationCalculatorValues>();
 
@@ -252,12 +254,22 @@ export default function VacationForm({
         </ScrollArea>
       </FieldSet>
       <Separator />
-      <DialogFooter>
-        <DialogClose asChild>
-          <Button variant='outline'>Cancel</Button>
-        </DialogClose>
-        <Button type='submit'>Calculate</Button>
-      </DialogFooter>
+
+      {!isDesktop ? (
+        <DrawerFooter className='pt-2'>
+          <Button type='submit'>Calculate</Button>
+          <DrawerClose asChild>
+            <Button variant='outline'>Cancel</Button>
+          </DrawerClose>
+        </DrawerFooter>
+      ) : (
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button variant='outline'>Cancel</Button>
+          </DialogClose>
+          <Button type='submit'>Calculate</Button>
+        </DialogFooter>
+      )}
     </form>
   );
 }

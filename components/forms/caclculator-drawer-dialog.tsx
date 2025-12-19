@@ -14,10 +14,8 @@ import {
 } from '../ui/dialog';
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
@@ -69,9 +67,11 @@ export default function CaclculatorDrawerDialog(
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Button variant={'secondary'}>Get free calculation</Button>
+        <Button variant={'secondary'} className={'w-full'}>
+          Get free calculation <SparklesIcon className={'size-4'} />
+        </Button>
       </DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className='p-6 min-h-fit'>
         <DrawerHeader>
           <DrawerTitle>{title}</DrawerTitle>
           <DrawerDescription>{desc}</DrawerDescription>
@@ -83,12 +83,6 @@ export default function CaclculatorDrawerDialog(
         {title === 'Retirement Planning' && <RetirementForm {...props} />}
         {title === 'Wedding Calculator' && <WeddingForm {...props} />}
         {title === 'Vacation Calculator' && <VacationForm {...props} />}
-
-        <DrawerFooter className='pt-2'>
-          <DrawerClose asChild>
-            <Button variant='outline'>Cancel</Button>
-          </DrawerClose>
-        </DrawerFooter>
       </DrawerContent>
     </Drawer>
   );
