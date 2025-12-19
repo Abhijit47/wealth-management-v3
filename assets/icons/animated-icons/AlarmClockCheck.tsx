@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Variants } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface AlarmClockCheckProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -20,7 +21,7 @@ const checkmarkVariants: Variants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      ease: "easeInOut",
+      ease: 'easeInOut',
       repeat: Infinity,
       repeatDelay: 1,
     },
@@ -34,7 +35,7 @@ const bellVariants: Variants = {
     transition: {
       duration: 0.5,
       repeat: Infinity,
-      repeatType: "reverse",
+      repeatType: 'reverse',
     },
   },
 };
@@ -43,7 +44,7 @@ const AlarmClockCheck = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: AlarmClockCheckProps) => {
   const controls = useAnimation();
@@ -51,40 +52,38 @@ const AlarmClockCheck = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
-        <circle cx="12" cy="13" r="8" />
-        <motion.g variants={bellVariants} animate={controls} initial="normal">
-          <path d="M5 3 2 6" />
-          <path d="m22 6-3-3" />
-          <path d="M6.38 18.7 4 21" />
-          <path d="M17.64 18.67 20 21" />
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
+        <circle cx='12' cy='13' r='8' />
+        <motion.g variants={bellVariants} animate={controls} initial='normal'>
+          <path d='M5 3 2 6' />
+          <path d='m22 6-3-3' />
+          <path d='M6.38 18.7 4 21' />
+          <path d='M17.64 18.67 20 21' />
         </motion.g>
         <motion.path
-          d="m9 13 2 2 4-4"
+          d='m9 13 2 2 4-4'
           variants={checkmarkVariants}
           animate={controls}
-          initial="normal"
+          initial='normal'
         />
       </svg>
     </div>

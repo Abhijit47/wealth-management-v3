@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import type { Variants } from "motion/react";
-import { motion, useAnimation } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 const variants: Variants = {
   normal: {
@@ -13,9 +14,9 @@ const variants: Variants = {
     y: [0, -2, 0, -1, -2, -0.5, -1, 0],
     transition: {
       duration: 6,
-      ease: "easeInOut",
+      ease: 'easeInOut',
       repeat: Infinity,
-      repeatType: "reverse",
+      repeatType: 'reverse',
       times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1],
     },
   },
@@ -32,7 +33,8 @@ const Music = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ...props
 }: MusicProps) => {
   const controls = useAnimation();
@@ -40,32 +42,30 @@ const Music = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <motion.svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        strokeLinecap='round'
+        strokeLinejoin='round'
         variants={variants}
-        animate={controls}
-      >
-        <path d="M9 18V5l12-2v13" />
-        <circle cx="6" cy="18" r="3" />
-        <circle cx="18" cy="16" r="3" />
+        animate={controls}>
+        <path d='M9 18V5l12-2v13' />
+        <circle cx='6' cy='18' r='3' />
+        <circle cx='18' cy='16' r='3' />
       </motion.svg>
     </div>
   );

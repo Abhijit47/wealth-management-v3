@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import type { Variants } from "motion/react";
-import { motion, useAnimation } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 const pathVariants: Variants = {
   normal: {
@@ -14,7 +15,7 @@ const pathVariants: Variants = {
     transition: {
       duration: 0.8,
       delay: i * 0.15,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   }),
 };
@@ -30,7 +31,7 @@ const Wind = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: WindProps) => {
   const controls = useAnimation();
@@ -38,42 +39,40 @@ const Wind = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.path
-          d="M9.8 4.4A2 2 0 1 1 11 8H2"
+          d='M9.8 4.4A2 2 0 1 1 11 8H2'
           variants={pathVariants}
           animate={controls}
           custom={0}
         />
         <motion.path
-          d="M17.5 8a2.5 2.5 0 1 1 2 4H2"
+          d='M17.5 8a2.5 2.5 0 1 1 2 4H2'
           variants={pathVariants}
           animate={controls}
           custom={1}
         />
         <motion.path
-          d="M12.8 19.6A2 2 0 1 0 14 16H2"
+          d='M12.8 19.6A2 2 0 1 0 14 16H2'
           variants={pathVariants}
           animate={controls}
           custom={2}

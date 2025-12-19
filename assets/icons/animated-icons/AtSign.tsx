@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Transition, Variants } from "motion/react";
+import type { Transition, Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface AtSignProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -34,7 +35,7 @@ const AtSign = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: AtSignProps) => {
   const controls = useAnimation();
@@ -42,38 +43,36 @@ const AtSign = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.circle
-          cx="12"
-          cy="12"
-          r="4"
+          cx='12'
+          cy='12'
+          r='4'
           variants={variants}
           animate={controls}
           custom={0}
         />
         <motion.path
-          d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"
+          d='M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8'
           variants={variants}
           animate={controls}
           custom={1}

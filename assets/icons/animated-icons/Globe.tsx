@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import type { Transition, Variants } from "motion/react";
-import { motion, useAnimation } from "motion/react";
+import type { Transition, Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface GlobeProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -34,7 +35,7 @@ const Globe = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: GlobeProps) => {
   const controls = useAnimation();
@@ -42,44 +43,42 @@ const Globe = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.circle
-          cx="12"
-          cy="12"
-          r="10"
+          cx='12'
+          cy='12'
+          r='10'
           variants={pathVariants}
           animate={controls}
           custom={0}
         />
         <motion.path
-          d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"
+          d='M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20'
           variants={pathVariants}
           animate={controls}
           custom={1}
         />
         <motion.path
-          d="M2 12h20"
+          d='M2 12h20'
           variants={pathVariants}
           animate={controls}
           custom={2}

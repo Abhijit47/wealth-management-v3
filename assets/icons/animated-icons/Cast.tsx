@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 const DURATION = 0.25;
 
@@ -19,7 +20,7 @@ const Cast = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: CastProps) => {
   const controls = useAnimation();
@@ -27,34 +28,32 @@ const Cast = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         {/* Static frame */}
-        <path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6" />
+        <path d='M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6' />
 
         {/* Animated waves */}
         <motion.path
-          d="M2 12a9 9 0 0 1 8 8"
+          d='M2 12a9 9 0 0 1 8 8'
           animate={controls}
           transition={{
             duration: DURATION,
@@ -76,7 +75,7 @@ const Cast = ({
           }}
         />
         <motion.path
-          d="M2 16a5 5 0 0 1 4 4"
+          d='M2 16a5 5 0 0 1 4 4'
           animate={controls}
           transition={{
             duration: DURATION,
@@ -98,10 +97,10 @@ const Cast = ({
           }}
         />
         <motion.line
-          x1="2"
-          x2="2.01"
-          y1="20"
-          y2="20"
+          x1='2'
+          x2='2.01'
+          y1='20'
+          y2='20'
           animate={controls}
           transition={{
             duration: DURATION,

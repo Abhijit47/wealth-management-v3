@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Transition, Variants } from "motion/react";
+import type { Transition, Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface BoltProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -12,7 +13,7 @@ interface BoltProps extends React.SVGAttributes<SVGSVGElement> {
 
 const transition: Transition = {
   duration: 2,
-  ease: "linear",
+  ease: 'linear',
   repeat: 0,
 };
 
@@ -25,7 +26,7 @@ const Bolt = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: BoltProps) => {
   const controls = useAnimation();
@@ -33,39 +34,36 @@ const Bolt = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
+      onMouseEnter={() => controls.start('animate')}
       onMouseLeave={() => {
         controls.stop();
-        controls.start("normal");
-      }}
-    >
+        controls.start('normal');
+      }}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.g
           variants={spinVariants}
           animate={controls}
-          initial="normal"
-          transition={transition}
-        >
-          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-          <circle cx="12" cy="12" r="4" />
+          initial='normal'
+          transition={transition}>
+          <path d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z' />
+          <circle cx='12' cy='12' r='4' />
         </motion.g>
       </svg>
     </div>

@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import type { Transition, Variants } from "motion/react";
-import { motion, useAnimation } from "motion/react";
+import type { Transition, Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 const transition: Transition = {
   duration: 0.3,
@@ -34,7 +35,7 @@ const IterationCcw = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: IterationCcwProps) => {
   const controls = useAnimation();
@@ -42,39 +43,37 @@ const IterationCcw = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.path
           variants={variants}
           animate={controls}
           custom={0}
-          d="M20 10c0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8h8"
+          d='M20 10c0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8h8'
         />
         <motion.polyline
           variants={variants}
           animate={controls}
           custom={1}
-          points="16 14 20 18 16 22"
+          points='16 14 20 18 16 22'
         />
       </svg>
     </div>

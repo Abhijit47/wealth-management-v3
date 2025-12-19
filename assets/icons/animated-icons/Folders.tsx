@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import type { Variants } from "motion/react";
-import { motion, useAnimation } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface FoldersProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -15,7 +16,7 @@ const folderVariants: Variants = {
     x: 0,
     y: 0,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 300,
       damping: 25,
     },
@@ -24,7 +25,7 @@ const folderVariants: Variants = {
     x: -4,
     y: 2,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 300,
       damping: 25,
     },
@@ -37,7 +38,7 @@ const bottomLineVariants: Variants = {
     x: 0,
     y: 0,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 300,
       damping: 25,
     },
@@ -47,7 +48,7 @@ const bottomLineVariants: Variants = {
     x: 4,
     y: -2,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 300,
       damping: 25,
       opacity: { duration: 0.1 },
@@ -59,7 +60,7 @@ const Folders = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: FoldersProps) => {
   const controls = useAnimation();
@@ -67,37 +68,35 @@ const Folders = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         {/* Main folder */}
         <motion.path
-          d="M20 17a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3.9a2 2 0 0 1-1.69-.9l-.81-1.2a2 2 0 0 0-1.67-.9H8a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2Z"
+          d='M20 17a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3.9a2 2 0 0 1-1.69-.9l-.81-1.2a2 2 0 0 0-1.67-.9H8a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2Z'
           variants={folderVariants}
           animate={controls}
         />
         {/* Bottom line that fades away */}
         <motion.path
-          d="M2 8v11a2 2 0 0 0 2 2h14"
+          d='M2 8v11a2 2 0 0 0 2 2h14'
           variants={bottomLineVariants}
           animate={controls}
         />

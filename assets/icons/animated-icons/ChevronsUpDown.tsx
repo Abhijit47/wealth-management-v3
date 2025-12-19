@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import type { Transition } from "motion/react";
-import { motion, useAnimation } from "motion/react";
+import type { Transition } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface ChevronsUpDownProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -11,7 +12,7 @@ interface ChevronsUpDownProps extends React.SVGAttributes<SVGSVGElement> {
 }
 
 const defaultTransition: Transition = {
-  type: "spring",
+  type: 'spring',
   stiffness: 250,
   damping: 25,
 };
@@ -20,7 +21,7 @@ const ChevronsUpDown = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: ChevronsUpDownProps) => {
   const controls = useAnimation();
@@ -28,47 +29,45 @@ const ChevronsUpDown = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.path
           variants={{
-            normal: { translateY: "0%" },
-            animate: { translateY: "2px" },
+            normal: { translateY: '0%' },
+            animate: { translateY: '2px' },
           }}
           transition={defaultTransition}
           animate={controls}
-          initial="normal"
-          d="m7 15 5 5 5-5"
+          initial='normal'
+          d='m7 15 5 5 5-5'
         />
         <motion.path
           variants={{
-            normal: { translateY: "0%" },
-            animate: { translateY: "-2px" },
+            normal: { translateY: '0%' },
+            animate: { translateY: '-2px' },
           }}
           transition={defaultTransition}
           animate={controls}
-          initial="normal"
-          d="m7 9 5-5 5 5"
+          initial='normal'
+          d='m7 9 5-5 5 5'
         />
       </svg>
     </div>

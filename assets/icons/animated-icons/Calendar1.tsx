@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Variants } from "motion/react";
-import React from "react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface Calendar1Props extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -19,7 +19,7 @@ const frameVariants: Variants = {
     opacity: [1, 0.8, 1],
     transition: {
       duration: 1,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   },
 };
@@ -35,7 +35,7 @@ const numberVariants: Variants = {
     scale: 1,
     y: 0,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 300,
       damping: 20,
       duration: 0.4,
@@ -47,7 +47,7 @@ const numberVariants: Variants = {
     y: 10,
     transition: {
       duration: 0.2,
-      ease: "easeIn",
+      ease: 'easeIn',
     },
   },
 };
@@ -56,7 +56,7 @@ const Calendar1 = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: Calendar1Props) => {
   const controls = useAnimation();
@@ -85,60 +85,57 @@ const Calendar1 = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
       onMouseEnter={() => {
         setIsHovering(true);
-        controls.start("animate");
+        controls.start('animate');
       }}
       onMouseLeave={() => {
         setIsHovering(false);
-        controls.start("normal");
-      }}
-    >
+        controls.start('normal');
+      }}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.rect
-          x="3"
-          y="4"
-          width="18"
-          height="18"
-          rx="2"
+          x='3'
+          y='4'
+          width='18'
+          height='18'
+          rx='2'
           variants={frameVariants}
           animate={controls}
-          initial="normal"
+          initial='normal'
         />
-        <path d="M16 2v4" />
-        <path d="M8 2v4" />
-        <path d="M3 10h18" />
+        <path d='M16 2v4' />
+        <path d='M8 2v4' />
+        <path d='M3 10h18' />
         <motion.text
-          x="11"
-          y="18"
-          fontSize="8"
-          textAnchor="middle"
-          fill="currentColor"
-          stroke="none"
+          x='11'
+          y='18'
+          fontSize='8'
+          textAnchor='middle'
+          fill='currentColor'
+          stroke='none'
           key={currentNumber}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          variants={numberVariants}
-        >
+          initial='initial'
+          animate='animate'
+          exit='exit'
+          variants={numberVariants}>
           {currentNumber}
         </motion.text>
       </svg>

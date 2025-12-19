@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Variants } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface CakeProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -20,11 +21,12 @@ const staticVariants: Variants = {
 };
 
 const flameVariants: Variants = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   normal: (i: number) => ({
     scale: 1,
     y: 0,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 300,
       damping: 25,
     },
@@ -39,9 +41,9 @@ const flameVariants: Variants = {
       ...patterns[i % patterns.length],
       transition: {
         duration: 2,
-        ease: "easeInOut",
+        ease: 'easeInOut',
         repeat: Infinity,
-        repeatType: "reverse",
+        repeatType: 'reverse',
       },
     };
   },
@@ -51,7 +53,7 @@ const Cake = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: CakeProps) => {
   const controls = useAnimation();
@@ -59,71 +61,69 @@ const Cake = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         {/* Static cake parts */}
         <motion.path
-          d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"
+          d='M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8'
           variants={staticVariants}
           animate={controls}
         />
         <motion.path
-          d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"
+          d='M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1'
           variants={staticVariants}
           animate={controls}
         />
         <motion.path
-          d="M2 21h20"
+          d='M2 21h20'
           variants={staticVariants}
           animate={controls}
         />
 
         {/* Candle sticks */}
-        <motion.path d="M7 8v3" variants={staticVariants} animate={controls} />
-        <motion.path d="M12 8v3" variants={staticVariants} animate={controls} />
-        <motion.path d="M17 8v3" variants={staticVariants} animate={controls} />
+        <motion.path d='M7 8v3' variants={staticVariants} animate={controls} />
+        <motion.path d='M12 8v3' variants={staticVariants} animate={controls} />
+        <motion.path d='M17 8v3' variants={staticVariants} animate={controls} />
 
         {/* Animated flames */}
         <motion.path
-          d="M7 4h.01"
+          d='M7 4h.01'
           variants={flameVariants}
           animate={controls}
           custom={0}
-          style={{ transformOrigin: "center" }}
+          style={{ transformOrigin: 'center' }}
         />
         <motion.path
-          d="M12 4h.01"
+          d='M12 4h.01'
           variants={flameVariants}
           animate={controls}
           custom={1}
-          style={{ transformOrigin: "center" }}
+          style={{ transformOrigin: 'center' }}
         />
         <motion.path
-          d="M17 4h.01"
+          d='M17 4h.01'
           variants={flameVariants}
           animate={controls}
           custom={2}
-          style={{ transformOrigin: "center" }}
+          style={{ transformOrigin: 'center' }}
         />
       </svg>
     </div>

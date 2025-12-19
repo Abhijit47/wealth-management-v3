@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Variants } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface AArrowUpProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -14,7 +15,7 @@ const arrowVariants: Variants = {
   normal: {
     y: 0,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 300,
     },
   },
@@ -22,7 +23,7 @@ const arrowVariants: Variants = {
     y: [0, -4, 0],
     transition: {
       duration: 0.6,
-      ease: "easeInOut",
+      ease: 'easeInOut',
       repeat: Infinity,
       repeatDelay: 1,
     },
@@ -33,7 +34,7 @@ const AArrowUp = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: AArrowUpProps) => {
   const controls = useAnimation();
@@ -41,36 +42,34 @@ const AArrowUp = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         {/* Letter A paths - static */}
-        <path d="M3.5 13h6" />
-        <path d="m2 16 4.5-9 4.5 9" />
+        <path d='M3.5 13h6' />
+        <path d='m2 16 4.5-9 4.5 9' />
 
         {/* Arrow paths - animated */}
-        <motion.g variants={arrowVariants} animate={controls} initial="normal">
-          <path d="M18 16V7" />
-          <path d="m14 11 4-4 4 4" />
+        <motion.g variants={arrowVariants} animate={controls} initial='normal'>
+          <path d='M18 16V7' />
+          <path d='m14 11 4-4 4 4' />
         </motion.g>
       </svg>
     </div>

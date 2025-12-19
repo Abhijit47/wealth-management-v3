@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Variants } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface AntennaProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -21,7 +22,7 @@ const lineVariants: Variants = {
     transition: {
       duration: 0.5,
       delay: i * 0.1,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   }),
 };
@@ -30,7 +31,7 @@ const Antenna = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: AntennaProps) => {
   const controls = useAnimation();
@@ -38,60 +39,58 @@ const Antenna = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.path
-          d="M2 12 7 2"
+          d='M2 12 7 2'
           variants={lineVariants}
           animate={controls}
           custom={0}
         />
         <motion.path
-          d="m7 12 5-10"
+          d='m7 12 5-10'
           variants={lineVariants}
           animate={controls}
           custom={1}
         />
         <motion.path
-          d="m12 12 5-10"
+          d='m12 12 5-10'
           variants={lineVariants}
           animate={controls}
           custom={2}
         />
         <motion.path
-          d="m17 12 5-10"
+          d='m17 12 5-10'
           variants={lineVariants}
           animate={controls}
           custom={3}
         />
         <motion.path
-          d="M4.5 7h15"
+          d='M4.5 7h15'
           variants={lineVariants}
           animate={controls}
           custom={4}
         />
         <motion.path
-          d="M12 16v6"
+          d='M12 16v6'
           variants={lineVariants}
           animate={controls}
           custom={5}

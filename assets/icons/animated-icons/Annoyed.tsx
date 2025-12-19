@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Variants } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface AnnoyedProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -16,7 +17,7 @@ const circleVariants: Variants = {
     scale: [1, 1.1, 1],
     transition: {
       duration: 0.5,
-      ease: "easeInOut",
+      ease: 'easeInOut',
       repeat: Infinity,
       repeatDelay: 1,
     },
@@ -30,7 +31,7 @@ const mouthVariants: Variants = {
     opacity: [0.5, 1],
     transition: {
       duration: 0.3,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   },
 };
@@ -41,7 +42,7 @@ const eyeVariants: Variants = {
     scale: [1, 0.8, 1],
     transition: {
       duration: 0.2,
-      ease: "easeInOut",
+      ease: 'easeInOut',
       repeat: 1,
     },
   },
@@ -51,7 +52,7 @@ const Annoyed = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: AnnoyedProps) => {
   const controls = useAnimation();
@@ -59,45 +60,43 @@ const Annoyed = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.circle
-          cx="12"
-          cy="12"
-          r="10"
+          cx='12'
+          cy='12'
+          r='10'
           variants={circleVariants}
           animate={controls}
-          initial="normal"
+          initial='normal'
         />
         <motion.path
-          d="M8 15h8"
+          d='M8 15h8'
           variants={mouthVariants}
           animate={controls}
-          initial="normal"
+          initial='normal'
         />
-        <motion.g variants={eyeVariants} animate={controls} initial="normal">
-          <path d="M8 9h2" />
-          <path d="M14 9h2" />
+        <motion.g variants={eyeVariants} animate={controls} initial='normal'>
+          <path d='M8 9h2' />
+          <path d='M14 9h2' />
         </motion.g>
       </svg>
     </div>

@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import type { Variants } from "motion/react";
-import { motion, useAnimation } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 const staticVariants: Variants = {
   normal: {
@@ -16,7 +17,7 @@ const dropVariants: Variants = {
   normal: {
     y: 0,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 400,
       damping: 25,
     },
@@ -24,7 +25,7 @@ const dropVariants: Variants = {
   animate: (custom: number) => ({
     y: [-100, 10, 0],
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 200,
       damping: 12,
       mass: 1.2,
@@ -44,7 +45,7 @@ const Linkedin = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: LinkedinProps) => {
   const controls = useAnimation();
@@ -52,48 +53,46 @@ const Linkedin = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         {/* Static dot and line */}
         <motion.rect
-          width="4"
-          height="12"
-          x="2"
-          y="9"
+          width='4'
+          height='12'
+          x='2'
+          y='9'
           variants={staticVariants}
           animate={controls}
         />
         <motion.circle
-          cx="4"
-          cy="4"
-          r="2"
+          cx='4'
+          cy='4'
+          r='2'
           variants={staticVariants}
           animate={controls}
         />
 
         {/* Dropping "i" part */}
         <motion.path
-          d="M16 8a6 6 0 0 1 6 6v7h-4v-7"
+          d='M16 8a6 6 0 0 1 6 6v7h-4v-7'
           variants={dropVariants}
           animate={controls}
           custom={0}
@@ -101,7 +100,7 @@ const Linkedin = ({
 
         {/* Dropping "n" part */}
         <motion.path
-          d="M18 14a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7"
+          d='M18 14a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7'
           variants={dropVariants}
           animate={controls}
           custom={1}

@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import type { Transition, Variants } from "motion/react";
-import { motion, useAnimation } from "motion/react";
+import type { Transition, Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 const transition: Transition = {
   duration: 0.3,
@@ -34,7 +35,7 @@ const snowflakeVariants: Variants = {
     x: [-2, 2, 0],
     opacity: 1,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 300,
       damping: 20,
       delay: 0.1 * custom,
@@ -53,7 +54,7 @@ const ThermometerSnowflake = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: ThermometerSnowflakeProps) => {
   const controls = useAnimation();
@@ -61,31 +62,29 @@ const ThermometerSnowflake = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         {/* Thermometer */}
         <motion.path
-          d="M20 14.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z"
+          d='M20 14.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z'
           variants={thermometerVariants}
           animate={controls}
           custom={0}
@@ -93,13 +92,13 @@ const ThermometerSnowflake = ({
 
         {/* Snowflake parts with spring animation */}
         <motion.g variants={snowflakeVariants} animate={controls} custom={1}>
-          <path d="m10 20-1.25-2.5L6 18" />
-          <path d="M10 4 8.75 6.5 6 6" />
-          <path d="M10.585 15H10" />
-          <path d="M2 12h6.5L10 9" />
-          <path d="m4 10 1.5 2L4 14" />
-          <path d="m7 21 3-6-1.5-3" />
-          <path d="m7 3 3 6h2" />
+          <path d='m10 20-1.25-2.5L6 18' />
+          <path d='M10 4 8.75 6.5 6 6' />
+          <path d='M10.585 15H10' />
+          <path d='M2 12h6.5L10 9' />
+          <path d='m4 10 1.5 2L4 14' />
+          <path d='m7 21 3-6-1.5-3' />
+          <path d='m7 3 3 6h2' />
         </motion.g>
       </svg>
     </div>

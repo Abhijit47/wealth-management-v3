@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import type { Variants } from "motion/react";
-import { motion, useAnimation } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation, type Transition } from 'motion/react';
+import * as React from 'react';
 
 interface DeleteProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -15,8 +16,8 @@ const lidVariants: Variants = {
   animate: { y: -1.1 },
 };
 
-const springTransition = {
-  type: "spring",
+const springTransition: Transition = {
+  type: 'spring',
   stiffness: 500,
   damping: 30,
 };
@@ -25,7 +26,7 @@ const Delete = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: DeleteProps) => {
   const controls = useAnimation();
@@ -33,50 +34,47 @@ const Delete = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.g
           variants={lidVariants}
           animate={controls}
-          transition={springTransition}
-        >
-          <path d="M3 6h18" />
-          <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+          transition={springTransition}>
+          <path d='M3 6h18' />
+          <path d='M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2' />
         </motion.g>
         <motion.path
-          d="M19 8v12c0 1-1 2-2 2H7c-1 0-2-1-2-2V8"
+          d='M19 8v12c0 1-1 2-2 2H7c-1 0-2-1-2-2V8'
           variants={{
-            normal: { d: "M19 8v12c0 1-1 2-2 2H7c-1 0-2-1-2-2V8" },
-            animate: { d: "M19 9v12c0 1-1 2-2 2H7c-1 0-2-1-2-2V9" },
+            normal: { d: 'M19 8v12c0 1-1 2-2 2H7c-1 0-2-1-2-2V8' },
+            animate: { d: 'M19 9v12c0 1-1 2-2 2H7c-1 0-2-1-2-2V9' },
           }}
           animate={controls}
           transition={springTransition}
         />
         <motion.line
-          x1="10"
-          x2="10"
-          y1="11"
-          y2="17"
+          x1='10'
+          x2='10'
+          y1='11'
+          y2='17'
           variants={{
             normal: { y1: 11, y2: 17 },
             animate: { y1: 11.5, y2: 17.5 },
@@ -85,10 +83,10 @@ const Delete = ({
           transition={springTransition}
         />
         <motion.line
-          x1="14"
-          x2="14"
-          y1="11"
-          y2="17"
+          x1='14'
+          x2='14'
+          y1='11'
+          y2='17'
           variants={{
             normal: { y1: 11, y2: 17 },
             animate: { y1: 11.5, y2: 17.5 },

@@ -1,14 +1,16 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Variants } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 const boxVariants: Variants = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   normal: (i: number) => ({
     x: 0,
     y: 0,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 300,
       damping: 25,
     },
@@ -24,7 +26,7 @@ const boxVariants: Variants = {
     return {
       ...positions[i],
       transition: {
-        type: "spring",
+        type: 'spring',
         stiffness: 300,
         damping: 25,
       },
@@ -43,7 +45,7 @@ const LayoutGrid = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: LayoutGridProps) => {
   const controls = useAnimation();
@@ -51,70 +53,68 @@ const LayoutGrid = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.rect
-          width="7"
-          height="7"
-          x="3"
-          y="3"
-          rx="1"
+          width='7'
+          height='7'
+          x='3'
+          y='3'
+          rx='1'
           variants={boxVariants}
           animate={controls}
-          initial="normal"
+          initial='normal'
           custom={0}
         />
         <motion.rect
-          width="7"
-          height="7"
-          x="14"
-          y="3"
-          rx="1"
+          width='7'
+          height='7'
+          x='14'
+          y='3'
+          rx='1'
           variants={boxVariants}
           animate={controls}
-          initial="normal"
+          initial='normal'
           custom={1}
         />
         <motion.rect
-          width="7"
-          height="7"
-          x="14"
-          y="14"
-          rx="1"
+          width='7'
+          height='7'
+          x='14'
+          y='14'
+          rx='1'
           variants={boxVariants}
           animate={controls}
-          initial="normal"
+          initial='normal'
           custom={2}
         />
         <motion.rect
-          width="7"
-          height="7"
-          x="3"
-          y="14"
-          rx="1"
+          width='7'
+          height='7'
+          x='3'
+          y='14'
+          rx='1'
           variants={boxVariants}
           animate={controls}
-          initial="normal"
+          initial='normal'
           custom={3}
         />
       </svg>

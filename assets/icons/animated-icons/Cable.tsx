@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface CableProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -19,7 +20,7 @@ const Cable = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: CableProps) => {
   const controls = useAnimation();
@@ -27,30 +28,28 @@ const Cable = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.path
-          d="M17 21v-2a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1"
+          d='M17 21v-2a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1'
           animate={controls}
           transition={{
             duration: DURATION,
@@ -72,7 +71,7 @@ const Cable = ({
           }}
         />
         <motion.path
-          d="M19 15V6.5a1 1 0 0 0-7 0v11a1 1 0 0 1-7 0V9"
+          d='M19 15V6.5a1 1 0 0 0-7 0v11a1 1 0 0 1-7 0V9'
           animate={controls}
           transition={{
             duration: DURATION,
@@ -94,7 +93,7 @@ const Cable = ({
           }}
         />
         <motion.path
-          d="M21 21v-2h-4"
+          d='M21 21v-2h-4'
           animate={controls}
           transition={{
             duration: DURATION,
@@ -116,7 +115,7 @@ const Cable = ({
           }}
         />
         <motion.path
-          d="M3 5h4V3"
+          d='M3 5h4V3'
           animate={controls}
           transition={{
             duration: DURATION,
@@ -138,7 +137,7 @@ const Cable = ({
           }}
         />
         <motion.path
-          d="M7 5a1 1 0 0 1 1 1v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1V3"
+          d='M7 5a1 1 0 0 1 1 1v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1V3'
           animate={controls}
           transition={{
             duration: DURATION,

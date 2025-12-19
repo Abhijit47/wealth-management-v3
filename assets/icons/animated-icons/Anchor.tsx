@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Variants } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface AnchorProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -18,7 +19,7 @@ const circleVariants: Variants = {
     scale: [1, 1.2, 1],
     transition: {
       duration: 0.8,
-      ease: "easeInOut",
+      ease: 'easeInOut',
       repeat: Infinity,
       repeatDelay: 1,
     },
@@ -35,7 +36,7 @@ const lineVariants: Variants = {
     opacity: [1, 0.5, 1],
     transition: {
       duration: 1,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   },
 };
@@ -44,7 +45,7 @@ const Anchor = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: AnchorProps) => {
   const controls = useAnimation();
@@ -52,47 +53,45 @@ const Anchor = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.path
-          d="M12 22V8"
+          d='M12 22V8'
           variants={lineVariants}
           animate={controls}
-          initial="normal"
+          initial='normal'
         />
         <motion.path
-          d="M5 12H2a10 10 0 0 0 20 0h-3"
+          d='M5 12H2a10 10 0 0 0 20 0h-3'
           variants={lineVariants}
           animate={controls}
-          initial="normal"
+          initial='normal'
         />
         <motion.circle
-          cx="12"
-          cy="5"
-          r="3"
+          cx='12'
+          cy='5'
+          r='3'
           variants={circleVariants}
           animate={controls}
-          initial="normal"
+          initial='normal'
         />
       </svg>
     </div>

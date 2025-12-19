@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 const DURATION = 0.25;
 
@@ -19,7 +20,7 @@ const Nfc = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: NfcProps) => {
   const controls = useAnimation();
@@ -27,30 +28,28 @@ const Nfc = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.path
-          d="M6 8.32a7.43 7.43 0 0 1 0 7.36"
+          d='M6 8.32a7.43 7.43 0 0 1 0 7.36'
           animate={controls}
           transition={{
             duration: DURATION,
@@ -72,7 +71,7 @@ const Nfc = ({
           }}
         />
         <motion.path
-          d="M9.46 6.21a11.76 11.76 0 0 1 0 11.58"
+          d='M9.46 6.21a11.76 11.76 0 0 1 0 11.58'
           animate={controls}
           transition={{
             duration: DURATION,
@@ -94,7 +93,7 @@ const Nfc = ({
           }}
         />
         <motion.path
-          d="M12.91 4.1a15.91 15.91 0 0 1 .01 15.8"
+          d='M12.91 4.1a15.91 15.91 0 0 1 .01 15.8'
           animate={controls}
           transition={{
             duration: DURATION,
@@ -116,7 +115,7 @@ const Nfc = ({
           }}
         />
         <motion.path
-          d="M16.37 2a20.16 20.16 0 0 1 0 20"
+          d='M16.37 2a20.16 20.16 0 0 1 0 20'
           animate={controls}
           transition={{
             duration: DURATION,

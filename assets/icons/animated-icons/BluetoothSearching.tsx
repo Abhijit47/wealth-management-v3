@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Variants } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface BluetoothSearchingProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -36,7 +37,7 @@ const BluetoothSearching = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: BluetoothSearchingProps) => {
   const controls = useAnimation();
@@ -44,32 +45,30 @@ const BluetoothSearching = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.path
           variants={secondVariants}
           animate={controls}
-          d="m7 7 10 10-5 5V2l5 5L7 17"
+          d='m7 7 10 10-5 5V2l5 5L7 17'
         />
         <motion.path
           variants={pathVariants}
@@ -79,7 +78,7 @@ const BluetoothSearching = ({
             delay: 0.2,
             repeat: Infinity,
           }}
-          d="M20.83 14.83a4 4 0 0 0 0-5.66"
+          d='M20.83 14.83a4 4 0 0 0 0-5.66'
         />
         <motion.path
           variants={pathVariants}
@@ -88,7 +87,7 @@ const BluetoothSearching = ({
             duration: 0.6,
             repeat: Infinity,
           }}
-          d="M18 12h.01"
+          d='M18 12h.01'
         />
       </svg>
     </div>

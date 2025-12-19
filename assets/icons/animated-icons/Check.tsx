@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Variants } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface CheckProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -17,7 +18,7 @@ const checkVariants: Variants = {
     rotateY: 0,
     transition: {
       duration: 0.8,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   },
   animate: {
@@ -26,7 +27,7 @@ const checkVariants: Variants = {
     rotateY: [0, 180, 360],
     transition: {
       duration: 0.8,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   },
 };
@@ -35,50 +36,48 @@ const Check = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: CheckProps) => {
   const controls = useAnimation();
 
   const handleHoverStart = () => {
-    controls.start("animate");
+    controls.start('animate');
   };
 
   const handleHoverEnd = () => {
-    controls.start("normal");
+    controls.start('normal');
   };
 
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
       onMouseEnter={handleHoverStart}
-      onMouseLeave={handleHoverEnd}
-    >
+      onMouseLeave={handleHoverEnd}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.path
-          d="M20 6 9 17l-5-5"
+          d='M20 6 9 17l-5-5'
           variants={checkVariants}
-          initial="normal"
+          initial='normal'
           animate={controls}
-          style={{ transformOrigin: "center" }}
+          style={{ transformOrigin: 'center' }}
         />
       </svg>
     </div>

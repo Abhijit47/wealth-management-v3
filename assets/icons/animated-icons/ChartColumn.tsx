@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { motion, useAnimation } from "motion/react";
-import type { Variants } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 interface ChartColumnProps extends React.SVGAttributes<SVGSVGElement> {
   width?: number;
@@ -24,7 +25,7 @@ const ChartColumn = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: ChartColumnProps) => {
   const controls = useAnimation();
@@ -43,55 +44,53 @@ const ChartColumn = ({
   };
 
   const handleHoverEnd = () => {
-    controls.start("visible");
+    controls.start('visible');
   };
 
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
       onMouseEnter={handleHoverStart}
-      onMouseLeave={handleHoverEnd}
-    >
+      onMouseLeave={handleHoverEnd}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <motion.path
           variants={lineVariants}
-          initial="visible"
+          initial='visible'
           animate={controls}
           custom={1}
-          d="M13 17V9"
+          d='M13 17V9'
         />
         <motion.path
           variants={lineVariants}
-          initial="visible"
+          initial='visible'
           animate={controls}
           custom={2}
-          d="M18 17V5"
+          d='M18 17V5'
         />
-        <motion.path variants={frameVariants} d="M3 3v16a2 2 0 0 0 2 2h16" />
+        <motion.path variants={frameVariants} d='M3 3v16a2 2 0 0 0 2 2h16' />
         <motion.path
           variants={lineVariants}
-          initial="visible"
+          initial='visible'
           animate={controls}
           custom={0}
-          d="M8 17v-3"
+          d='M8 17v-3'
         />
       </svg>
     </div>

@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import type { Variants } from "motion/react";
-import { motion, useAnimation } from "motion/react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 const variants: Variants = {
   normal: {
@@ -15,7 +16,7 @@ const variants: Variants = {
     y: [0, -2, 0],
     transition: {
       duration: 0.6,
-      ease: "easeInOut",
+      ease: 'easeInOut',
       times: [0, 0.2, 0.5, 0.8, 1],
     },
   },
@@ -32,7 +33,8 @@ const Wine = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ...props
 }: WineProps) => {
   const controls = useAnimation();
@@ -40,33 +42,31 @@ const Wine = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <motion.svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        strokeLinecap='round'
+        strokeLinejoin='round'
         variants={variants}
-        animate={controls}
-      >
-        <path d="M8 22h8" />
-        <path d="M7 10h10" />
-        <path d="M12 15v7" />
-        <path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z" />
+        animate={controls}>
+        <path d='M8 22h8' />
+        <path d='M7 10h10' />
+        <path d='M12 15v7' />
+        <path d='M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z' />
       </motion.svg>
     </div>
   );

@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import type { Variants } from "motion/react";
-import { motion, useAnimation, cubicBezier } from "motion/react";
+import type { Variants } from 'motion/react';
+import { cubicBezier, motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 const customEasing = cubicBezier(0.25, 0.1, 0.25, 1);
 
@@ -54,7 +55,7 @@ const Undo = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: UndoProps) => {
   const controls = useAnimation();
@@ -62,31 +63,29 @@ const Undo = ({
   return (
     <div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
-    >
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
-        <motion.path d="M3 7v6h6" variants={arrowVariants} animate={controls} />
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
+        <motion.path d='M3 7v6h6' variants={arrowVariants} animate={controls} />
         <motion.path
-          d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"
+          d='M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13'
           variants={pathVariants}
           animate={controls}
         />

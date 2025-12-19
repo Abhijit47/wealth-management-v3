@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion, useAnimation } from "motion/react";
-import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useAnimation } from 'motion/react';
+import * as React from 'react';
 
 const circles = [
   { cx: 19, cy: 5 }, // Top right
@@ -26,13 +26,13 @@ const Grip = ({
   width = 28,
   height = 28,
   strokeWidth = 2,
-  stroke = "#ffffff",
+  stroke = '#ffffff',
   ...props
 }: GripProps) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = React.useState(false);
   const controls = useAnimation();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const animateCircles = async () => {
       if (isHovered) {
         await controls.start((i) => ({
@@ -58,43 +58,41 @@ const Grip = ({
   return (
     <motion.div
       style={{
-        cursor: "pointer",
-        userSelect: "none",
-        padding: "8px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        cursor: 'pointer',
+        userSelect: 'none',
+        padding: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+      onMouseLeave={() => setIsHovered(false)}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}
-        viewBox="0 0 24 24"
-        fill="none"
+        viewBox='0 0 24 24'
+        fill='none'
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-      >
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        {...props}>
         <AnimatePresence>
           {circles.map((circle, index) => (
             <motion.circle
               key={`${circle.cx}-${circle.cy}`}
               cx={circle.cx}
               cy={circle.cy}
-              r="1"
-              initial="initial"
+              r='1'
+              initial='initial'
               variants={{
                 initial: {
                   opacity: 1,
                 },
               }}
               animate={controls}
-              exit="initial"
+              exit='initial'
               custom={index}
             />
           ))}
