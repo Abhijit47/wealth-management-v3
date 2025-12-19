@@ -12,9 +12,9 @@ import {
 
 export default function Calculators() {
   return (
-    <div
+    <section
       id='calaculators'
-      className='py-12 container max-w-[85em] mx-auto px-4'>
+      className='py-12 container max-w-(--breakpoint-xl) mx-auto px-4'>
       <div>
         <h2 className='text-4xl sm:text-5xl font-semibold tracking-tight text-center'>
           Unleash Your Creativity
@@ -47,6 +47,6 @@ export default function Calculators() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

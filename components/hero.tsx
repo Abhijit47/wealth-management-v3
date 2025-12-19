@@ -11,7 +11,7 @@ import { ShadCNShinyButton } from './extends/shadcn-shiny-btn';
 
 export default function Hero() {
   return (
-    <div
+    <section
       id='home'
       className='min-h-screen flex items-center justify-center px-6'>
       <BackgroundPattern />
@@ -58,6 +58,6 @@ export default function Hero() {
           </InteractiveHoverButton>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -2,8 +2,8 @@ import { LazyStatCard } from './stat-card';
 
 export default function Stats() {
   return (
-    <div className='flex items-center justify-center'>
-      <div className='max-w-(--breakpoint-xl) mx-auto py-12 text-center'>
+    <section className='max-w-(--breakpoint-xl) mx-auto'>
+      <div className=' py-12 text-center'>
         <h2 className='text-4xl md:text-5xl font-semibold tracking-tighter'>
           Why Should You Choose Us?
         </h2>
@@ -21,6 +21,6 @@ export default function Stats() {
 
         <LazyStatCard />
       </div>
-    </div>
+    </section>
   );
 }

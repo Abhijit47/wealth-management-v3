@@ -16,7 +16,7 @@ export default function ServiceCard(props: (typeof services)[number]) {
   return (
     <SpotlightCard
       key={title}
-      className='p-0! rounded-none! border-none!'
+      className='p-0! rounded-none! border-none! bg-transparent!'
       // spotlightColor='rgba(0, 229, 255, 0.2)'
       spotlightColor='rgba(83, 68, 5, 1)'>
       <Card className='flex flex-col border rounded-xl overflow-hidden shadow-none pb-0'>

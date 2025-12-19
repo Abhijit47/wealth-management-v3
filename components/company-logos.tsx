@@ -207,7 +207,7 @@ export default function CompanyLogos() {
       <h2 className='text-4xl md:text-5xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
         Our Trusted Partners
       </h2>
-      <div className='relative flex w-full flex-col items-center justify-center gap-1 overflow-hidden py-8'>
+      <div className='relative flex w-full flex-col items-center justify-center gap-1 space-y-4 overflow-hidden py-8'>
         {/* Marquee moving left to right (default) */}
         <Marquee pauseOnHover repeat={3} className='[--duration:120s]'>
           {companyLogos.map((logo) => (

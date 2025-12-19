@@ -4,8 +4,10 @@ import ConsultationDialog from './forms/consultation-dialog';
 
 export default function CTABanner() {
   return (
-    <div id='free-consultation' className='px-6'>
-      <div className='dark:border relative overflow-hidden my-20 w-full dark bg-background text-foreground max-w-(--breakpoint-xl) mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14'>
+    <section
+      id='free-consultation'
+      className='max-w-(--breakpoint-xl) mx-auto w-full'>
+      <div className='dark:border relative overflow-hidden my-20 dark bg-background text-foreground rounded-2xl py-10 md:py-16 px-6 md:px-14'>
         <LazyAnimatedGridPattern
           numSquares={90}
           maxOpacity={0.1}
@@ -38,6 +40,6 @@ export default function CTABanner() {
           <ConsultationDialog />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
