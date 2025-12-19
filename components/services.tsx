@@ -1,15 +1,5 @@
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-
 import { services } from '@/constants';
-import Image from 'next/image';
-import ServiceDrawer from './service-drawer';
+import ServiceCard from './service-card';
 
 export default function Services() {
   return (
@@ -30,41 +20,5 @@ export default function Services() {
         </div>
       </div>
     </div>
-  );
-}
-
-function ServiceCard(props: (typeof services)[number]) {
-  const { title, description, cover } = props;
-  return (
-    <Card
-      key={title}
-      className='flex flex-col border rounded-xl overflow-hidden shadow-none pb-0'>
-      <CardHeader>
-        <CardTitle>
-          <h4 className='text-xl font-semibold tracking-tight'>{title}</h4>
-        </CardTitle>
-        <CardDescription>
-          <p className='text-muted-foreground text-base line-clamp-3'>
-            {description[0]}
-          </p>
-        </CardDescription>
-      </CardHeader>
-      <CardContent className='flex items-center'>
-        <CardAction>
-          <ServiceDrawer {...props} />
-        </CardAction>
-      </CardContent>
-      <CardContent className='mt-auto px-0 pb-0'>
-        <div className='bg-muted h-40 ml-6 rounded-tl-xl overhflow-hidden'>
-          <Image
-            src={cover}
-            alt={title}
-            width={400}
-            height={160}
-            className='h-full w-full object-cover rounded-tl-xl hover:scale-105 transition-transform duration-300'
-          />
-        </div>
-      </CardContent>
-    </Card>
   );
 }

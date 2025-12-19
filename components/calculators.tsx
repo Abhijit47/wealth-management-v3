@@ -1,5 +1,6 @@
 import { calculators } from '@/constants';
 
+import { ShineBorder } from './extends/shine-border';
 import { LazyCaclculatorDrawerDialog } from './forms/lazy-components';
 import {
   Card,
@@ -20,7 +21,8 @@ export default function Calculators() {
         </h2>
         <div className='mt-10 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
           {calculators.map((calculator) => (
-            <Card key={calculator.title} className=''>
+            <Card key={calculator.title} className='relative overflow-hidden'>
+              <ShineBorder shineColor={['#A07CFE', '#FE8FB5', '#FFBE7B']} />
               <CardHeader className={'text-center'}>
                 <div className='mb-4 size-12 mx-auto flex items-center justify-center bg-accent rounded-full'>
                   <calculator.icon className='size-6' />

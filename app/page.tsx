@@ -6,6 +6,7 @@ import CTABanner from '@/components/cta-banner';
 import { ScrollProgress } from '@/components/extends/scroll-progress';
 import FAQ from '@/components/faq';
 import Hero from '@/components/hero';
+import { ScrollBasedVelocityImagesDemo } from '@/components/logo-loop';
 // import LogoCloud from '@/components/logo-cloud';
 import Planning from '@/components/planning';
 // import { MarqueeDemo } from '@/components/reviews';
@@ -44,6 +45,7 @@ export default function Home() {
       <Calculators />
       <CTABanner />
       <FAQ />
+      <ScrollBasedVelocityImagesDemo />
       <CompanyLogos />
       <TestimonialMarquee />
       {/* <Testimonials /> */}

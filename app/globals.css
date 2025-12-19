@@ -39,9 +39,11 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   --animate-gradient: gradient 8s linear infinite;
+  --animate-shine: shine var(--duration) infinite linear;
 
   @keyframes marquee {
     from {
@@ -69,6 +71,18 @@
     }
     100% {
       background-position: 0% 50%;
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    to {
+      background-position: 0% 0%;
     }
   }
 }
@@ -143,6 +157,27 @@
   --code-selection: oklch(0.96 0.01 93.87967943941892);
   --code-border: oklch(0.9 0.008 93.87967943941892);
   --radius: 0.5rem;
+
+  /* Vermin Brown */
+  --vermin-brown-base: #8a7208;
+  --vermin-brown-shade-100: #7c6707;
+  --vermin-brown-shade-200: #6e5b06;
+  --vermin-brown-shade-300: #615006;
+  --vermin-brown-shade-400: #534405;
+  --vermin-brown-shade-500: #453904;
+  --vermin-brown-shade-600: #372e03;
+  --vermin-brown-shade-700: #292202;
+  --vermin-brown-shade-800: #1c1702;
+  --vermin-brown-shade-900: #0e0b01;
+  --vermin-brown-tint-100: #968021;
+  --vermin-brown-tint-200: #a18e39;
+  --vermin-brown-tint-300: #ad9c52;
+  --vermin-brown-tint-400: #b9aa6b;
+  --vermin-brown-tint-500: #c5b984;
+  --vermin-brown-tint-600: #d0c79c;
+  --vermin-brown-tint-700: #dcd5b5;
+  --vermin-brown-tint-800: #e8e3ce;
+  --vermin-brown-tint-900: #f3f1e6;
 }
 
 .dark {

@@ -4,6 +4,7 @@ import { motion, type MotionProps } from 'motion/react';
 import React from 'react';
 
 import { cn } from '@/lib/utils';
+import { ArrowRight } from 'lucide-react';
 
 const animationProps: MotionProps = {
   initial: { '--x': '100%', scale: 0.8 },
@@ -31,12 +32,13 @@ interface ShinyButtonProps
     MotionProps {
   children: React.ReactNode;
   className?: string;
+  icon?: React.ReactNode;
 }
 
 export const ShinyButton = React.forwardRef<
   HTMLButtonElement,
   ShinyButtonProps
->(({ children, className, ...props }, ref) => {
+>(({ children, className, icon, ...props }, ref) => {
   return (
     <motion.button
       ref={ref}
@@ -47,12 +49,13 @@ export const ShinyButton = React.forwardRef<
       {...animationProps}
       {...props}>
       <span
-        className='relative block size-full text-sm tracking-wide text-[rgb(0,0,0,65%)] uppercase dark:font-light dark:text-[rgb(255,255,255,90%)]'
+        className='relative flex items-center gap-2 text-sm tracking-wide text-[rgb(0,0,0,65%)] dark:font-light dark:text-[rgb(255,255,255,90%)]'
         style={{
           maskImage:
             'linear-gradient(-75deg,var(--primary) calc(var(--x) + 20%),transparent calc(var(--x) + 30%),var(--primary) calc(var(--x) + 100%))',
         }}>
         {children}
+        {icon ? icon : <ArrowRight />}
       </span>
       <span
         style={{

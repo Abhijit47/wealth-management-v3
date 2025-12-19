@@ -1,12 +1,21 @@
 import { ArrowRight } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
+import { ButtonHTMLAttributes } from 'react';
+
+interface InteractiveHoverButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+  className?: string;
+  icon?: React.ReactNode;
+}
 
 export function InteractiveHoverButton({
   children,
   className,
+  icon,
   ...props
-}: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+}: InteractiveHoverButtonProps) {
   return (
     <button
       className={cn(
@@ -22,7 +31,7 @@ export function InteractiveHoverButton({
       </div>
       <div className='text-primary-foreground absolute top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 opacity-0 transition-all duration-300 group-hover:-translate-x-5 group-hover:opacity-100'>
         <span>{children}</span>
-        <ArrowRight />
+        {icon ? icon : <ArrowRight />}
       </div>
     </button>
   );
