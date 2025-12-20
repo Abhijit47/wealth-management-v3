@@ -1,5 +1,7 @@
 'use server';
 
+import { PostValues } from '@/content-collections';
+import jsonData from '@/docs/data-20251219223035.json';
 import axios from 'axios';
 import fs from 'fs/promises';
 import path from 'path';
@@ -57,3 +59,26 @@ export async function ensureDirectoryExists(dirPath: string): Promise<void> {
     throw error;
   }
 }
+
+type expectedShape = PostValues[];
+
+export const createMarkDownFile = async (): Promise<void> => {
+  const data = jsonData;
+
+  const markdownDir = path.join(process.cwd(), 'public', 'markdowns');
+
+  await ensureDirectoryExists(markdownDir);
+
+  for (const item of data) {
+    const fileName = `${item.slug}.md`;
+    const filePath = path.join(markdownDir, fileName);
+    const markdownContent = {};
+  }
+  // try {
+  //   await fs.writeFile(filePath, markdownContent, 'utf-8');
+  //   console.log(`Markdown file created: ${filePath}`);
+  // } catch (error) {
+  //   console.error('Error writing markdown file:', error);
+  //   throw error;
+  // }
+};

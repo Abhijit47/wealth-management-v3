@@ -6,11 +6,18 @@ import Autoplay from 'embla-carousel-autoplay';
 import { useCallback, useState } from 'react';
 
 import { useDotButton } from '@/hooks/use-dot-button';
+import { useMediaQuery } from '@/hooks/use-media-query';
 import { cn } from '@/lib/utils';
 
 import BlogCard from './blog-card';
 import { Card, CardContent } from './ui/card';
-import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from './ui/carousel';
 
 const OPTIONS: EmblaOptionsType = {};
 
@@ -34,6 +41,8 @@ export function BlogCarousel() {
 
     resetOrStop();
   }, []);
+
+  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
     api,
@@ -59,8 +68,12 @@ export function BlogCarousel() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* <CarouselPrevious />
-      <CarouselNext /> */}
+      {isDesktop && (
+        <>
+          <CarouselPrevious />
+          <CarouselNext />
+        </>
+      )}
 
       <div className='mt-4 flex justify-center gap-3 py-4'>
         {scrollSnaps.map((_, index) => (

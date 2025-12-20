@@ -7,7 +7,7 @@ import { z } from 'zod';
 //   value: z.any(),
 // });
 
-const postSchema = z.object({
+export const postSchema = z.object({
   title: z.string(),
   slug: z.string(),
   image: z.string(), // Changed from 'coverImage' to match JSON
@@ -22,7 +22,7 @@ export type PostValues = z.infer<typeof postSchema>;
 
 const posts = defineCollection({
   name: 'posts',
-  directory: 'contents',
+  directory: 'generated-posts',
   include: '**/*.md',
   schema: postSchema,
   transform: async (document, context) => {
