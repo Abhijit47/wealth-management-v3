@@ -3,17 +3,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Badge } from './ui/badge';
-import { Card, CardContent, CardHeader } from './ui/card';
+import { buttonVariants } from './ui/button';
+import { Card, CardAction, CardContent, CardHeader } from './ui/card';
 
 type BlogCardProps = {
-  i: number;
   post: PostValues;
 };
 
 export default function BlogCard(props: BlogCardProps) {
-  const { i, post } = props;
+  const { post } = props;
   return (
-    <Card key={i} className='shadow-none py-0 gap-3'>
+    <Card className='shadow-none py-0 gap-3'>
       <CardHeader className='p-2 pb-0'>
         <div className='aspect-video bg-muted rounded-lg w-full'>
           <Image
@@ -36,10 +36,24 @@ export default function BlogCard(props: BlogCardProps) {
         </div>
 
         <Link href={`/blogs/${post.slug}`}>
-          <h3 className='mt-4 text-2xl line-clamp-2 text-[1.4rem] font-semibold underline underline-offset-2 tracking-[-0.015em] hover:no-underline'>
+          <h3 className='mt-4 text-2xl line-clamp-1 text-[1.4rem] font-semibold underline underline-offset-2 tracking-[-0.015em] hover:no-underline'>
             {post.title}
           </h3>
         </Link>
+
+        <CardAction className={'mt-4'}>
+          <Link
+            className={buttonVariants({
+              variant: 'link',
+              size: 'sm',
+              className:
+                'text-muted-foreground! p-0! h-fit! hover:text-primary! transition-colors! delay-150! duration-300! ease-linear!',
+            })}
+            href={`/blogs/${post.slug}`}>
+            Read more &rarr;
+          </Link>
+        </CardAction>
+
         <div className='mt-6 flex items-center justify-between'>
           <div className='flex items-center gap-2'>
             <Avatar>

@@ -1,4 +1,4 @@
-import { LazyStatCard } from './stat-card';
+import { LazyStatCard } from './lazy-components';
 
 export default function Stats() {
   return (

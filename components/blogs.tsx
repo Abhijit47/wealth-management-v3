@@ -1,5 +1,5 @@
-import { BlogCarousel } from './blog-carousel';
 import BlogFilter from './blog-filter';
+import { LazyBlogCarousel } from './lazy-components';
 
 export default function Blogs() {
   return (
@@ -13,7 +13,7 @@ export default function Blogs() {
         <BlogFilter />
       </div>
 
-      <BlogCarousel />
+      <LazyBlogCarousel />
     </section>
   );
 }
