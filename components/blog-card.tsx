@@ -1,6 +1,7 @@
 import { PostValues } from '@/content-collections';
 import Image from 'next/image';
 import Link from 'next/link';
+// import Image from './blur-image';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Badge } from './ui/badge';
 import { buttonVariants } from './ui/button';
@@ -15,7 +16,7 @@ export default function BlogCard(props: BlogCardProps) {
   return (
     <Card className='shadow-none py-0 gap-3'>
       <CardHeader className='p-2 pb-0'>
-        <div className='aspect-video bg-muted rounded-lg w-full'>
+        <div className='aspect-video w-full h-full bg-muted rounded-lg overflow-hidden'>
           <Image
             src={post.image}
             alt={post.title}
@@ -24,6 +25,11 @@ export default function BlogCard(props: BlogCardProps) {
             height={500}
             // priority={i < 3}
           />
+          {/* <Image
+            src={post.image}
+            alt={post.title}
+            className='object-cover w-full h-full rounded-lg'
+          /> */}
         </div>
       </CardHeader>
       <CardContent className='pt-0 pb-5 px-5'>
