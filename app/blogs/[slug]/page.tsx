@@ -2,6 +2,7 @@ import { allPosts } from '@/.content-collections/generated';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
+import { getLocalImage } from '@/lib/plaiceholder';
 import { MDXContent } from '@content-collections/mdx/react';
 import { ArrowLeftCircle } from 'lucide-react';
 import { Metadata, ResolvingMetadata } from 'next';
@@ -56,6 +57,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
+  const { base64 } = await getLocalImage(post.image);
+
   return (
     <article className='max-w-4xl mx-auto px-4 py-24'>
       {/* Header */}
@@ -68,6 +71,8 @@ export default async function BlogPostPage({ params }: PageProps) {
             height={400}
             className='w-full aspect-video object-cover rounded-lg'
             priority
+            placeholder='blur'
+            blurDataURL={base64}
           />
         </div>
 
