@@ -738,6 +738,7 @@ export const testimonials = [
     designation: 'Commercial head in an MNC.',
     image: '/images/testimonials/testimonial_1.jpg',
     rating: 4.5,
+    createdAt: new Date().toISOString(),
   },
   {
     id: crypto.randomUUID(),
@@ -746,6 +747,7 @@ export const testimonials = [
     designation: 'Managing Director - Synergy Maritime Pvt Ltd. Chennai.',
     image: '/images/testimonials/testimonial_2.png',
     rating: 4.5,
+    createdAt: new Date().toISOString(),
   },
   {
     id: crypto.randomUUID(),
@@ -755,6 +757,7 @@ export const testimonials = [
       'General Manager - Sales &amp; Service, TVS Motor Company Ltd, Hosur',
     image: '/images/testimonials/testimonial_3.png',
     rating: 4.5,
+    createdAt: new Date().toISOString(),
   },
   {
     id: crypto.randomUUID(),
@@ -763,6 +766,7 @@ export const testimonials = [
     designation: 'General Manager - Sales - Carrier Midea India Pvt. Ltd',
     image: '/images/testimonials/testimonial_4.png',
     rating: 4.5,
+    createdAt: new Date().toISOString(),
   },
   {
     id: crypto.randomUUID(),
@@ -771,6 +775,7 @@ export const testimonials = [
     designation: 'Int. Medicine - Ponmalligai Hospital, chennai',
     image: '/images/testimonials/testimonial_5.jpg',
     rating: 4.5,
+    createdAt: new Date().toISOString(),
   },
   {
     id: crypto.randomUUID(),
@@ -779,6 +784,7 @@ export const testimonials = [
     designation: 'N/A, New Delhi',
     image: '/images/testimonials/testimonial_6.jpg',
     rating: 4.5,
+    createdAt: new Date().toISOString(),
   },
   {
     id: crypto.randomUUID(),
@@ -787,5 +793,623 @@ export const testimonials = [
     designation: 'Retd. Sr. VP - Mercantile Credit Corporation',
     image: '/images/testimonials/testimonial_7.jpg',
     rating: 4.5,
+    createdAt: new Date().toISOString(),
+  },
+];
+
+export const googleReviews = [
+  {
+    id: '40f1cc5e-cbe9-4b6d-a92a-81dbe81bdf3d',
+    message: '',
+    name: 'Mani Arul',
+    designation: '1 review • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocKDaWRH1g3HiPVBzejSQKG1CfjZj41RsZyLuJT_bIBGTIB_uQ=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '2 weeks ago',
+  },
+  {
+    id: 'd0441f5c-0488-4513-87ac-34c3d70bf856',
+    message: '',
+    name: 'Meena',
+    designation: '8 reviews • 2 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocIYlvhpBZ93VqWHFTY7vFalfS43U8_ddfi5SCsth3zHlcg35w=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '2 weeks ago',
+  },
+  {
+    id: '2544dd49-b63f-4411-a2b2-02214101fdea',
+    message:
+      'I am not a Finance person to understand the nuances of\n                        Finance market but due to various past experiences where\n                        people always got you registered to various investments\n                        but when it failed provided truckload even more\n                        technical reasons for failures. But when I started\n                        working Mr. Kannan I could see the difference and over\n                        time I have seen the growth of 11% using Asset plus and\n                        his wisdom we were seeing growth continuously.This\n                        is a new experience for us compared to past and it’s\n                        been great so far.Looking forward to use asset\n                        plus and Mr. Kannan to further invest in good\n                        opportunities.',
+    name: 'sujatha sankaranarayanan',
+    designation: '6 reviews • 1 photo',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocL9D_apzvJ4giIu4Vt1MMSjOvjOAnDbE4zTOj0lm2EEU75PqQ=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '8 weeks ago',
+  },
+  {
+    id: '940c4056-84f2-44c4-a09c-0d37f6414274',
+    message: '',
+    name: 'Vin pan',
+    designation: '0 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjWxAgUkxHIEf08nDjN2GsDo2TofSp6VjhAe3HeuJPyXoII7a6U=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '9 weeks ago',
+  },
+  {
+    id: '942a6616-4621-4a77-913a-881473ab6bfa',
+    message:
+      'Have been associate with Ascent wealth for more than\n                        3years.Now Investment decisions are no longer a\n                        problem. Mr. Kannan’s expertise, his client focused\n                        advisory services, highly personalised financial plan to\n                        align with both the short term and long term\n                        requirements is par excellence.',
+    name: 'RAGHUNATHAN ARAVAMUDAN',
+    designation: '2 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocIOsB3qcuKjHKNwac-ulnfKiS5Zl6CC1pb_yISt6WJyz8ccpw=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '9 weeks ago',
+  },
+  {
+    id: '71d91967-1766-40f8-ba02-233293303c6c',
+    message: '',
+    name: 'Durga Prasad',
+    designation: '1 review • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocJRNnb1vE8rqcDOdauj-XksbgI_AhwIW1mrutGnKTZiGvS-KA=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '9 weeks ago',
+  },
+  {
+    id: '6bbb6106-06aa-4938-a727-592cc8c43640',
+    message:
+      'The team at Ascent Wealth provides exceptional guidance\n                        and services with clarity. Their professionalism, prompt\n                        services and long-term approach make investing simple\n                        and productive. Totally trust their approach! Surely\n                        recommend their services.',
+    name: 'srinivasan alwar',
+    designation: '1 review • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjVLEHYdfZswc7YHnP6KuSuZF5hTlyBnvCEARcaPmVQnUoBh7yvy=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '9 weeks ago',
+  },
+  {
+    id: '584d8cab-62f7-4220-9ee4-70154bd53188',
+    message:
+      'Ascent wealth makes investing a very good learning\n                        experience in the area of investments. Really happy with\n                        their support services.Great Advice, Reliable and\n                        knowledgeable. Highly recommended!',
+    name: 'Srivaramangai Srinivasan',
+    designation: '1 review • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocLTeNuWDngeOHs5eB1LizTWKf1kwceglkUNCqtWRkBKX7xu-g=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '9 weeks ago',
+  },
+  {
+    id: '071d3f91-5eb8-4f97-a794-04f8d2136b9f',
+    message: '',
+    name: 'Nirmala Ram',
+    designation: '1 review • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocKiIKVbvP7ADEO8nfUeesf9RQ29AZzgr6UH6uRezit3DQ4gnA=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '9 weeks ago',
+  },
+  {
+    id: 'b6c3f80d-6536-46aa-805a-61a4606880b7',
+    message: '',
+    name: 'raji lakshmi',
+    designation: '1 review • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjWH9VtLYCamol1lJEd4QQubJl2-yvhWdhMnpim9YwfNVDr-MEr3=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '27 Dec 2024',
+  },
+  {
+    id: '1f88a332-922a-41c7-ae13-d6e24df9d522',
+    message: '',
+    name: 'padmavathy selvam',
+    designation: '7 reviews • 4 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjXh_qnnqd-Mq5b6T3j-t5PW-96AasYTOFFovO45m46Ys-_h5H_7=s45-c-rp-mo-br100',
+    rating: 4,
+    createdAt: '25 Dec 2024',
+  },
+  {
+    id: '9bd1a5bc-c648-4316-91d9-7039a6629e23',
+    message:
+      'When I thought of investing in Mutual fund, I\n                        accidentally found Ascent wealth and contacted Kannan\n                        sir.. He gave clear explanation and addressed my queries\n                        patiently and plan my investments accordingly.. Even\n                        though I had started late now I am confident about my\n                        wealth creation..Thank you Ascent Wealth team.🙏',
+    name: 'Kaleeswari Manikandan',
+    designation: '5 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocJPuBZQvnIVrWb7AIiK6z0TT5XGKfX49ef2Ve9h3FxLWvB-6g=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '24 Dec 2024',
+  },
+  {
+    id: 'f89a12cb-78f3-497d-9680-0afa4d6ea041',
+    message: '',
+    name: 'sethupathi raja',
+    designation: '1 review • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocLTa8R0wRllpTrN3XZmZCsXYQ3HoIQHhtssz7Vj_OTfycJTHA=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '23 Dec 2024',
+  },
+  {
+    id: '8c576a88-b1d0-4756-b705-a9ad71122354',
+    message: '',
+    name: 'Nagamani Birudolu',
+    designation: '2 reviews • 1 photo',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocKV48VsjtEddoNmzw3aDgLGd1qPrBP6rmbE1eJD0sL_5-ovLw=s45-c-rp-mo-br100',
+    rating: 4,
+    createdAt: '26 Sept 2024',
+  },
+  {
+    id: '43c65567-f09d-4e63-a39f-c74085c838aa',
+    message:
+      'Im travelling with Kannan for last 5 years and taken his\n                        advice/service of Mutual fund and Financial investment,\n                        Im happy with Mutal Funds returns and timely response on\n                        any questions/concerns. I recommend Kannan for any\n                        Mutual Fund investment/term insurance/ health insurance\n                        and financial planning..Im thankful to Kannan for giving\n                        me confidence to get into Financial journey .',
+    name: 'vivek katakamsubramaniyam',
+    designation: '4 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocLlcOHqgI23mxd0Fuv-YZFK7Kz2FLfycUFQfeEOVFGHBn_vcw=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '23 Sept 2024',
+  },
+  {
+    id: '8afc0ecb-133e-4f0b-b078-6e4bea01611f',
+    message: '',
+    name: 'Ramanathan V',
+    designation: '7 reviews • 1 photo',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjUVef-nJiH1TWwUCiOR7Vou2AJ7EhEr9JTZcmSlqgoBWaGl5pA2Vg=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '22 Sept 2024',
+  },
+  {
+    id: 'ae96fdf2-5d82-4f6b-938c-9e110ff6f454',
+    message:
+      "It's a great pleasure of working with Mr. Kannan, and I\n                        am happy about choosing Ascent Wealth. He explained\n                        different investment options and helped me to understand\n                        what would work best for my financial situation. Now I\n                        feel much more confident about my financial goals.",
+    name: 'suresh m',
+    designation: 'Local Guide • 9 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjWQEhYrgAmbLDcwGVPIcS3TRvS7hrEEXNVyBVZnhMBtMD3AfMpurg=s45-c-rp-mo-ba2-br100',
+    rating: 5,
+    createdAt: '22 Sept 2024',
+  },
+  {
+    id: '93fab31d-728d-49fc-9992-3f4cad99d7da',
+    message:
+      'Me and my husband are investing through Ascent wealth\n                        and are greatly impressed with their service. We receive\n                        the right advice on where to invest based on our\n                        requirements. The support from Ascent wealth during our\n                        investment journey has been great, we receive instant\n                        help and support whenever we need. Highly recommend\n                        Ascent wealth for mutual fund investments.',
+    name: 'Sujana Kumar',
+    designation: '5 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjVfhwtcdItujaAZmpyOEwlICrePMjt4qxRom3UIGv-lQ7uFzBRX=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '31 Aug 2024',
+  },
+  {
+    id: 'd9a47d41-a6f6-4880-9498-d186d8975722',
+    message:
+      "I am associated with Ascent wealth for more than 5 years\n                        now and have built a very good mutual fund investment\n                        portfolio based on Kannan sir's advice. He has been very\n                        supportive throughout this journey instantly offering\n                        advice and support. Would greatly recommend him and\n                        Ascent wealth for investment services.",
+    name: 'natrayan mahalingam',
+    designation: '9 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocKtubpUdL6ItHbFg0_6t046i9LbM5jb9od7LJOsOo8cXwmH1XHi=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '31 Aug 2024',
+  },
+  {
+    id: 'f2141513-ebce-43cd-94a6-3c2dc8e8b913',
+    message: '',
+    name: 'Jithin Prasanth',
+    designation: 'Local Guide • 32 reviews • 16 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjURbmtWlNAmMKkMNDN1pLQk9uY4pdOwTFkwR1YZTa4-1A3iUNIh_A=s45-c-rp-mo-ba3-br100',
+    rating: 5,
+    createdAt: '30 Aug 2024',
+  },
+  {
+    id: 'a4c9feaa-e442-40b0-8eb3-f9514f97b60b',
+    message:
+      'A great thanks to Ascent Wealth team for their great\n                        support and service. The advisors provided valuable\n                        inputs based on my risk appetite helping me to take\n                        proper decision on mutual fund investment .Once\n                        again I would like to thank them for their dedication,\n                        commitment and invaluable contribution towards helping\n                        my investment. Lastly wishing all the great success.',
+    name: 'deepak sadanandan',
+    designation: '11 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjXnBrXG0b65KNJNb8q3x_mTepQ1fJw_t_vAyZU9XY_X8WHsDeFt=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '29 Aug 2024',
+  },
+  {
+    id: '2fde4f5c-cdb7-4deb-9a11-3695461cbcdb',
+    message: '',
+    name: 'pradeep Sripathi',
+    designation: '8 reviews • 7 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocLBiGZE6jIUrXEtcPzf6PhuDwTFiw6dQw07Re1ZCrMKnH4fFQ=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '28 Aug 2024',
+  },
+  {
+    id: '07286e5c-a961-408e-b370-a63539259389',
+    message:
+      "As a lawyer working at a tier 1 firm, I was getting a\n                        decent income but was very clueless about my financial\n                        management. Very glad to have found this app and have my\n                        SIPs managed with such effective guidance from Ascent\n                        Wealth! It's been almost a year and I'm very happy with\n                        the savings I've made!",
+    name: 'Shruti Mishra',
+    designation: '5 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjUxRfXoRsHhumF7hh8Lfc8BvMj25rSQkHxCPC_g8BX4aQzfIiIPrw=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '27 Aug 2024',
+  },
+  {
+    id: '0323b161-5d28-4965-8923-0939a93bb940',
+    message:
+      'I had the pleasure of working with Mr. Kannan, and I\n                        couldn’t be more happy about choosing Ascent Wealth as\n                        my financial advisor. He took the time to thoroughly\n                        explain various investment options and helped me\n                        understand what would work best for my financial\n                        situation. Mr. Kannan provided a well-structured plan\n                        tailored to my needs, and I feel much more confident\n                        about my financial future.What stood out the\n                        most was the excellent customer service I received\n                        throughout the entire process. Mr. Kannan was always\n                        available to answer my questions, and his\n                        professionalism and dedication made a significant\n                        difference. I highly recommend his services to anyone\n                        looking for sound financial advice.',
+    name: 'Pavithra Sundar',
+    designation: '1 review • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjW-MkA9XAAfVfZjoinfrZFaDwwqiVakKL2I6YTmjk4I-ER4LjMy=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '23 Aug 2024',
+  },
+  {
+    id: '2c6e1582-d379-4d80-b182-6e8e2cb624f0',
+    message: '',
+    name: 'Louis Stanley',
+    designation: '2 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocI5Ico4bBGqOSgokzuzV5kPqLLa_gRfBIncDqQPVlLlkcpbgA=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '22 Aug 2024',
+  },
+  {
+    id: '0073257f-9cf4-4bfa-a9b8-a620260dc860',
+    message: '',
+    name: 'Srinivasan Ramachandran',
+    designation: '3 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocJJuPvsODusbxW_yGxKTOCebduRJLq_5HJH4buIRsh94roUIg=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '13 Aug 2024',
+  },
+  {
+    id: 'd1e3450c-bfd2-4c4d-9712-54ef9ee1e89e',
+    message: '',
+    name: 'Krishna Kumar',
+    designation: 'Local Guide • 46 reviews • 2 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjVRx8RyPwY5r9zUuatmBxaaPODiGyUlT2u23E-JBaHm_OaBO3ugKw=s45-c-rp-mo-ba3-br100',
+    rating: 5,
+    createdAt: '3 Aug 2024',
+  },
+  {
+    id: '68b75594-c144-4da1-bcd7-e9d23968437c',
+    message:
+      "I have been investing with Ascent Wealth for the past\n                        few years, and their service is exceptional. Mr. Kannan\n                        provides expert advice, tailored solutions, and is\n                        always available to address my concerns.His\n                        commitment to transparency and a client-first approach\n                        sets him apart. Mr. Kannan thoroughly explains mutual\n                        funds and investment strategies, ensuring I am\n                        well-informed. His recommendations have led to\n                        substantial growth in my portfolio.I highly\n                        recommend Ascent Wealth for their reliability and\n                        dedication to clients' success.",
+    name: 'Shwetha Kannan',
+    designation: '1 review • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocJNvZk2QsS92_HprnwtJXMftipebtzTU6itpxkFw-jaZVZylg=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '23 Jul 2024',
+  },
+  {
+    id: '9aeab328-3fa2-4b80-872b-f578c0a4cbaa',
+    message: '',
+    name: 'Preethi Vaidya',
+    designation: '10 reviews • 1 photo',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjWcY19_5mCscxBE0x6jwuYYe6MiC_WloSgjT-DuZnLvLbKV7vaAnQ=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '22 Jul 2024',
+  },
+  {
+    id: '26787697-f236-4293-943b-28c661a1acf0',
+    message: '',
+    name: 'anusiyaa khannan',
+    designation: '2 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocJouCVUbNLCYU7HEsj40YalrwdkkX4yfizO4zXVFvVj_353XDk=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '17 Jul 2024',
+  },
+  {
+    id: '99aa2aef-87bd-43a7-bfd7-9438496ad679',
+    message: '',
+    name: 'VINAYAGA MOORTHY',
+    designation: '3 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjVvrh2r3ELN5OPo6LUiu7x5PJJ3_cgR6bmbLU5tztOMzmkNipY=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '13 Jul 2024',
+  },
+  {
+    id: '3e5bec31-1ee0-4ffa-9e71-08accfb523f2',
+    message:
+      'It was a delightful experience starting from\n                        registration till order placement. Since I am totally\n                        new to this mutual funds field, Mr. Kannan assisted me\n                        with some insightful background and necessities of\n                        investment. Kudos to Ascent group. Way to go.. Best\n                        wishes.',
+    name: 'ezhil arasan',
+    designation: '3 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocL6sdCYNwTvTdlJ0L0MLWzGXj8YqxiPoLES9HpDxPHiSIKZ1g=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '12 Jul 2024',
+  },
+  {
+    id: 'd589eadf-8846-479d-831b-584da75c4e8d',
+    message: '',
+    name: 'daniel john',
+    designation: '1 review • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocIEKipPa6NXNIydsRQGqRhxkBIjAzNeNuKHPtNB8qXILuzsbqM=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '12 Jul 2024',
+  },
+  {
+    id: '3b52be70-259a-4af3-b261-621dc43e8147',
+    message: '',
+    name: 'Chandrababu Naidu',
+    designation: '2 reviews • 1 photo',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocJYF8Ze6hB7VMsaD_pWqD-H0vce1NOU9IDVXSA8JZKpSs7yoQ=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '12 Jul 2024',
+  },
+  {
+    id: 'e6863a15-e0f9-459f-96c4-7df0e9009cb1',
+    message: '',
+    name: 'Sashi Naidu',
+    designation: '0 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocLpgDF0UBSb6T7WMJfKmZZtOwZFmlGC4FjXwEr2inAcuzSZnw=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '11 Jul 2024',
+  },
+  {
+    id: '50260fc5-80e7-4c39-9229-576e7b413100',
+    message:
+      'Mr. Kannan perfectly understood my needs for investment\n                        as an NRI and gave precise advice. The custom investment\n                        strategy was perfectly tailored, and he kept me updated\n                        on market trends and adjustments. I will continue to use\n                        his insight and advise for all my future investments.\n                        His prompt responses and proactive updates made\n                        everything easy. Highly recommend his services.',
+    name: 'Siddharth Shenvi',
+    designation: '2 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocKLgh2955XZmH2OXSNv7Y4n6A76ar_8xvDOWHPkpZCjUA_-AKk=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '11 Jul 2024',
+  },
+  {
+    id: '6dab072f-7469-4b5f-bd73-0eaa10db9794',
+    message:
+      "I can't recommend Ascent Wealth enough! Mr. Kannan was\n                        instrumental in helping me build my portfolio from the\n                        ground up. He took the time to understand my financial\n                        goals and risk tolerance, then selected a variety of\n                        funds and instruments that perfectly fit my needs.He\n                        provided valuable guidance on the tax implications of my\n                        investment strategy, which helped me maximize my\n                        returns.Anyone looking for a financial\n                        advisor who is knowledgeable, patient, and committed to\n                        their client's success should definitely contact him!",
+    name: 'Tanmayee Tata',
+    designation: '4 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocJJOkbcWR0jCogzTVVPRuV9UgH8TV8ZhrcQzEiSX6dmHg7Mus8U=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '9 Jul 2024',
+  },
+  {
+    id: '6462545d-cbbe-4125-96a0-9374983ffe59',
+    message:
+      "We have being closely associated with Ascent wealth for\n                        about 6 years now. Any clarification and questions, Mr\n                        Kannan is always available to clarify. He's become more\n                        of a family member now whom we can reach out for any\n                        financial advices.",
+    name: 'Sunnisa Ismail',
+    designation: '4 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocIFtyiYP8DhZTTPaI1-1lsDFMKtoV3u4kDdMh4lrsCkhLgFAA=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '8 Jul 2024',
+  },
+  {
+    id: 'c3384e7a-a071-4c5e-8a0b-10e408fed908',
+    message:
+      'Some years back, before Corona, While I was looking for\n                        a investment advisor, I contacted Mr Kannan through one\n                        of my LinkedIn contacts. I have been investing with his\n                        guidance and it has been highly rewarding and I can\n                        recommend him to anybody, both beginners and experienced\n                        that you can trust him, his suggesions are genuine and\n                        investor oriented.',
+    name: 'Ravindran Arunachalam',
+    designation: 'Local Guide • 7 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjUgTAr6yhLp4cVvwEShaKbPUE19JmIYesSYF1rTw6kXLU-n99Z3=s45-c-rp-mo-ba2-br100',
+    rating: 5,
+    createdAt: '7 Jul 2024',
+  },
+  {
+    id: 'fd6111e3-a396-469a-8786-08b35030e9f5',
+    message: '',
+    name: 'stephen pius',
+    designation: '0 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocJypc3eTCaCwQilin32jSnk7M2x9T04N6I_q3S9UZXjK32u2g=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '1 Jul 2024',
+  },
+  {
+    id: '3ca9d7df-8a73-48b7-b8d6-4c71901842c6',
+    message:
+      'The platform is user-friendly and provides comprehensive\n                        information on the various fund options, making it easy\n                        for me to research and compare different investments.\n                        The onboarding process was seamless, and the ongoing\n                        support I receive is exceptional. Whenever I have a\n                        question or need to make a change to my account, the\n                        customer service representatives are responsive and\n                        helpful.',
+    name: 'Bharathwaj R',
+    designation: '3 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjXJm2pcsAgPAvmGUXOpEwdY7euGUmDHytIS9m37zxL0DqUl04cL-g=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '29 Jun 2024',
+  },
+  {
+    id: '6fa15a93-33c1-4643-97c5-faf6a7744d5c',
+    message: '',
+    name: 'chala pathi',
+    designation: 'Local Guide • 35 reviews • 7 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjXmN9A61BessvKK-tkDT7N5Cg_su9Vu1Tuyf7kJMEJHCOXRaJg=s45-c-rp-mo-ba3-br100',
+    rating: 4,
+    createdAt: '29 Jun 2024',
+  },
+  {
+    id: 'cd5421d2-9474-4bff-aad0-f16181fbc65e',
+    message: '',
+    name: 'Nimal Manickam',
+    designation: 'Local Guide • 14 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjULmymGs3tWtk1PZ36clnMPhZ4VjoBZ9HvgOWLpSEGf-BD3eZDv=s45-c-rp-mo-ba2-br100',
+    rating: 5,
+    createdAt: '29 Jun 2024',
+  },
+  {
+    id: '20cb14e2-0789-4657-858c-a88039a1db37',
+    message: '',
+    name: 'Dinesh Kalyanasundaram',
+    designation: '6 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjXhPvkv9xROBvng0DIyf9RfRvtEUjKfTkptXrSp2aS9ST13A_12=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '29 Jun 2024',
+  },
+  {
+    id: 'edd623c1-6b72-4a84-a997-8ad6728518de',
+    message: '',
+    name: 'ALPHONSE JEROLDIN ANTONY',
+    designation: 'Local Guide • 11 reviews • 5 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjXjmUIkKALpfYEwMMAuDd1qQS5ECtVRL3m4HvOslkgODskHjeW5eA=s45-c-rp-mo-ba2-br100',
+    rating: 5,
+    createdAt: '29 Jun 2024',
+  },
+  {
+    id: 'a1344a71-f197-49a4-9992-4b1d5b0c12c7',
+    message:
+      'Mr. Kannan has a wealth of knowledge in fanancial wealth\n                        management and has helped me immensely in planning\n                        towards my financial freedom. I highly recommend Ascent\n                        wealth to everyone who wants to begin or strengthen\n                        their journey towards financial independence.',
+    name: 'Bharath Krishna',
+    designation: 'Local Guide • 8 reviews • 2 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjXMWgPBO0FwM9YAsAdi8SXGQdusz0j-JmKJw3gVoE4Xl-CXGlfv=s45-c-rp-mo-ba3-br100',
+    rating: 5,
+    createdAt: '29 Jun 2024',
+  },
+  {
+    id: '58f428ac-9b22-43b8-86a9-38e258fd0ca3',
+    message:
+      'Kannan appears highly responsive and agile in the\n                        finance world. When I started with zero knowledge in\n                        mutual funds, he educated me on every aspect of\n                        financial planning. If I am ever in a dilemma about a\n                        personal finance decision, I certainly ask him, and he\n                        always provides 100% useful clarification.',
+    name: 'Murali Krishnan R',
+    designation: 'Local Guide • 11 reviews • 17 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocKbhSy71P2Il1kH_XO05HCPnhWaotpLx6ZlmO42b01bPSGi-ZpB=s45-c-rp-mo-ba3-br100',
+    rating: 5,
+    createdAt: '28 Jun 2024',
+  },
+  {
+    id: '0c8db31c-090f-499c-bfdc-5ba21eb741fc',
+    message:
+      "As a young professional, I wasn't sure where to begin\n                        with financial planning. Ascent Wealth took the time to\n                        educate me on different investment options and helped me\n                        develop a long-term strategy for building wealth.\n                        They're incredibly responsive and always go the extra\n                        mile for their clients.",
+    name: 'Divya P',
+    designation: '2 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocLNULytS045CLVTD_lIFWrTFJWbqqjOE3LMuHcnlqbQicis_A=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '25 Jun 2024',
+  },
+  {
+    id: 'fd1f5337-980b-4211-b0de-fd5b252782f9',
+    message: '',
+    name: 'Theyagarajan R',
+    designation: '0 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjXGIjgd6WYqgPgbu50KzlTP3wqX_kTAfApqhLN0Xd5YKhPxa--B=s45-c-rp-mo-br100',
+    rating: 4,
+    createdAt: '24 Jun 2024',
+  },
+  {
+    id: 'efe4462b-307a-4c25-a79f-1d2681587780',
+    message: '',
+    name: 'M Ravi',
+    designation: '2 reviews • 1 photo',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjU14mRgf_2ZhHgxnjA-sxzWiHo2RvJ28WqdLWiKssOKXccJ700p=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '22 Jun 2024',
+  },
+  {
+    id: '51f37fee-0f30-490c-856e-fa9a0fc53252',
+    message: '',
+    name: 'Barath A',
+    designation: '6 reviews • 4 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocKvnAENx5-uHW2e2gIFAN32-ypKo4Ub0hKyui3lmQrly9Y-zg=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '21 Jun 2024',
+  },
+  {
+    id: '877a2ffb-2494-4931-8b73-e5efdc24c3e0',
+    message: '',
+    name: 'Jaya kumar',
+    designation: '6 reviews • 1 photo',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjVUjS1q7tj4rrn1rvpsuMzHFMGvnm8GYdjuMQf8zII9B_RPFJw6Rg=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '21 Jun 2024',
+  },
+  {
+    id: '29489d2a-2050-4280-9c16-20b8fd9b48e4',
+    message: '',
+    name: 'usha marudu',
+    designation: '5 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocKYy6RCpHrwJWUm1CehnyM9T_Mj3kX3rY3BPez9ogyYOu_UEw=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '21 Jun 2024',
+  },
+  {
+    id: 'fecfda97-3149-440a-a919-724cf41c99cc',
+    message: '',
+    name: 'Vijayaragavan Ramanujam',
+    designation: 'Local Guide • 137 reviews • 47 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjXZ3Ot0vy-fWckSYia0QhOJ7KVpl4JOTMRDQAn1M4hh1OccSxiX=s45-c-rp-mo-ba4-br100',
+    rating: 5,
+    createdAt: '21 Jun 2024',
+  },
+  {
+    id: '28c6d23b-eaed-43e6-b4be-54094b808ffd',
+    message:
+      'Choosing Ascent Wealth was a decision that truly paid\n                        off. Their knowledgeable team guided me through the\n                        complexities of mutual fund investments with clarity and\n                        patience. I appreciated their commitment to personalized\n                        service, as they took the time to understand my\n                        financial goals and tailor their recommendations\n                        accordingly. Thanks to their expert advice, my\n                        investments have shown steady growth, exceeding my\n                        expectations. I highly recommend Ascent Wealth to anyone\n                        seeking a reliable partner in wealth management.',
+    name: 'Sarathy',
+    designation: '6 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocI6h4aWO92__gsqlyvFTc29gEckDBrUE_GsLyrVtptseA5mEQ=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '20 Jun 2024',
+  },
+  {
+    id: 'ac969d52-a94c-48db-9115-3508aecfad83',
+    message: '',
+    name: 'stanley balkar',
+    designation: '3 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocKC1EiMh-7jvMaoU9pQ3PeaUadefZKdx3z1PwQ5agFcC0qY5Q=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '20 Jun 2024',
+  },
+  {
+    id: 'eee7bdf4-d266-4cd2-aa0c-b79e3eafec82',
+    message: '',
+    name: 'Subiramanian N',
+    designation: 'Local Guide • 1 review • 4 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjXTpSsYV2h9OmqFVJg5HXF2M74LwGoEHb8P44KNVZVRblsCmb1p=s45-c-rp-mo-ba3-br100',
+    rating: 5,
+    createdAt: '19 Jun 2024',
+  },
+  {
+    id: '288297d4-733f-4039-a708-7830f09a0802',
+    message: '',
+    name: 'Sriinivasan R',
+    designation: '2 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a/ACg8ocJWV2Uo6vJ4xWXJ06hJBVxSrSOu3WGzwqaNNOxDn3NbFSKrQw=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '19 Jun 2024',
+  },
+  {
+    id: 'ae470c31-620c-41e3-a7b9-66ad09e16e24',
+    message:
+      'Ascent Wealth was my first wealth advisor who have been\n                        advising me for the past 10 years on the ways I can\n                        multiply my wealth - A one stop shop for all financial\n                        related goals. He gives the right advice at the right\n                        time which is quite important for investors and I look\n                        forward to the association longer, that means I am\n                        becoming wealthy too :). I definitely recommend Ascent\n                        Wealth to everyone and more particularly for new\n                        starters as that’s where my journey began and haven’t\n                        looked back since.',
+    name: 'Mukundan Srinivasan',
+    designation: '7 reviews • 0 photos',
+    image:
+      'https://lh3.googleusercontent.com/a-/ALV-UjWICuSdcUPWsOA0Rva7Ta9Tfo9EDHHYYBr0TmryoL3G4Iyudd6Fsg=s45-c-rp-mo-br100',
+    rating: 5,
+    createdAt: '18 Jun 2024',
   },
 ];

@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
     typedEnv: true,
-    turbopackFileSystemCacheForDev: isDev,
+    // turbopackFileSystemCacheForDev: isDev,
     webVitalsAttribution: ['CLS', 'LCP'],
   },
   reactCompiler: true,
