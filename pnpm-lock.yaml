@@ -125,6 +125,9 @@ importers:
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
+      cloudinary:
+        specifier: ^2.8.0
+        version: 2.8.0
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -158,6 +161,9 @@ importers:
       next:
         specifier: 16.0.10
         version: 16.0.10(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      next-cloudinary:
+        specifier: ^6.17.5
+        version: 6.17.5(next@16.0.10(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react@19.2.1)
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
@@ -188,6 +194,9 @@ importers:
       react-intersection-observer:
         specifier: ^10.0.0
         version: 10.0.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      react-pdf:
+        specifier: ^10.3.0
+        version: 10.3.0(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       react-resizable-panels:
         specifier: ^3.0.6
         version: 3.0.6(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
@@ -360,6 +369,24 @@ packages:
   '@babel/types@7.28.5':
     resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
     engines: {node: '>=6.9.0'}
+
+  '@cloudinary-util/types@1.5.10':
+    resolution: {integrity: sha512-n5lrm7SdAXhgWEbkSJKHZGnaoO9G/g4WYS6HYnq/k4nLj79sYfQZOoKjyR8hF2iyLRdLkT+qlk68RNFFv5tKew==}
+
+  '@cloudinary-util/url-loader@5.10.4':
+    resolution: {integrity: sha512-gHkdvOaV+rlcwuIT7Vqd0ts/H5bsH4+bwFten/gIZ8oRjzdTBvgIY3R6F8bbJt0pFIEfpFEQLe4rPkl0NNqEWg==}
+
+  '@cloudinary-util/util@3.3.2':
+    resolution: {integrity: sha512-Cc0iFxzfl7fcOXuznpeZFGYC885Of/vDgccRDnhTe/8Rf8YKv2PjLtezyo0VgmdA/CpeZy29NCXAsf6liokbwg==}
+
+  '@cloudinary-util/util@4.0.0':
+    resolution: {integrity: sha512-S4xcou/3A7l5o+bcKlw2VHBNgwups7/0lbVDT/cO5YmtrcEYXgj6LGmwnjvpTm/x571VPVN8x5jWdT3rLZiKJQ==}
+
+  '@cloudinary/transformation-builder-sdk@1.21.2':
+    resolution: {integrity: sha512-ehOgKUaP+Nvuf7B0TosmB8iilL0kdiVjzjl8tIK06cjvsNnwSJI3xP9nEJmKkvqNxwwFwvYXT+mxUTqnSv9JOA==}
+
+  '@cloudinary/url-gen@1.15.0':
+    resolution: {integrity: sha512-bjU67eZxLUgoRy/Plli4TQio7q6P31OYqnEgXxeN9TKXrzr6h0DeEdIUhKI9gy3HkEBWXWWJIPh7j7gkOJPnyA==}
 
   '@content-collections/core@0.12.0':
     resolution: {integrity: sha512-fAweH9JtME6edGzSDavHrDTxyt2jLzikw+I75yKOd/QBmxuAQrK/cFRqxmDznbdm6m3AZnpDPvh63IQ4jpvYvw==}
@@ -954,6 +981,76 @@ packages:
 
   '@mdx-js/mdx@3.1.1':
     resolution: {integrity: sha512-f6ZO2ifpwAQIpzGWaBQT2TXxPv6z3RBzQKpVftEWN78Vl/YweF1uwussDx8ECAXVtr3Rs89fKyG9YlzUs9DyGQ==}
+
+  '@napi-rs/canvas-android-arm64@0.1.88':
+    resolution: {integrity: sha512-KEaClPnZuVxJ8smUWjV1wWFkByBO/D+vy4lN+Dm5DFH514oqwukxKGeck9xcKJhaWJGjfruGmYGiwRe//+/zQQ==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [android]
+
+  '@napi-rs/canvas-darwin-arm64@0.1.88':
+    resolution: {integrity: sha512-Xgywz0dDxOKSgx3eZnK85WgGMmGrQEW7ZLA/E7raZdlEE+xXCozobgqz2ZvYigpB6DJFYkqnwHjqCOTSDGlFdg==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@napi-rs/canvas-darwin-x64@0.1.88':
+    resolution: {integrity: sha512-Yz4wSCIQOUgNucgk+8NFtQxQxZV5NO8VKRl9ePKE6XoNyNVC8JDqtvhh3b3TPqKK8W5p2EQpAr1rjjm0mfBxdg==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@napi-rs/canvas-linux-arm-gnueabihf@0.1.88':
+    resolution: {integrity: sha512-9gQM2SlTo76hYhxHi2XxWTAqpTOb+JtxMPEIr+H5nAhHhyEtNmTSDRtz93SP7mGd2G3Ojf2oF5tP9OdgtgXyKg==}
+    engines: {node: '>= 10'}
+    cpu: [arm]
+    os: [linux]
+
+  '@napi-rs/canvas-linux-arm64-gnu@0.1.88':
+    resolution: {integrity: sha512-7qgaOBMXuVRk9Fzztzr3BchQKXDxGbY+nwsovD3I/Sx81e+sX0ReEDYHTItNb0Je4NHbAl7D0MKyd4SvUc04sg==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@napi-rs/canvas-linux-arm64-musl@0.1.88':
+    resolution: {integrity: sha512-kYyNrUsHLkoGHBc77u4Unh067GrfiCUMbGHC2+OTxbeWfZkPt2o32UOQkhnSswKd9Fko/wSqqGkY956bIUzruA==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@napi-rs/canvas-linux-riscv64-gnu@0.1.88':
+    resolution: {integrity: sha512-HVuH7QgzB0yavYdNZDRyAsn/ejoXB0hn8twwFnOqUbCCdkV+REna7RXjSR7+PdfW0qMQ2YYWsLvVBT5iL/mGpw==}
+    engines: {node: '>= 10'}
+    cpu: [riscv64]
+    os: [linux]
+
+  '@napi-rs/canvas-linux-x64-gnu@0.1.88':
+    resolution: {integrity: sha512-hvcvKIcPEQrvvJtJnwD35B3qk6umFJ8dFIr8bSymfrSMem0EQsfn1ztys8ETIFndTwdNWJKWluvxztA41ivsEw==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+
+  '@napi-rs/canvas-linux-x64-musl@0.1.88':
+    resolution: {integrity: sha512-eSMpGYY2xnZSQ6UxYJ6plDboxq4KeJ4zT5HaVkUnbObNN6DlbJe0Mclh3wifAmquXfrlgTZt6zhHsUgz++AK6g==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+
+  '@napi-rs/canvas-win32-arm64-msvc@0.1.88':
+    resolution: {integrity: sha512-qcIFfEgHrchyYqRrxsCeTQgpJZ/GqHiqPcU/Fvw/ARVlQeDX1VyFH+X+0gCR2tca6UJrq96vnW+5o7buCq+erA==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@napi-rs/canvas-win32-x64-msvc@0.1.88':
+    resolution: {integrity: sha512-ROVqbfS4QyZxYkqmaIBBpbz/BQvAR+05FXM5PAtTYVc0uyY8Y4BHJSMdGAaMf6TdIVRsQsiq+FG/dH9XhvWCFQ==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [win32]
+
+  '@napi-rs/canvas@0.1.88':
+    resolution: {integrity: sha512-/p08f93LEbsL5mDZFQ3DBxcPv/I4QG9EDYRRq1WNlCOXVfAHBTHMSVMwxlqG/AtnSfUr9+vgfN7MKiyDo0+Weg==}
+    engines: {node: '>= 10'}
 
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
@@ -2410,6 +2507,10 @@ packages:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
     engines: {node: '>=12'}
 
+  cloudinary@2.8.0:
+    resolution: {integrity: sha512-s7frvR0HnQXeJsQSIsbLa/I09IMb1lOnVLEDH5b5E53WTiCYgrNNOBGV/i/nLHwrcEOUkqjfSwP1+enXWNYmdw==}
+    engines: {node: '>=9'}
+
   clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
@@ -3444,6 +3545,12 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
+  make-cancellable-promise@2.0.0:
+    resolution: {integrity: sha512-3SEQqTpV9oqVsIWqAcmDuaNeo7yBO3tqPtqGRcKkEo0lrzD3wqbKG9mkxO65KoOgXqj+zH2phJ2LiAsdzlogSw==}
+
+  make-event-props@2.0.0:
+    resolution: {integrity: sha512-G/hncXrl4Qt7mauJEXSg3AcdYzmpkIITTNl5I+rH9sog5Yw0kK6vseJjCaPfOXqOqQuPUP89Rkhfz5kPS8ijtw==}
+
   markdown-extensions@2.0.0:
     resolution: {integrity: sha512-o5vL7aDWatOTX8LzaS1WMoaoxIiLRQJuIKKe2wAw6IeULDHaqbiqiggmx+pKvZDb1Sj+pE46Sn1T7lCqfFtg1Q==}
     engines: {node: '>=16'}
@@ -3487,6 +3594,14 @@ packages:
     engines: {node: '>=18', npm: '>=6'}
     peerDependencies:
       esbuild: 0.*
+
+  merge-refs@2.0.0:
+    resolution: {integrity: sha512-3+B21mYK2IqUWnd2EivABLT7ueDhb0b8/dGK8LoFQPrU61YITeCMn14F7y7qZafWNZhUEKb24cJdiT5Wxs3prg==}
+    peerDependencies:
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -3641,6 +3756,12 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
+  next-cloudinary@6.17.5:
+    resolution: {integrity: sha512-YIyIWw5Ds30f4rnED+E9ssLUd94FOPTtbkO2KUvOcw9z4irOEIpb1goxMxbn2EUBnIGQOd6uUf1gFizjME7pMg==}
+    peerDependencies:
+      next: ^12 || ^13 || ^14 || >=15.0.0-rc || ^15
+      react: ^17 || ^18 || >=19.0.0-beta || ^19
+
   next-themes@0.4.6:
     resolution: {integrity: sha512-pZvgD5L0IEvX5/9GWyHMf3m8BKiVQwsCMHfoFosXtXBMnaS0ZnIJ9ST4b4NqLVKDEm8QBxoNNGNaBv2JNF6XNA==}
     peerDependencies:
@@ -3760,6 +3881,10 @@ packages:
   path-parse@1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
 
+  pdfjs-dist@5.4.296:
+    resolution: {integrity: sha512-DlOzet0HO7OEnmUmB6wWGJrrdvbyJKftI1bhMitK7O2N8W2gc757yyYBbINy9IDafXAV9wmKr9t7xsTaNKRG5Q==}
+    engines: {node: '>=20.16.0 || >=22.3.0'}
+
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -3812,6 +3937,14 @@ packages:
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
+
+  q@1.5.1:
+    resolution: {integrity: sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw==}
+    engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
+    deprecated: |-
+      You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+
+      (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -3874,6 +4007,16 @@ packages:
 
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
+
+  react-pdf@10.3.0:
+    resolution: {integrity: sha512-2LQzC9IgNVAX8gM+6F+1t/70a9/5RWThYxc+CWAmT2LW/BRmnj+35x1os5j/nR2oldyf8L+hCAMBmVKU8wrYFA==}
+    peerDependencies:
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   react-remove-scroll-bar@2.3.8:
     resolution: {integrity: sha512-9r+yi9+mgU33AKcj6IbT9oRCO78WriSj6t/cF8DWBZJ9aOGPOTEDvdUDz1FwKim7QXWwmHqtdHnRJfhAxEG46Q==}
@@ -4384,6 +4527,9 @@ packages:
   victory-vendor@36.9.2:
     resolution: {integrity: sha512-PnpQQMuxlwYdocC8fIJqVXvkeViHYzotI+NJrCuav0ZYFoq912ZHBk3mCeuj+5/VpodOjPe1z0Fk2ihgzlXqjQ==}
 
+  warning@4.0.3:
+    resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
+
   webpack-bundle-analyzer@4.10.1:
     resolution: {integrity: sha512-s3P7pgexgT/HTUSYgxJyn28A+99mmLq4HsJepMPzu0R8ImJc52QNqaFYW1Z2z2uIb1/J3eYgaAWVpaC+v/1aAQ==}
     engines: {node: '>= 10.13.0'}
@@ -4472,6 +4618,9 @@ packages:
     engines: {node: '>=18.0.0'}
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
+
+  zod@3.25.76:
+    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
   zod@4.1.13:
     resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
@@ -4608,6 +4757,27 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
+
+  '@cloudinary-util/types@1.5.10': {}
+
+  '@cloudinary-util/url-loader@5.10.4':
+    dependencies:
+      '@cloudinary-util/types': 1.5.10
+      '@cloudinary-util/util': 3.3.2
+      '@cloudinary/url-gen': 1.15.0
+      zod: 3.25.76
+
+  '@cloudinary-util/util@3.3.2': {}
+
+  '@cloudinary-util/util@4.0.0': {}
+
+  '@cloudinary/transformation-builder-sdk@1.21.2':
+    dependencies:
+      '@cloudinary/url-gen': 1.15.0
+
+  '@cloudinary/url-gen@1.15.0':
+    dependencies:
+      '@cloudinary/transformation-builder-sdk': 1.21.2
 
   '@content-collections/core@0.12.0(typescript@5.9.3)':
     dependencies:
@@ -5067,6 +5237,54 @@ snapshots:
       vfile: 6.0.3
     transitivePeerDependencies:
       - supports-color
+
+  '@napi-rs/canvas-android-arm64@0.1.88':
+    optional: true
+
+  '@napi-rs/canvas-darwin-arm64@0.1.88':
+    optional: true
+
+  '@napi-rs/canvas-darwin-x64@0.1.88':
+    optional: true
+
+  '@napi-rs/canvas-linux-arm-gnueabihf@0.1.88':
+    optional: true
+
+  '@napi-rs/canvas-linux-arm64-gnu@0.1.88':
+    optional: true
+
+  '@napi-rs/canvas-linux-arm64-musl@0.1.88':
+    optional: true
+
+  '@napi-rs/canvas-linux-riscv64-gnu@0.1.88':
+    optional: true
+
+  '@napi-rs/canvas-linux-x64-gnu@0.1.88':
+    optional: true
+
+  '@napi-rs/canvas-linux-x64-musl@0.1.88':
+    optional: true
+
+  '@napi-rs/canvas-win32-arm64-msvc@0.1.88':
+    optional: true
+
+  '@napi-rs/canvas-win32-x64-msvc@0.1.88':
+    optional: true
+
+  '@napi-rs/canvas@0.1.88':
+    optionalDependencies:
+      '@napi-rs/canvas-android-arm64': 0.1.88
+      '@napi-rs/canvas-darwin-arm64': 0.1.88
+      '@napi-rs/canvas-darwin-x64': 0.1.88
+      '@napi-rs/canvas-linux-arm-gnueabihf': 0.1.88
+      '@napi-rs/canvas-linux-arm64-gnu': 0.1.88
+      '@napi-rs/canvas-linux-arm64-musl': 0.1.88
+      '@napi-rs/canvas-linux-riscv64-gnu': 0.1.88
+      '@napi-rs/canvas-linux-x64-gnu': 0.1.88
+      '@napi-rs/canvas-linux-x64-musl': 0.1.88
+      '@napi-rs/canvas-win32-arm64-msvc': 0.1.88
+      '@napi-rs/canvas-win32-x64-msvc': 0.1.88
+    optional: true
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
@@ -6540,6 +6758,11 @@ snapshots:
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
 
+  cloudinary@2.8.0:
+    dependencies:
+      lodash: 4.17.21
+      q: 1.5.1
+
   clsx@2.1.1: {}
 
   cmdk@1.1.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
@@ -7758,6 +7981,10 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
+  make-cancellable-promise@2.0.0: {}
+
+  make-event-props@2.0.0: {}
+
   markdown-extensions@2.0.0: {}
 
   math-intrinsics@1.1.0: {}
@@ -7886,6 +8113,10 @@ snapshots:
       vfile: 6.0.3
     transitivePeerDependencies:
       - supports-color
+
+  merge-refs@2.0.0(@types/react@19.2.7):
+    optionalDependencies:
+      '@types/react': 19.2.7
 
   merge2@1.4.1: {}
 
@@ -8147,6 +8378,14 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
+  next-cloudinary@6.17.5(next@16.0.10(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react@19.2.1):
+    dependencies:
+      '@cloudinary-util/types': 1.5.10
+      '@cloudinary-util/url-loader': 5.10.4
+      '@cloudinary-util/util': 4.0.0
+      next: 16.0.10(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      react: 19.2.1
+
   next-themes@0.4.6(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
     dependencies:
       react: 19.2.1
@@ -8291,6 +8530,10 @@ snapshots:
 
   path-parse@1.0.7: {}
 
+  pdfjs-dist@5.4.296:
+    optionalDependencies:
+      '@napi-rs/canvas': 0.1.88
+
   picocolors@1.1.1: {}
 
   picomatch@2.3.1: {}
@@ -8335,6 +8578,8 @@ snapshots:
   proxy-from-env@1.1.0: {}
 
   punycode@2.3.1: {}
+
+  q@1.5.1: {}
 
   queue-microtask@1.2.3: {}
 
@@ -8440,6 +8685,21 @@ snapshots:
   react-is@16.13.1: {}
 
   react-is@18.3.1: {}
+
+  react-pdf@10.3.0(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
+    dependencies:
+      clsx: 2.1.1
+      dequal: 2.0.3
+      make-cancellable-promise: 2.0.0
+      make-event-props: 2.0.0
+      merge-refs: 2.0.0(@types/react@19.2.7)
+      pdfjs-dist: 5.4.296
+      react: 19.2.1
+      react-dom: 19.2.1(react@19.2.1)
+      tiny-invariant: 1.3.3
+      warning: 4.0.3
+    optionalDependencies:
+      '@types/react': 19.2.7
 
   react-remove-scroll-bar@2.3.8(@types/react@19.2.7)(react@19.2.1):
     dependencies:
@@ -9129,6 +9389,10 @@ snapshots:
       d3-time: 3.1.0
       d3-timer: 3.0.1
 
+  warning@4.0.3:
+    dependencies:
+      loose-envify: 1.4.0
+
   webpack-bundle-analyzer@4.10.1:
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
@@ -9234,6 +9498,8 @@ snapshots:
   zod-validation-error@4.0.2(zod@4.1.13):
     dependencies:
       zod: 4.1.13
+
+  zod@3.25.76: {}
 
   zod@4.1.13: {}
 

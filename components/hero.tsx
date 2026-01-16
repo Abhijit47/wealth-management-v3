@@ -1,13 +1,9 @@
-import { Sparkles } from '@/assets/icons/animated-icons/Sparkles';
 import { BackgroundPattern } from '@/components/extends/background-pattern';
 import { Badge } from '@/components/ui/badge';
-import { buttonVariants } from '@/components/ui/button';
-import { ArrowUpRight, CirclePlay } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import { AuroraText } from './extends/aurora-text';
-import { InteractiveHoverButton } from './extends/interactive-hover-button';
-import { ShadCNShinyButton } from './extends/shadcn-shiny-btn';
-// import Link from "next/link";
+import { LazyBrochureDownload, LazyLocationDialog } from './lazy';
 
 export default function Hero() {
   return (
@@ -43,19 +39,22 @@ export default function Hero() {
           achieve your financial goals.
         </p>
         <div className='mt-12 flex items-center justify-center gap-4'>
-          <ShadCNShinyButton
+          <LazyLocationDialog />
+          {/* <ShadCNShinyButton
             icon={<Sparkles className='h-5! w-5!' />}
             className={buttonVariants({
               size: 'lg',
               className: 'rounded-full',
             })}>
             Know More
-          </ShadCNShinyButton>
-          <InteractiveHoverButton
+          </ShadCNShinyButton> */}
+          <LazyBrochureDownload />
+          {/* <BrochureDialog /> */}
+          {/* <InteractiveHoverButton
             className={''}
             icon={<CirclePlay className='h-5! w-5!' />}>
             Watch Demo
-          </InteractiveHoverButton>
+          </InteractiveHoverButton> */}
         </div>
       </div>
     </section>

@@ -9,52 +9,60 @@ import {
 import { navlinks } from '@/constants';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { type ComponentProps } from 'react';
+import { useEffect, useState, type ComponentProps } from 'react';
 
 export default function NavMenu(props: ComponentProps<typeof NavigationMenu>) {
-  // const hash =
-  //   '#' +
-  //   (typeof window !== 'undefined'
-  //     ? window.location.hash.replace('#', '')
-  //     : '');
+  const [trackHash, setTrackHash] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const storedHash = localStorage.getItem('trackHash');
+      if (storedHash) {
+        // eslint-disable-next-line
+        setTrackHash(storedHash);
+        window.location.hash = '#home';
+      }
+    }
+  }, []);
 
   return (
     <NavigationMenu {...props}>
-      <NavigationMenuList className='space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start'>
+      <NavigationMenuList className='space-x-0 data-[orientation=vertical]:flex-col lg:gap-4 data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start'>
         {navlinks.map((link) => (
           <NavigationMenuItem key={link.id}>
             <NavigationMenuLink
               asChild
               className={cn(
+                trackHash === `#${link.href.split('#')[1]}` &&
+                  'border-primary!',
+                // ? 'data-[active=true]:border-primary data-[active=true]:text-accent-foreground'
+                // : 'border-primary',
+
                 // active styles
-                'data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-destructive data-[active=true]:text-accent-foreground',
+                'data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-transparent data-[active=true]:text-accent-foreground',
 
                 // hover styles
-                'hover:bg-accent hover:text-foreground',
+                'hover:bg-transparent hover:text-foreground border-b-2 border-transparent hover:border-b-2 hover:border-primary',
 
                 // focus styles
-                'focus:text-accent-foreground focus-visible:ring-ring/50 focus:bg-accent',
+                'focus:text-accent-foreground focus-visible:ring-ring/50 focus:bg-transparent focus:hover:bg-transparent focus:border-primary',
 
                 // inactive styles
                 "[&_svg:not([class*='text-'])]:text-muted-foreground",
 
                 // common styles
-                "flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 font-semibold"
-                // 'data-[active=true]:focus:border data-[active=true]:hover:border data-[active=true]:border data-[active=true]:border-accent/50 border border-transparent'
-                // 'data-[active=true]:focus:border-b-2 data-[active=true]:hover:border-b-2 data-[active=true]:border-b-2 data-[active=true]:border-primary border-b-2 hover:border-b-2 focus:border-b-2 border-primary'
+                "flex flex-col gap-4 px-0 py-1 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 font-semibold rounded-none",
 
-                // conditional active state
-                // hash === `#${link.href.split('#')[1]}`
-                //   ? 'data-[active=true]=true'
-                //   : ''
+                // animation styles
+                'data-[active=true]:transition-all data-[active=true]:duration-300 data-[active=true]:ease-in-out focus:data-[active=true]:transition-all focus:data-[active=true]:duration-300 focus:data-[active=true]:ease-in-out'
               )}>
               <Link
                 scroll={true}
                 href={link.href}
-                // className={cn(
-                //   'data-[active=true]:focus:border-b data-[active=true]:hover:border-b data-[active=true]:border-b data-[active=true]:border-accent/50 border-b'
-                // )}
-              >
+                onClick={() => {
+                  localStorage.setItem('trackHash', link.href);
+                  return setTrackHash(link.href);
+                }}>
                 {link.label}
               </Link>
             </NavigationMenuLink>

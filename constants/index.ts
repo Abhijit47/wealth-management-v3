@@ -40,7 +40,7 @@ export const navlinks = [
   },
   {
     id: crypto.randomUUID(),
-    label: 'Faqs',
+    label: 'FAQs',
     href: '#faqs',
   },
   {
