@@ -7,15 +7,31 @@ import {
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
 import { navlinks } from '@/constants';
+import { useMediaQuery } from '@/hooks/use-media-query';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState, type ComponentProps } from 'react';
+import {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+  type ComponentProps,
+} from 'react';
 
-export default function NavMenu(props: ComponentProps<typeof NavigationMenu>) {
+type NavMenuProps = ComponentProps<typeof NavigationMenu> & {
+  onOpenChange?: Dispatch<SetStateAction<boolean>>;
+};
+
+export default function NavMenu(props: NavMenuProps) {
+  const { onOpenChange, ...navigationMenuProps } = props;
   const [trackHash, setTrackHash] = useState('');
 
   const pathname = usePathname();
+
+  const isBlogPage = pathname?.startsWith('/blogs/');
+
+  const isMobile = useMediaQuery('(max-width: 1024px)');
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -23,17 +39,16 @@ export default function NavMenu(props: ComponentProps<typeof NavigationMenu>) {
       if (storedHash) {
         // eslint-disable-next-line
         setTrackHash(storedHash);
-        window.location.hash = trackHash;
+
+        if (!isMobile) {
+          window.location.hash = trackHash;
+        }
       }
     }
-  }, [trackHash]);
-
-  // console.log({ pathname });
-  // pathname: '/blogs/passive-income-ideas-in-india-in-2025-your-path-to-financial-freedom'
-  const isBlogPage = pathname?.startsWith('/blogs/');
+  }, [isMobile, trackHash]);
 
   return (
-    <NavigationMenu {...props}>
+    <NavigationMenu {...navigationMenuProps}>
       <NavigationMenuList className='space-x-0 data-[orientation=vertical]:flex-col lg:gap-4 data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start'>
         {navlinks.map((link) => (
           <NavigationMenuItem key={link.id}>
@@ -68,6 +83,10 @@ export default function NavMenu(props: ComponentProps<typeof NavigationMenu>) {
                 href={isBlogPage ? '/' : link.href}
                 prefetch={isBlogPage ? true : false}
                 onClick={() => {
+                  if (onOpenChange && isMobile) {
+                    onOpenChange(false);
+                  }
+
                   localStorage.setItem('trackHash', link.href);
                   return setTrackHash(link.href);
                 }}>

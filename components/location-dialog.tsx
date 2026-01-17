@@ -12,8 +12,7 @@ import {
 } from '@/components/ui/dialog';
 import { ShadCNShinyButton } from './extends/shadcn-shiny-btn';
 
-// import Image from 'next/image';
-import CloudinaryImage from './shared/cloudinary-loader';
+import Image from 'next/image';
 
 export default function LocationDialog() {
   return (
@@ -36,23 +35,19 @@ export default function LocationDialog() {
             tailored to your goals.
           </DialogDescription>
         </DialogHeader>
-        <div className='w-(--radix-dialog-content-width)! mx-auto'>
-          <CloudinaryImage
-            src='business-location_x7pl9i.avif'
-            width={600}
-            quality={80}
-            priority={true}
-          />
-          {/* <Image
+        <div className='w-(--radix-dialog-content-width)! mx-auto h-full relative'>
+          <Image
             src={
               'https://res.cloudinary.com/dxgckfhti/image/upload/v1768549237/business-location_x7pl9i.avif'
             }
             alt='Our Location'
-            width={600}
-            height={400}
-            className='w-(--radix-dialog-content-width)! mx-auto h-full rounded-md'
-            loading='lazy'
-          /> */}
+            width={4746}
+            height={5280}
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            className='w-full h-full object-cover rounded-md'
+            placeholder='blur'
+            blurDataURL='https://res.cloudinary.com/dxgckfhti/image/upload/v1768549237/business-location_x7pl9i.avif'
+          />
         </div>
         <DialogFooter>
           <DialogClose asChild>

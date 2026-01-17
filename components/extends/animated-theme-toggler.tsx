@@ -11,6 +11,7 @@ import {
 import { flushSync } from 'react-dom';
 
 import { cn } from '@/lib/utils';
+import { useTheme } from 'next-themes';
 
 interface AnimatedThemeTogglerProps extends ComponentPropsWithoutRef<'button'> {
   duration?: number;
@@ -23,10 +24,12 @@ export const AnimatedThemeToggler = ({
 }: AnimatedThemeTogglerProps) => {
   const [isDark, setIsDark] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const { setTheme } = useTheme();
 
   useEffect(() => {
     const updateTheme = () => {
       setIsDark(document.documentElement.classList.contains('dark'));
+      // setTheme(isDark ? 'dark' : 'light');
     };
 
     updateTheme();
@@ -49,6 +52,7 @@ export const AnimatedThemeToggler = ({
         setIsDark(newTheme);
         document.documentElement.classList.toggle('dark');
         localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+        setTheme(newTheme ? 'dark' : 'light');
       });
     }).ready;
 
@@ -74,7 +78,7 @@ export const AnimatedThemeToggler = ({
         pseudoElement: '::view-transition-new(root)',
       }
     );
-  }, [isDark, duration]);
+  }, [isDark, duration, setTheme]);
 
   return (
     <button

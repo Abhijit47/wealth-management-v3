@@ -29,3 +29,29 @@ export async function getResources() {
     throw error;
   }
 }
+
+export async function getResoursesByFolder(folder: string) {
+  try {
+    const res = await cloudinary.api.resources_by_asset_folder(folder, {
+      max_results: 100,
+    });
+
+    const secureUrls: {
+      id: string;
+      imgSrc: string;
+    }[] = [];
+    res.resources.map((resource) => {
+      secureUrls.push({
+        id: crypto.randomUUID(),
+        imgSrc: resource.secure_url,
+      });
+    });
+
+    console.log('Secure URLs:', secureUrls);
+
+    return res;
+  } catch (error) {
+    console.error('Error fetching resources from Cloudinary:', error);
+    throw error;
+  }
+}

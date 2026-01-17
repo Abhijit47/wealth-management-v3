@@ -38,7 +38,7 @@ export default function Hero() {
           insurance, and personalized investment solutions tailored to help you
           achieve your financial goals.
         </p>
-        <div className='mt-12 flex items-center justify-center gap-4'>
+        <div className='mt-12 flex flex-wrap items-center justify-center gap-4'>
           <LazyLocationDialog />
           {/* <ShadCNShinyButton
             icon={<Sparkles className='h-5! w-5!' />}

@@ -281,7 +281,9 @@ export const services = [
     ],
     // cover:
     //   'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/176mfa.jpg',
-    cover: '/assets/9.avif',
+    // cover: '/assets/9.avif',
+    cover:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/w_600/v1768586853/9_a7t573.avif',
     quote: `"The doorstep to the temple of wisdom is a knowledge of our own ignorance" – Benjamin Franklin`,
   },
   {
@@ -295,9 +297,11 @@ export const services = [
       `Associated with leading Health Insurance companies and with our customer centric approach for the satisfaction and smiles of our clients we stretch ourselves and go beyond the ordinary whenever they face medical challenges.We assist clients with good health insurance cover that gives peace of mind and the freedom to protect from the ever increasing medical costs.
       Consider Ascent Wealth as your trusted insurance advisor for your Life and Healt Insurance requirements for protection and financial security.`,
     ],
-    cover: '/images/services/507insurance.jpg',
+    // cover: '/images/services/507insurance.jpg',
     // cover:
     //   'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/507insurance.jpg',
+    cover:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/w_600/v1768580705/507insurance_rnbrp4.jpg',
     quote: `""Luck is the flip side of risk. You cannot understand one without appreciating the other" - Morgan Housel`,
   },
   {
@@ -311,9 +315,11 @@ export const services = [
       While we strive to reduce risks for our investors, we also strive to provide diversity, active credit risk management, and liquidity.
       We thank you for your trust in Ascent Wealth for your fixed income requirements.`,
     ],
-    cover: '/images/services/301eqa.jpg',
+    // cover: '/images/services/301eqa.jpg',
     // cover:
     //   'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/301eqa.jpg',
+    cover:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/w_600/v1768580705/301eqa_sohyoc.jpg',
     quote: `"When it's obvious that the goals cannot be reached, don't adjust the goals, adjust the action steps" - Confucius`,
   },
   {
@@ -329,9 +335,11 @@ export const services = [
       `Significant life events may also compel you to make changes to your plan. It’s important to regularly review your plan to ensure it continues to meet your needs and objectives.`,
       `"Ultimately the decisions you make about your estate are yours alone".`,
     ],
-    cover: '/images/services/729eee.jpg',
+    // cover: '/images/services/729eee.jpg',
     // cover:
     //   'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/729eee.jpg',
+    cover:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/w_600/v1768580706/729eee_uddka7.jpg',
     quote: `"It's not how much money you make but how much money you can keep, how hard it works for you and how many generations you keep it for" - Robert Kiyosaki`,
   },
   {
@@ -347,9 +355,11 @@ export const services = [
       `Historically, Investments in equities has offered higher real returns compared to fixed income products. Hence, it is seen as good hedge against inflation.`,
       `Ascent Wealth assists clients with onboarding into a trading platform, completing KYC requirements, offering trading platform training, and effectively and quickly resolving difficulties that may arise.`,
     ],
-    cover: '/images/services/384eq.jpg',
+    // cover: '/images/services/384eq.jpg',
     // cover:
     //   'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/384eq.jpg',
+    cover:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/w_600/v1768580708/384eq_xrrg5d.jpg',
     quote: `"The single greatest challenge you face as an investor is handling the truth about yourself" - Jason Zweig`,
   },
   {
@@ -363,9 +373,11 @@ export const services = [
       `While we discuss about discipline in investments, it is also equally or more important to steadily invest for a considerably long term to achieve the desired results or outcome. That’s why goal-based investments assume significance will deliver better results.`,
       `Ascent Wealth helps clients with varying risk profiles accomplish their medium to long-term wealth creation goals.`,
     ],
-    cover: '/images/services/664goalf.jpg',
+    // cover: '/images/services/664goalf.jpg',
     // cover:
     //   'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/664goalf.jpg',
+    cover:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/w_600/v1768580706/664goalf_y9effa.jpg',
     quote: `"The best decisions draw on the dual strength of your investing brain: intuition and analysis. Feeling and thinking." - Jason Zweig`,
   },
 ];
@@ -585,150 +597,333 @@ export const faqs = [
 
 export const companyLogos = [
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_1.jpg',
+    id: '3d293f0f-1ed5-40dd-8049-b0e448530b6a',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652961/partner_36_edf0tw.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_2.png',
+    id: '4814bb61-309a-4a42-b8dd-bf755c8650d8',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652960/partner_35_gapgth.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_3.jpg',
+    id: '046dc608-6d6c-4fd7-ac2f-7444d5d09ce6',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652960/partner_29_mumaxz.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_4.jpg',
+    id: '1dc3ed18-069f-47c7-be85-094839491f63',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652959/partner_34_mmg7bs.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_5.jpg',
+    id: '9b9fccf1-6484-491b-9542-1566e751bc32',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652959/partner_33_qulux3.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_6.jpg',
+    id: 'bd29c92e-9a3d-4490-8ee5-292e0dbcf4d0',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652959/partner_32_achjmp.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_7.jpg',
+    id: '235562e8-3b9c-46f2-83e5-cc594a6429d0',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652958/partner_30_hxxivo.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_8.jpg',
+    id: 'cf9f0b66-d7b2-4963-b735-c0f07bb49e47',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652958/partner_31_e2o39f.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_9.jpg',
+    id: 'be36548f-70f8-4abc-9922-c9f914560eaa',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652957/partner_27_bcicux.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_10.jpg',
+    id: 'a853ffde-b9a6-4407-8809-3ad7edabbc96',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652957/partner_28_vkrkzo.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_11.jpg',
+    id: '8634083e-7f88-4849-bbca-979bf152ab0e',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652955/partner_26_yqefnl.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_12.jpg',
+    id: '1bf984b0-8242-48cc-9534-d64f8f63abfb',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652955/partner_24_skq3fh.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_13.jpg',
+    id: '6d661864-1e5f-485b-bbcc-813a9614d294',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652955/partner_25_zqrdnu.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_14.jpg',
+    id: '3331449f-9183-49ae-bcc9-7d26f97ef605',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652955/partner_22_qwczef.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_15.jpg',
+    id: 'a02f4ea5-d723-4fa6-885f-d9c3030f7299',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652955/partner_23_zh1eph.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_16.jpg',
+    id: '4e36dafc-ddb2-4488-8ac1-3b87b664624b',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652955/partner_21_czxbq7.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_17.jpg',
+    id: '1b6da9ec-65d6-4aff-8e26-ccda6ca5b4c5',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652955/partner_20_jiduow.png',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_18.jpg',
+    id: '87498ad4-43e2-4019-bd80-7768ca841693',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652954/partner_19_ohw3fr.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_19.jpg',
+    id: '119f1070-be2f-47ca-97b3-4e33ea9cf494',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652950/partner_12_paotuq.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_20.png',
+    id: 'adecb7d9-db66-46a2-bebc-f389b516cb46',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652950/partner_17_yhq2iv.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_21.jpg',
+    id: '6887f130-2066-4fd2-921d-353c4a6b6a7d',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652950/partner_15_l8efdy.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_22.jpg',
+    id: 'd989ba63-a520-474a-b58e-9c98a930f897',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652950/partner_18_kbhanz.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_23.jpg',
+    id: '1d82d83b-6b52-4897-a1ff-ed8697a3b63f',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652950/partner_16_zwgjg3.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_24.jpg',
+    id: '31fb7a4d-0922-4e01-bbd5-eef0905e2590',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652950/partner_14_cgpqtd.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_25.jpg',
+    id: '8f5b2444-772c-464b-87e0-c379bc1a851f',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652949/partner_7_em1x3d.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_26.jpg',
+    id: '4b57fd2b-bb1c-45f6-a8b7-9c03ba79cbd3',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652949/partner_11_pppu9c.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_27.jpg',
+    id: 'f6abaef4-f55a-4a72-a660-ddd60f5745e7',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652949/partner_13_ym2u3l.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_28.jpg',
+    id: '2736aad8-6f38-4da6-8550-daf9c32a5128',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652949/partner_6_kyej5b.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_29.jpg',
+    id: 'e9c50ce6-23a6-4373-9be9-ee18481a7d2d',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652949/partner_8_etpp8p.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_30.jpg',
+    id: 'cab9cf66-4537-43d0-bd00-d8c5b9c2e86d',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652949/partner_5_fxgofd.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_31.jpg',
+    id: 'b72aebfe-6fcd-4eb7-8f10-fe5c531c2651',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652949/partner_3_vhisti.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_32.jpg',
+    id: 'ae3a37f0-07c1-4393-a1a7-12a1498ff5d6',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652949/partner_2_ixkgcg.png',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_33.jpg',
+    id: '397cda9f-c443-4712-8fd1-fc09fe5bcd67',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652949/partner_4_ulpgia.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_34.jpg',
+    id: '79fb56db-a8c8-4028-93e6-7005d9b12d91',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652949/partner_1_rexzr3.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_35.jpg',
+    id: '2c07e630-ae16-4512-8363-db0052088d66',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652948/partner_9_q9zgfo.jpg',
   },
   {
-    id: crypto.randomUUID(),
-    imgSrc: '/images/partner-logos/partner_36.jpg',
+    id: '6d541cb6-8dde-4c64-8146-96d0e71002f4',
+    imgSrc:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768652948/partner_10_d0mfle.jpg',
   },
 ];
+// export const companyLogos = [
+//   [
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_1.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_2.png',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_3.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_4.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_5.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_6.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_7.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_8.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_9.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_10.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_11.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_12.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_13.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_14.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_15.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_16.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_17.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_18.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_19.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_20.png',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_21.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_22.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_23.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_24.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_25.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_26.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_27.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_28.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_29.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_30.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_31.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_32.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_33.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_34.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_35.jpg',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     imgSrc: '/images/partner-logos/partner_36.jpg',
+//   },
+// ];
 
 export const testimonials = [
   {
@@ -736,7 +931,9 @@ export const testimonials = [
     message: `A truly professional mutual funds distributor is defined by knowledge and a genuine interest in achieving the best results for clients." Ascent Wealth's commitment to clients, and integrity sets them&nbsp;apart, and I would definitely suggest to anybody seeking improved financial results.`,
     name: 'Mr Vijay Kalyanasundaram',
     designation: 'Commercial head in an MNC.',
-    image: '/images/testimonials/testimonial_1.jpg',
+    // image: '/images/testimonials/testimonial_1.jpg',
+    image:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768654109/testimonial_1_dp72w3.jpg',
     rating: 4.5,
     createdAt: new Date().toISOString(),
   },
@@ -745,7 +942,9 @@ export const testimonials = [
     message: `Building a strong mutual fund portfolio has been made possible in large part by Ascent Wealth. They developed investment choices and tailored recommendations after carefully considering my risk tolerance and investment objectives. I highly recommend their personal financial services as I have complete faith in Ascent Wealth's knowledge and desire for a lasting relationship.`,
     name: 'Mr N Hariprasad',
     designation: 'Managing Director - Synergy Maritime Pvt Ltd. Chennai.',
-    image: '/images/testimonials/testimonial_2.png',
+    // image: '/images/testimonials/testimonial_2.png',
+    image:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768654110/testimonial_2_f9apn2.png',
     rating: 4.5,
     createdAt: new Date().toISOString(),
   },
@@ -755,7 +954,9 @@ export const testimonials = [
     name: 'Mr S S Krishnakumar',
     designation:
       'General Manager - Sales &amp; Service, TVS Motor Company Ltd, Hosur',
-    image: '/images/testimonials/testimonial_3.png',
+    // image: '/images/testimonials/testimonial_3.png',
+    image:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768654110/testimonial_3_cvknr0.png',
     rating: 4.5,
     createdAt: new Date().toISOString(),
   },
@@ -764,7 +965,9 @@ export const testimonials = [
     message: `Mr. Kannan of Ascent Wealth is keenly focused on minimizing risks and generating returns that are much better than the conventional options. They regularly update us with appropriate investment options and stay current with emerging industry trends. He has handled our financial matters with unmatched professionalism and attention to detail. I would for sure recommend their services to my acquaintances.`,
     name: 'Mr Milton Stanley Balkar',
     designation: 'General Manager - Sales - Carrier Midea India Pvt. Ltd',
-    image: '/images/testimonials/testimonial_4.png',
+    // image: '/images/testimonials/testimonial_4.png',
+    image:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768654110/testimonial_4_a26ups.png',
     rating: 4.5,
     createdAt: new Date().toISOString(),
   },
@@ -773,7 +976,9 @@ export const testimonials = [
     message: `We are more than satisfied with the personalized attention and direction we received from Mr Kannan of Ascent Wealth. We appreciate your professional skills because you always explain things thoroughly. We have complete confidence in recommending your services to anyone in need of professional assistance. I look forward to continuing to work with you.`,
     name: 'Dr Marudhupandian MD',
     designation: 'Int. Medicine - Ponmalligai Hospital, chennai',
-    image: '/images/testimonials/testimonial_5.jpg',
+    // image: '/images/testimonials/testimonial_5.jpg',
+    image:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768654110/testimonial_5_rdx8ko.jpg',
     rating: 4.5,
     createdAt: new Date().toISOString(),
   },
@@ -782,7 +987,9 @@ export const testimonials = [
     message: `Financial goal identification and investment plan preparation are made easier with Ascent Wealth's guidance. Their individualized attention and always-ready attitude have been incredibly beneficial to me as I make financial decisions. He has extensive knowledge of the always changing markets, and I have found his advice to be very helpful most of the time. My best wishes to Mr Kannan and Ascent Wealth.`,
     name: 'K Ovi Siddharthan',
     designation: 'N/A, New Delhi',
-    image: '/images/testimonials/testimonial_6.jpg',
+    // image: '/images/testimonials/testimonial_6.jpg',
+    image:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768654111/testimonial_6_vfwruf.jpg',
     rating: 4.5,
     createdAt: new Date().toISOString(),
   },
@@ -791,7 +998,9 @@ export const testimonials = [
     message: `For the work they have done for me over the past few years, I would like to convey my gratitude. I am ecstatic with the service you provided. Whenever feasible, I will gladly refer to their services. I rely on Mr. Kannan of Ascent Wealth for all of my financial requirements because of his dependability and quick service.`,
     name: 'A Srinivasan',
     designation: 'Retd. Sr. VP - Mercantile Credit Corporation',
-    image: '/images/testimonials/testimonial_7.jpg',
+    // image: '/images/testimonials/testimonial_7.jpg',
+    image:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1768654110/testimonial_7_bpgn8t.jpg',
     rating: 4.5,
     createdAt: new Date().toISOString(),
   },

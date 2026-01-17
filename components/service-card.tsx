@@ -1,5 +1,5 @@
 import { services } from '@/constants';
-import { getLocalImage } from '@/lib/plaiceholder';
+import { getRemoteImage } from '@/lib/plaiceholder';
 import Image from 'next/image';
 import SpotlightCard from './extends/spotlight-card';
 import ServiceDrawer from './service-drawer';
@@ -15,7 +15,8 @@ import {
 export default async function ServiceCard(props: (typeof services)[number]) {
   const { title, description, cover } = props;
 
-  const { base64 } = await getLocalImage(cover);
+  // const { base64 } = await getLocalImage(cover);
+  const { base64 } = await getRemoteImage(cover);
 
   return (
     <SpotlightCard
@@ -42,12 +43,12 @@ export default async function ServiceCard(props: (typeof services)[number]) {
           </CardAction>
         </CardContent>
         <CardContent className='mt-auto px-0 pb-0'>
-          <div className='bg-muted h-40 ml-6 rounded-tl-xl overhflow-hidden'>
+          <div className='bg-muted h-40 ml-6 rounded-tl-xl overhflow-hidden w-full aspect-video relative'>
             <Image
               src={cover}
               alt={title}
-              width={400}
-              height={160}
+              fill
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               className='h-full w-full object-cover rounded-tl-xl hover:scale-105 transition-transform duration-300'
               placeholder='blur'
               blurDataURL={base64}
