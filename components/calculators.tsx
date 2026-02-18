@@ -14,24 +14,28 @@ export default function Calculators() {
   return (
     <section
       id='calaculators'
-      className='container max-w-(--breakpoint-xl) mx-auto w-full px-4 py-24'>
-      <div>
-        <h2 className='text-4xl sm:text-5xl font-semibold tracking-tight text-center'>
+      className='container max-w-(--breakpoint-xl) mx-auto w-full px-4 py-12 sm:py-16 md:py-20 lg:py-24'>
+      <div className='space-y-6 lg:space-y-8'>
+        <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-center'>
           Unleash Your Creativity
         </h2>
-        <div className='mt-10 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+        <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
           {calculators.map((calculator) => (
-            <Card key={calculator.title} className='relative overflow-hidden'>
+            <Card
+              key={calculator.title}
+              className='relative overflow-hidden gap-4'>
               <ShineBorder shineColor={['#A07CFE', '#FE8FB5', '#FFBE7B']} />
               <CardHeader className={'text-center'}>
                 <div className='mb-4 size-12 mx-auto flex items-center justify-center bg-accent rounded-full'>
                   <calculator.icon className='size-6' />
                 </div>
                 <CardTitle>
-                  <h4 className='text-lg font-semibold'>{calculator.title}</h4>
+                  <h4 className='text-base lg:text-lg font-semibold'>
+                    {calculator.title}
+                  </h4>
                 </CardTitle>
                 <CardDescription>
-                  <p className='mt-1 text-foreground/80 text-[15px]'>
+                  <p className='mt-1 text-foreground/80 text-sm md:text-base'>
                     {calculator.description}
                   </p>
                 </CardDescription>

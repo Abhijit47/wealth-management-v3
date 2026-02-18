@@ -4,6 +4,7 @@ import { useMediaQuery } from '@/hooks/use-media-query';
 import { cn } from '@/lib/utils';
 import { SparklesIcon } from 'lucide-react';
 import { useState } from 'react';
+import ResponsiveButton from '../shared/responsive-button';
 import { Button } from '../ui/button';
 import {
   Dialog,
@@ -131,9 +132,9 @@ export default function CaclculatorDrawerDialog(
     <>
       <Drawer open={open} onOpenChange={setOpen}>
         <DrawerTrigger asChild>
-          <Button variant={'secondary'} className={'w-full'}>
+          <ResponsiveButton variant={'secondary'} className={'w-full'}>
             Get free calculation <SparklesIcon className={'size-4'} />
-          </Button>
+          </ResponsiveButton>
         </DrawerTrigger>
         <DrawerContent className='p-6 min-h-fit'>
           <DrawerHeader>

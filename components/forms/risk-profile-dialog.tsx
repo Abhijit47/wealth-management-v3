@@ -25,6 +25,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Spinner } from '@/components/ui/spinner';
 import { sendEmail } from '@/lib/resend';
 import { RiskProfileFormValues, riskProfileSchema } from '@/lib/zod.schemas';
+import ResponsiveButton from '../shared/responsive-button';
 import RiskProfileForm from './risk-profile-form';
 
 export default function RiskProfileDialog() {
@@ -130,9 +131,9 @@ export default function RiskProfileDialog() {
   return (
     <Dialog open={isOpen} onOpenChange={toggleDialog}>
       <DialogTrigger asChild>
-        <Button size='lg' className='mt-6 rounded-full gap-3'>
+        <ResponsiveButton className='mt-6 rounded-full gap-3'>
           Assess Your Risk Profile <ArrowRightIcon />
-        </Button>
+        </ResponsiveButton>
       </DialogTrigger>
       <Form {...form}>
         <DialogContent className='data-[state=open]:zoom-in-100! data-[state=open]:slide-in-from-left-20 data-[state=open]:duration-600 min-w-[calc(100vw-2rem)] gap-0 p-0'>

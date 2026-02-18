@@ -11,7 +11,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
 import { Minus, Plus } from 'lucide-react';
 import { useState } from 'react';
-import { Button } from '../ui/button';
+import ResponsiveButton from '../shared/responsive-button';
 import {
   Collapsible,
   CollapsibleContent,
@@ -31,9 +31,11 @@ export function Accordion02() {
       : faqs;
 
   return (
-    <section className='max-w-(--breakpoint-xl) mx-auto w-full px-6 xl:px-0 space-y-8 py-24'>
+    <section
+      id='faqs'
+      className='max-w-(--breakpoint-xl) mx-auto w-full px-6 xl:px-0 space-y-6 lg:space-y-8 py-12 sm:py-16 md:py-20 lg:py-24'>
       <div className='text-center w-full'>
-        <h2 className='text-4xl md:text-5xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
+        <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
           Frequently Asked Questions
         </h2>
       </div>
@@ -54,14 +56,15 @@ export function Accordion02() {
           {faqToShow.map((item) => (
             <AccordionItem value={item.id} key={item.id}>
               <AccordionTrigger className='text-left data-[state=open]:[&_svg]:rotate-180 data-[state=open]:[&_svg]:[#plus]:opacity-0 [&_svg]:[#plus]:[data-state=open]:opacity-0 duration-500 hover:no-underline cursor-pointer [data-slot=accordion-trigger] [&>svg]:hidden'>
-                <div className='flex flex-1 items-center gap-4'>
-                  <div className='relative ml-4'>
+                <div className='flex flex-1 items-center gap-2 lg:gap-4'>
+                  <div className='relative ml-2 lg:ml-4'>
                     <Plus
                       id='plus'
                       className={cn(
-                        'h-6 w-6 shrink-0 transition-all duration-500',
+                        'shrink-0 transition-all duration-500',
                         'data-[state=open]:opacity-0 data-[state=closed]:opacity-100',
                         'data-[state=open]:rotate-180',
+                        'size-4 lg:size-6',
                       )}
                     />
                     <Minus
@@ -70,14 +73,17 @@ export function Accordion02() {
                         'absolute inset-0 opacity-100 transition-all duration-500',
                         'hover:opacity-100 [data-state=close]:opacity-100',
                         'data-[state=open]:rotate-180',
+                        'size-4 lg:size-6',
                       )}
                     />
                   </div>
-                  <h3 className='text-lg font-semibold'>{item.question}</h3>
+                  <h3 className='text-xs sm:text-sm md:text-base lg:text-lg font-semibold'>
+                    {item.question}
+                  </h3>
                 </div>
               </AccordionTrigger>
 
-              <AccordionContent className='px-0 pb-6 ml-6 text-base'>
+              <AccordionContent className='px-0 pb-6 ml-3 lg:ml-6 text-xs sm:text-sm lg:text-base'>
                 {item.answer}
               </AccordionContent>
             </AccordionItem>
@@ -95,14 +101,15 @@ export function Accordion02() {
           {faqToShow.map((item) => (
             <AccordionItem value={item.id} key={item.id}>
               <AccordionTrigger className='text-left data-[state=open]:[&_svg]:rotate-180 data-[state=open]:[&_svg]:[#plus]:opacity-0 [&_svg]:[#plus]:[data-state=open]:opacity-0 duration-500 hover:no-underline cursor-pointer [data-slot=accordion-trigger] [&>svg]:hidden'>
-                <div className='flex flex-1 items-center gap-4'>
-                  <div className='relative ml-4'>
+                <div className='flex flex-1 items-center gap-2 lg:gap-4'>
+                  <div className='relative ml-2 lg:ml-4'>
                     <Plus
                       id='plus'
                       className={cn(
-                        'h-6 w-6 shrink-0 transition-all duration-500',
+                        'shrink-0 transition-all duration-500',
                         'data-[state=open]:opacity-0 data-[state=closed]:opacity-100',
                         'data-[state=open]:rotate-180',
+                        'size-4 lg:size-6',
                       )}
                     />
                     <Minus
@@ -111,14 +118,17 @@ export function Accordion02() {
                         'absolute inset-0 opacity-100 transition-all duration-500',
                         'hover:opacity-100 [data-state=close]:opacity-100',
                         'data-[state=open]:rotate-180',
+                        'size-4 lg:size-6',
                       )}
                     />
                   </div>
-                  <h3 className='text-lg font-semibold'>{item.question}</h3>
+                  <h3 className='text-xs sm:text-sm md:text-base lg:text-lg font-semibold'>
+                    {item.question}
+                  </h3>
                 </div>
               </AccordionTrigger>
 
-              <AccordionContent className='px-0 pb-6 ml-6 text-base'>
+              <AccordionContent className='px-0 pb-6 ml-3 lg:ml-6 text-xs sm:text-sm lg:text-base'>
                 {item.answer}
               </AccordionContent>
             </AccordionItem>
@@ -127,7 +137,7 @@ export function Accordion02() {
       ) : null}
 
       <Collapsible open={isShowMore} onOpenChange={setIsShowMore}>
-        <CollapsibleContent className='data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down flex flex-col gap-2 overflow-hidden transition-all duration-300 px-2'>
+        <CollapsibleContent className='data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down flex flex-col gap-2 overflow-hidden transition-all duration-300'>
           <div className='w-full'>
             <Accordion
               type='single'
@@ -138,14 +148,15 @@ export function Accordion02() {
               {faqs.map((item) => (
                 <AccordionItem value={item.id} key={item.id}>
                   <AccordionTrigger className='text-left data-[state=open]:[&_svg]:rotate-180 data-[state=open]:[&_svg]:[#plus]:opacity-0 [&_svg]:[#plus]:[data-state=open]:opacity-0 duration-500 hover:no-underline cursor-pointer [data-slot=accordion-trigger] [&>svg]:hidden'>
-                    <div className='flex flex-1 items-center gap-4'>
-                      <div className='relative ml-4'>
+                    <div className='flex flex-1 items-center gap-2 lg:gap-4'>
+                      <div className='relative ml-2 lg:ml-4'>
                         <Plus
                           id='plus'
                           className={cn(
-                            'h-6 w-6 shrink-0 transition-all duration-500',
+                            'shrink-0 transition-all duration-500',
                             'data-[state=open]:opacity-0 data-[state=closed]:opacity-100',
                             'data-[state=open]:rotate-180',
+                            'size-4 lg:size-6',
                           )}
                         />
                         <Minus
@@ -154,14 +165,17 @@ export function Accordion02() {
                             'absolute inset-0 opacity-100 transition-all duration-500',
                             'hover:opacity-100 [data-state=close]:opacity-100',
                             'data-[state=open]:rotate-180',
+                            'size-4 lg:size-6',
                           )}
                         />
                       </div>
-                      <h3 className='text-lg font-semibold'>{item.question}</h3>
+                      <h3 className='text-xs sm:text-sm md:text-base lg:text-lg font-semibold'>
+                        {item.question}
+                      </h3>
                     </div>
                   </AccordionTrigger>
 
-                  <AccordionContent className='px-0 pb-6 ml-6 text-base'>
+                  <AccordionContent className='px-0 pb-6 ml-3 lg:ml-6 text-xs sm:text-sm lg:text-base'>
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -173,7 +187,9 @@ export function Accordion02() {
           <CollapsibleTrigger
             asChild
             className='flex items-center justify-center data-[state=open]:my-6 data-[state=close]:mb-6'>
-            <Button>{isShowMore ? 'Show Less' : 'Show More'}</Button>
+            <ResponsiveButton className={'rounded-full!'}>
+              {isShowMore ? 'Show Less' : 'Show More'}
+            </ResponsiveButton>
           </CollapsibleTrigger>
         </div>
       </Collapsible>

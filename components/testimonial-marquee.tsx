@@ -6,13 +6,23 @@ import Image from 'next/image';
 import { Blockquote, BlockquoteAuthor } from './extends/blockquote';
 import { Marquee } from './marque';
 
+type Testimonial = {
+  id: string;
+  message: string;
+  name: string;
+  designation: string;
+  image: string;
+  rating: number;
+  createdAt?: string;
+};
+
 export function TestimonialCard({
   image,
   name,
   designation,
   message,
   createdAt,
-}: (typeof testimonials)[number]) {
+}: Testimonial) {
   return (
     <Card className='max-w-md w-full h-fit items-center justify-center mx-auto'>
       <CardContent className={'space-y-2'}>
@@ -60,13 +70,13 @@ export default function TestimonialMarquee() {
   const reviewCount = googleReviews.length + testimonials.length;
 
   return (
-    <div className='w-full max-w-(--breakpoint-xl) mx-auto text-center pt-24'>
+    <section className='w-full max-w-(--breakpoint-xl) mx-auto text-center pt-12 sm:pt-16 md:pt-20 lg:pt-24'>
       <div className={'relative space-y-4'}>
-        <h2 className='text-4xl md:text-5xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
+        <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
           What Our Clients Say About Us
         </h2>
 
-        <p className='mt-3 text-center text-muted-foreground text-xl'>
+        <p className='text-center text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl'>
           Real stories from people who use and love our product every day
         </p>
 
@@ -83,7 +93,7 @@ export default function TestimonialMarquee() {
           />
           <span
             className={
-              'ring-1 rounded-full p-1 py-0.5 font-bold absolute top-0 right-0'
+              'ring-1 rounded-full text-xs md:text-sm lg:text-base p-1 py-0.5 font-bold absolute top-0 right-0'
             }>
             {reviewCount}
           </span>
@@ -96,15 +106,22 @@ export default function TestimonialMarquee() {
         </Blockquote>
       </div>
 
-      <div className='relative flex w-full flex-col items-center justify-center gap-10 overflow-hidden py-8'>
+      <div className='relative flex w-full flex-col items-center justify-center gap-1!0 overflow-hidden'>
         {/* Marquee moving left to right (default) */}
-        <Marquee pauseOnHover repeat={3} className='[--duration:120s]'>
+        <Marquee
+          pauseOnHover
+          repeat={3}
+          className='items-center [--duration:120s]'>
           {testimonials.map((review) => (
             <TestimonialCard key={review.id} {...review} />
           ))}
         </Marquee>
         {/* Marquee moving right to left (reverse) */}
-        <Marquee pauseOnHover reverse repeat={3} className='[--duration:120s]'>
+        <Marquee
+          pauseOnHover
+          reverse
+          repeat={3}
+          className='items-center [--duration:120s]'>
           {filteredGoogleReviews.map((review) => (
             <TestimonialCard key={review.id} {...review} />
           ))}
@@ -115,6 +132,6 @@ export default function TestimonialMarquee() {
         <div className='pointer-events-none absolute top-0 left-0 w-full h-12 bg-linear-to-b from-background/90 to-transparent'></div>
         <div className='pointer-events-none absolute bottom-0 left-0 w-full h-12 bg-linear-to-t from-background/90 to-transparent'></div>
       </div>
-    </div>
+    </section>
   );
 }

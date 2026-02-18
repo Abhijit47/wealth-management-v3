@@ -22,8 +22,10 @@ function LogoCard({ id, imgSrc }: (typeof companyLogos)[number]) {
 
 export default function CompanyLogos() {
   return (
-    <div className='w-full max-w-(--breakpoint-xl) mx-auto text-center space-y-8 pt-24'>
-      <h2 className='text-4xl md:text-5xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
+    <section
+      id='company-logos'
+      className='w-full max-w-(--breakpoint-xl) mx-auto text-center space-y-6 lg:space-y-8'>
+      <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
         Our Trusted Partners
       </h2>
       <Blockquote>
@@ -31,7 +33,7 @@ export default function CompanyLogos() {
         after saving
         <BlockquoteAuthor>Warren Buffet</BlockquoteAuthor>
       </Blockquote>
-      <div className='relative flex w-full flex-col items-center justify-center gap-1 space-y-4 overflow-hidden py-8'>
+      <div className='relative flex w-full flex-col items-center justify-center gap-1 space-y-4 overflow-hidden'>
         {/* Marquee moving left to right (default) */}
         <Marquee pauseOnHover repeat={3} className='[--duration:120s]'>
           {companyLogos.map((logo) => (
@@ -50,6 +52,6 @@ export default function CompanyLogos() {
         <div className='pointer-events-none absolute top-0 left-0 w-full h-12 bg-linear-to-b from-background/90 to-transparent'></div>
         <div className='pointer-events-none absolute bottom-0 left-0 w-full h-12 bg-linear-to-t from-background/90 to-transparent'></div>
       </div>
-    </div>
+    </section>
   );
 }

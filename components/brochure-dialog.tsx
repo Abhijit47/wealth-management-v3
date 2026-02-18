@@ -14,6 +14,8 @@ import { IconPdf } from '@tabler/icons-react';
 import { useEffect, useMemo, useState, useTransition } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 
+import { useIsMobile } from '@/hooks/use-mobile';
+import { cn } from '@/lib/utils';
 import { Options } from 'react-pdf/dist/shared/types.js';
 import { InteractiveHoverButton } from './extends/interactive-hover-button';
 import { Skeleton } from './ui/skeleton';
@@ -27,13 +29,14 @@ export default function BrochureDialog() {
   const [numPages, setNumPages] = useState<number>();
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [isPending, startTransition] = useTransition();
+  const isMobile = useIsMobile();
 
   const options = useMemo<Options>(
     () => ({
       cMapUrl: `/pdf-js/cmaps/`,
       wasmUrl: `/pdf-js/wasm/`,
     }),
-    []
+    [],
   );
   // Configure worker only on client-side
   useEffect(() => {
@@ -81,7 +84,7 @@ export default function BrochureDialog() {
     <Dialog>
       <DialogTrigger asChild>
         <InteractiveHoverButton
-          className={''}
+          className={cn('rounded-full', isMobile && 'py-1.5 text-sm')}
           icon={<IconPdf className='h-5! w-5!' />}>
           Download Brochure
         </InteractiveHoverButton>

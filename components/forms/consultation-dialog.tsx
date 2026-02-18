@@ -29,6 +29,7 @@ import {
   consultationSchema,
   type ConsultationFormValues,
 } from '@/lib/zod.schemas';
+import ResponsiveButton from '../shared/responsive-button';
 import { Spinner } from '../ui/spinner';
 import ConsultationForm from './consultation-form';
 
@@ -129,9 +130,9 @@ export default function ConsultationDialog() {
     <Dialog open={isOpen} onOpenChange={toggleDialog}>
       <FormProvider {...form}>
         <DialogTrigger asChild>
-          <Button size='lg'>
+          <ResponsiveButton className={'rounded-full!'}>
             Take a free consultation <ArrowUpRight className='size-4' />
-          </Button>
+          </ResponsiveButton>
         </DialogTrigger>
         <DialogContent className='min-w-6/12 mx-auto w-full'>
           <form

@@ -26,13 +26,15 @@ export default async function ServiceCard(props: (typeof services)[number]) {
       spotlightColor='rgba(173, 156, 82, 0.5)'
       // spotlightColor='rgba(83, 68, 5, 1)'
     >
-      <Card className='flex flex-col border rounded-xl overflow-hidden shadow-none pb-0'>
+      <Card className='flex flex-col border rounded-xl overflow-hidden shadow-none gap-4 pb-0'>
         <CardHeader>
           <CardTitle>
-            <h4 className='text-xl font-semibold tracking-tight'>{title}</h4>
+            <h4 className='text-base md:text-lg xl:text-xl font-semibold tracking-tight'>
+              {title}
+            </h4>
           </CardTitle>
           <CardDescription>
-            <p className='text-muted-foreground text-base line-clamp-3'>
+            <p className='text-muted-foreground text-sm lg:text-base line-clamp-3'>
               {description[0]}
             </p>
           </CardDescription>

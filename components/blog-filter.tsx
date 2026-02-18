@@ -9,7 +9,7 @@ import {
 export default function BlogFilter() {
   return (
     <Select defaultValue='recommended'>
-      <SelectTrigger className='w-45'>
+      <SelectTrigger className='w-full md:w-45'>
         <SelectValue />
       </SelectTrigger>
       <SelectContent>

@@ -1,11 +1,9 @@
 'use client';
 
-import CountUp from 'react-countup';
-import { useInView } from 'react-intersection-observer';
+import SlotCounter from 'react-slot-counter';
 
 import { stats } from '@/constants';
 import { cn } from '@/lib/utils';
-import GradientText from './extends/gradient-text';
 import {
   Card,
   CardContent,
@@ -15,17 +13,11 @@ import {
 } from './ui/card';
 
 export default function StatCard() {
-  const { ref, inView } = useInView({
-    root: null,
-    rootMargin: '20px',
-    threshold: 0.5,
-    triggerOnce: false,
-  });
-
   return (
     <div
-      ref={ref}
-      className={'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4'}>
+      className={
+        'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4'
+      }>
       {stats.map((stat) => {
         const title = stat.label.split(' ').slice(-1).join(' ');
         const content = stat.label.split(' ').slice(0, -1).join(' ');
@@ -37,15 +29,30 @@ export default function StatCard() {
           <div
             className={cn(
               'border rounded-xl border-border/70 p-1',
-              isLast ? 'sm:col-span-full lg:col-span-1' : '',
+              isLast ? 'sm:col-span-full md:col-span-2 xl:col-span-1' : '',
             )}
             key={stat.id}>
-            <Card className='rounded-lg bg-muted/20 h-full'>
+            <Card className='rounded-lg bg-muted/20 h-full gap-4 p-4'>
               <CardHeader>
-                <CardTitle className={'font-normal'}>{title}</CardTitle>
+                <CardTitle className={'font-semibold'}>{title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <GradientText
+                <span className='font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight'>
+                  <SlotCounter
+                    dummyCharacterCount={10}
+                    useMonospaceWidth
+                    value={stat.value}
+                    animateOnVisible={{
+                      triggerOnce: false,
+                      rootMargin: '0px 0px -100px 0px',
+                    }}
+                  />
+                  <sup
+                    className={'text-base sm:text-lg md:text-xl lg:text-2xl'}>
+                    {stat.suffix}
+                  </sup>
+                </span>
+                {/* <GradientText
                   colors={[
                     '#8a7208',
                     '#a18e39',
@@ -61,18 +68,18 @@ export default function StatCard() {
                     delay={1}
                     enableScrollSpy={inView}
                     end={stat.value}
-                    start={0}
+                    start={stat.value}
                     suffix='+'
                     redraw={inView}
-                    scrollSpyDelay={100}
-                    scrollSpyOnce={true}
-                    startOnMount={true}
+                    scrollSpyDelay={5}
+                    scrollSpyOnce={false}
+                    startOnMount={inView}
                   />
-                </GradientText>
+                </GradientText> */}
               </CardContent>
               <CardContent>
                 <CardDescription>
-                  <p className={'font-semibold text-base'}>{content}</p>
+                  <p className={'font-semibold text-sm'}>{content}</p>
                 </CardDescription>
               </CardContent>
             </Card>

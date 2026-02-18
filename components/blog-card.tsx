@@ -50,7 +50,7 @@ export default function BlogCard(props: BlogCardProps) {
           /> */}
         </div>
       </CardHeader>
-      <CardContent className='pt-0 pb-5 px-5'>
+      <CardContent className='pt-0 pb-5 px-3 lg:px-5 space-y-4'>
         <div className='flex flex-wrap gap-2 line-clamp-1'>
           {post.categories.slice(0, 3).map((category, index) => (
             <Badge key={index} variant='outline'>
@@ -59,26 +59,26 @@ export default function BlogCard(props: BlogCardProps) {
           ))}
         </div>
 
-        <Link href={`/blogs/${post.slug}`}>
-          <h3 className='mt-4 text-2xl line-clamp-1 text-[1.4rem] font-semibold underline underline-offset-2 tracking-[-0.015em] hover:no-underline'>
+        <Link prefetch='auto' href={`/blogs/${post.slug}`} className={'block'}>
+          <h3 className='mt-4 text-lg sm:text-xl md:text-xl lg:text-2xl line-clamp-1 font-semibold underline underline-offset-2 tracking-[-0.015em] hover:no-underline'>
             {post.title}
           </h3>
         </Link>
 
-        <CardAction className={'mt-4'}>
+        <CardAction className={''}>
           <Link
             className={buttonVariants({
               variant: 'link',
               size: 'sm',
               className:
-                'text-muted-foreground! p-0! h-fit! hover:text-primary! transition-colors! delay-150! duration-300! ease-linear!',
+                'text-muted-foreground! p-0! h-fit! rounded-none! hover:text-primary! transition-colors! delay-150! duration-300! ease-linear!',
             })}
             href={`/blogs/${post.slug}`}>
             Read more &rarr;
           </Link>
         </CardAction>
 
-        <div className='mt-6 flex items-center justify-between'>
+        <div className='flex flex-wrap gap-2 items-center justify-between'>
           <div className='flex items-center gap-2'>
             <Avatar>
               <AvatarImage src='https://github.com/shadcn.png' alt='@shadcn' />

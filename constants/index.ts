@@ -245,6 +245,7 @@ export const plannings = [
       "Ready to take control of your financial future? We help you transform dreams into actionable plans—whether it's buying a home, funding education, or retiring comfortably. Let's design a personalized strategy that works for your life.",
     tutorialLink: '#free-consultation',
     image: '/assets/2.jpg',
+    direction: 'left',
   },
   {
     id: crypto.randomUUID(),
@@ -254,6 +255,7 @@ export const plannings = [
       "Every rupee you invest should have a purpose. We guide you to set clear financial goals, understand your risk appetite, and choose investments that align with your timeline and needs. Because smart investing starts with knowing what you're working towards.",
     tutorialLink: '#free-consultation',
     image: '/assets/4.jpg',
+    direction: 'right',
   },
   {
     id: crypto.randomUUID(),
@@ -263,6 +265,7 @@ export const plannings = [
       "Feeling uncertain about the right investment moves? Our personalized risk profiling takes the guesswork out of the equation. We help you find that sweet spot between your goals, your comfort level, and what's realistic for your situation. No jargon, just clarity.",
     tutorialLink: '#free-consultation',
     image: '/assets/8.jpg',
+    direction: 'left',
   },
 ];
 
@@ -935,7 +938,7 @@ export const testimonials = [
     image:
       'https://res.cloudinary.com/dxgckfhti/image/upload/w_80/v1768654109/testimonial_1_dp72w3.jpg',
     rating: 4.5,
-    createdAt: new Date().toISOString(),
+    // createdAt: new Date().toISOString(),
   },
   {
     id: crypto.randomUUID(),
@@ -946,7 +949,7 @@ export const testimonials = [
     image:
       'https://res.cloudinary.com/dxgckfhti/image/upload/w_80/v1768654110/testimonial_2_f9apn2.png',
     rating: 4.5,
-    createdAt: new Date().toISOString(),
+    // createdAt: new Date().toISOString(),
   },
   {
     id: crypto.randomUUID(),
@@ -958,7 +961,7 @@ export const testimonials = [
     image:
       'https://res.cloudinary.com/dxgckfhti/image/upload/w_80/v1768654110/testimonial_3_cvknr0.png',
     rating: 4.5,
-    createdAt: new Date().toISOString(),
+    // createdAt: new Date().toISOString(),
   },
   {
     id: crypto.randomUUID(),
@@ -969,7 +972,7 @@ export const testimonials = [
     image:
       'https://res.cloudinary.com/dxgckfhti/image/upload/w_80/v1768654110/testimonial_4_a26ups.png',
     rating: 4.5,
-    createdAt: new Date().toISOString(),
+    // createdAt: new Date().toISOString(),
   },
   {
     id: crypto.randomUUID(),
@@ -980,7 +983,7 @@ export const testimonials = [
     image:
       'https://res.cloudinary.com/dxgckfhti/image/upload/w_80/v1768654110/testimonial_5_rdx8ko.jpg',
     rating: 4.5,
-    createdAt: new Date().toISOString(),
+    // createdAt: new Date().toISOString(),
   },
   {
     id: crypto.randomUUID(),
@@ -991,7 +994,7 @@ export const testimonials = [
     image:
       'https://res.cloudinary.com/dxgckfhti/image/upload/w_80/v1768654111/testimonial_6_vfwruf.jpg',
     rating: 4.5,
-    createdAt: new Date().toISOString(),
+    // createdAt: new Date().toISOString(),
   },
   {
     id: crypto.randomUUID(),
@@ -1002,7 +1005,7 @@ export const testimonials = [
     image:
       'https://res.cloudinary.com/dxgckfhti/image/upload/w_80/v1768654110/testimonial_7_bpgn8t.jpg',
     rating: 4.5,
-    createdAt: new Date().toISOString(),
+    // createdAt: new Date().toISOString(),
   },
 ];
 

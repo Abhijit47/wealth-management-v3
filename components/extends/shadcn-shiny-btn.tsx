@@ -29,7 +29,8 @@ const animationProps: MotionProps = {
 };
 
 interface ShadCNShinyButtonProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps>,
+  extends
+    Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps>,
     MotionProps {
   children: React.ReactNode;
   className?: string;
@@ -53,14 +54,14 @@ export const ShadCNShinyButton = React.forwardRef<
           className:
             'relative overflow-hidden rounded-lg px-6 py-2 font-medium! backdrop-blur-xl! transition-shadow duration-300 ease-in-out hover:shadow-lg!',
         }),
-        className
+        className,
       )}
       {...animationProps}
       {...props}>
       <span
         className={cn(
           'relative text-sm tracking-wide',
-          icon ? 'flex items-center gap-2' : ''
+          icon ? 'flex items-center gap-2' : '',
         )}
         // className='relative flex items-center gap-2 text-sm tracking-wide text-[rgb(0,0,0,65%)] dark:font-light dark:text-[rgb(255,255,255,90%)]'
         style={{

@@ -14,7 +14,7 @@ export const LazyRiskProfileDialog = dynamic(
   () => import('./risk-profile-dialog').then((mod) => mod.default),
   {
     ssr: false,
-    loading: () => <Skeleton className='mt-6 h-11 w-52 rounded-full' />,
+    loading: () => <Skeleton className='mt-6 h-8 lg:h-12 w-52 rounded-full' />,
   },
 );
 
@@ -22,6 +22,6 @@ export const LazyConsultationDialog = dynamic(
   () => import('./consultation-dialog').then((mod) => mod.default),
   {
     ssr: false,
-    loading: () => <Skeleton className='mt-6 h-10 w-56 rounded-xl' />,
+    loading: () => <Skeleton className='mt-6 h-8 lg:h-12 w-56 rounded-xl' />,
   },
 );

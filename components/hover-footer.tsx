@@ -11,7 +11,8 @@ import Link from 'next/link';
 import { Fragment } from 'react/jsx-runtime';
 import FooterBackgroundGradient from './extends/footer-background-gradient';
 import { LazyTextHoverEffect } from './extends/lazy-components';
-import LogoSVG from './shared/logo-svg';
+// import LogoSVG from './shared/logo-svg';
+import LogoSVG1 from './shared/logo-svg1';
 import { Separator } from './ui/separator';
 
 // Footer link data
@@ -159,7 +160,8 @@ export function HoverFooter() {
                   className='fill-foreground'
                 />
               </svg> */}
-              <LogoSVG />
+              {/* <LogoSVG /> */}
+              <LogoSVG1 />
             </div>
             <p className='text-sm leading-relaxed'>
               We are an AMFI registered Mutual Funds Distributor engaged in

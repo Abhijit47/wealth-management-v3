@@ -16,7 +16,10 @@ import { Skeleton } from './ui/skeleton';
 export const LazyStatCard = dynamic(() => import('./stat-card'), {
   ssr: false,
   loading: () => (
-    <div className={'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4'}>
+    <div
+      className={
+        'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4'
+      }>
       {Array.from({ length: 5 }).map((_, index) => {
         const isLast = index === 4;
 
@@ -24,10 +27,10 @@ export const LazyStatCard = dynamic(() => import('./stat-card'), {
           <div
             className={cn(
               'border rounded-xl border-border/70 p-1',
-              isLast ? 'sm:col-span-full lg:col-span-1' : '',
+              isLast ? 'sm:col-span-full md:col-span-2 xl:col-span-1' : '',
             )}
             key={index}>
-            <Card className='rounded-lg bg-muted/20 h-full'>
+            <Card className='rounded-lg bg-muted/20 h-full gap-4 p-4'>
               <CardHeader>
                 <CardTitle className={'font-normal'}>
                   <Skeleton className='h-6 w-20' />

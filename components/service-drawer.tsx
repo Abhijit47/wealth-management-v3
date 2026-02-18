@@ -1,6 +1,5 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
 import {
   Drawer,
   DrawerClose,
@@ -13,6 +12,8 @@ import {
 import { services } from '@/constants';
 import { useInView } from 'react-intersection-observer';
 import { Highlighter } from './extends/highlighter';
+import ResponsiveButton from './shared/responsive-button';
+import { ScrollArea } from './ui/scroll-area';
 
 export default function ServiceDrawer(props: (typeof services)[number]) {
   const { ref, inView } = useInView({
@@ -27,34 +28,46 @@ export default function ServiceDrawer(props: (typeof services)[number]) {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant={'link'} size={'sm'}>
+        <ResponsiveButton
+          variant={'link'}
+          className={
+            'underline underline-offset-2 hover:no-underline h-fit! px-0! rounded-none!'
+          }>
           Know more
-        </Button>
+        </ResponsiveButton>
       </DrawerTrigger>
-      <DrawerContent ref={ref}>
-        <div className='mx-auto w-full max-w-(--breakpoint-sm) flex flex-col h-full p-6'>
-          <DrawerHeader>
-            <DrawerTitle className={'text-lg'}>
-              <Highlighter
-                action='underline'
-                color='#a18e39'
-                isView={inView}
-                multiline>
-                {props.title}
-              </Highlighter>
-            </DrawerTitle>
-          </DrawerHeader>
+      <DrawerContent ref={ref} className={'min-h-fit'}>
+        <div className='mx-auto w-full max-w-(--breakpoint-sm) flex flex-col h-full px-4'>
+          <div className={'py-0'}>
+            <DrawerHeader className={''}>
+              <DrawerTitle
+                className={
+                  'text-sm font-medium md:font-semibold md:text-base lg:text-lg'
+                }>
+                <Highlighter
+                  action='underline'
+                  color='#a18e39'
+                  isView={inView}
+                  multiline>
+                  {props.title}
+                </Highlighter>
+              </DrawerTitle>
+            </DrawerHeader>
+          </div>
 
-          {props.description.map((para, index) => (
-            <p key={index} className='mb-4 text-sm text-muted-foreground'>
-              {para}
-            </p>
-          ))}
-
-          <DrawerFooter className='mt-auto p-0'>
+          <ScrollArea className='h-96 w-full pt-4'>
+            {props.description.map((para, index) => (
+              <p
+                key={index}
+                className='mb-2 lg:mb-4 text-sm text-muted-foreground'>
+                {para}
+              </p>
+            ))}
+          </ScrollArea>
+          <DrawerFooter className='mt-auto p-2'>
             {/* <Button>Submit</Button> */}
             <DrawerClose asChild>
-              <Button variant='outline'>Close</Button>
+              <ResponsiveButton variant='outline'>Close</ResponsiveButton>
             </DrawerClose>
           </DrawerFooter>
         </div>

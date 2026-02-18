@@ -12,16 +12,19 @@ import {
 } from '@/components/ui/dialog';
 import { ShadCNShinyButton } from './extends/shadcn-shiny-btn';
 
+import { useIsMobile } from '@/hooks/use-mobile';
 import Image from 'next/image';
 
 export default function LocationDialog() {
+  const isMobile = useIsMobile();
+
   return (
     <Dialog>
       <DialogTrigger asChild>
         <ShadCNShinyButton
           icon={<Sparkles className='h-5! w-5!' />}
           className={buttonVariants({
-            size: 'lg',
+            size: isMobile ? 'sm' : 'lg',
             className: 'rounded-full',
           })}>
           Know More

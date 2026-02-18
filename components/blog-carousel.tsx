@@ -128,7 +128,7 @@ export function BlogCarousel() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      {isDesktop ? (
+      {isLarge ? (
         <>
           <CarouselPrevious />
           <CarouselNext />

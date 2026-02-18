@@ -1,6 +1,6 @@
 import { BackgroundPattern } from '@/components/extends/background-pattern';
 import { Badge } from '@/components/ui/badge';
-import { ArrowUpRight } from 'lucide-react';
+import { IconPointFilled } from '@tabler/icons-react';
 import Link from 'next/link';
 import { AuroraText } from './extends/aurora-text';
 import RocketIcon from './extends/icons/rocket';
@@ -25,10 +25,10 @@ export default function Hero() {
               strokeWidth={2}
             />{' '}
             Start Your Wealth Journey
-            <ArrowUpRight className='ml-1 size-4' />
+            <IconPointFilled className='ml-1 mt-0.5 size-8 animate-pulse fill-green-500' />
           </Link>
         </Badge>
-        <h1 className='mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter'>
+        <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter'>
           Ascent Wealth <br />{' '}
           <AuroraText
             colors={['#7c6707', '#c5b984', '#968021', '#dcd5b5']}
@@ -36,7 +36,7 @@ export default function Hero() {
             Welcomes You!
           </AuroraText>
         </h1>
-        <p className='mt-6 md:text-lg text-foreground/80'>
+        <p className='text-sm md:text-base lg:text-lg text-foreground/80'>
           Build your wealth with expert guidance. We offer mutual funds, bonds,
           insurance, and personalized investment solutions tailored to help you
           achieve your financial goals.
