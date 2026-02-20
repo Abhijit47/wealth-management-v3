@@ -5,10 +5,14 @@ export default function Stats() {
   return (
     <section className='max-w-(--breakpoint-xl) mx-auto w-full py-12 sm:py-16 md:py-20 lg:py-24 px-6'>
       <div className='text-center space-y-4 md:space-y-6 lg:space-y-8'>
-        <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tighter'>
+        <h2
+          data-aos='fade-down'
+          className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tighter'>
           Why Should You Choose Us?
         </h2>
-        <p className='text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground'>
+        <p
+          data-aos='fade-up'
+          className='text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground'>
           Because after switching to us...
         </p>
 

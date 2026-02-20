@@ -6,7 +6,7 @@ import { Card } from './ui/card';
 
 function LogoCard({ id, imgSrc }: (typeof companyLogos)[number]) {
   return (
-    <Card className={'p-2 rounded-md'}>
+    <Card className={'p-2 rounded-none'}>
       <div className='flex items-center justify-center rounded-sm overflow-hidden'>
         <Image
           src={imgSrc}
@@ -25,7 +25,9 @@ export default function CompanyLogos() {
     <section
       id='company-logos'
       className='w-full max-w-(--breakpoint-xl) mx-auto text-center space-y-6 lg:space-y-8'>
-      <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
+      <h2
+        data-aos='fade-down'
+        className='text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
         Our Trusted Partners
       </h2>
       <Blockquote>

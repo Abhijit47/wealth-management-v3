@@ -17,7 +17,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Separator } from '../ui/separator';
 // import LogoSVG from './logo-svg';
-import LogoSVG1 from './logo-svg1';
+// import LogoSVG1 from './logo-svg1';
+import Logo from './logo';
 
 export const NavigationSheet = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,10 +42,13 @@ export const NavigationSheet = () => {
             Use this menu to navigate through the website.
           </SheetDescription>
         </VisuallyHidden>
-        <Link href='/' aria-label='Home' className={'w-full pt-4'}>
-          {/* <LogoSVG /> */}
-          <LogoSVG1 />
-        </Link>
+        <div className={'relative'}>
+          <Link href='/' aria-label='Home' className={'w-full h-16'}>
+            {/* <LogoSVG /> */}
+            {/* <LogoSVG1 /> */}
+            <Logo />
+          </Link>
+        </div>
         <Separator />
         <NavMenu
           orientation='vertical'

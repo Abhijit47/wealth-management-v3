@@ -19,8 +19,22 @@ export default function PlanningCard({
   // find the last index
   const isLast = idx === plannings.length - 1;
 
+  const isSecondLast = idx === plannings.length - 2;
+
   return (
     <div
+      data-aos={
+        isLast
+          ? 'fade-right'
+          : isSecondLast
+            ? 'fade-left'
+            : idx % 2 === 0
+              ? 'fade-right'
+              : 'fade-left'
+      }
+      data-aos-duration='700'
+      // data-aos-easing='linear'
+      data-aos-easing='ease-in-sine'
       key={plan.category}
       className={cn(
         'flex flex-col md:flex-row items-center gap-x-12 gap-y-6',
@@ -51,7 +65,10 @@ export default function PlanningCard({
           {plan.details}
         </p>
         {!isLast ? (
-          <ResponsiveButton asChild className='mt-6 rounded-full gap-3'>
+          <ResponsiveButton
+            data-aos='fade-right'
+            asChild
+            className='mt-6 rounded-full gap-3'>
             <Link scroll={true} href={plan.tutorialLink}>
               Learn More <ArrowRightIcon />
             </Link>

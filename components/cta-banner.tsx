@@ -27,16 +27,22 @@ export default function CTABanner() {
           )}
         />
         <div className='relative z-0 flex flex-col gap-3 lg:gap-6 text-center'>
-          <h3 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold'>
+          <h3
+            data-aos='flip-down'
+            className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold'>
             Are You Ready to Transform Your Financial Journey?
           </h3>
-          <p className='text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed'>
+          <p
+            data-aos='flip-up'
+            className='text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed'>
             Let&apos;s transform your financial future together. Get a
             personalized investment strategy tailored to your goals and risk
             comfort in just one conversation.
           </p>
         </div>
-        <div className='relative z-0 mt-8 sm:mt-10 md:mt-12 lg:mt-14 flex flex-col sm:flex-row items-center justify-center gap-4'>
+        <div
+          data-aos='zoom-in'
+          className='relative z-0 mt-8 sm:mt-10 md:mt-12 lg:mt-14 flex flex-col sm:flex-row items-center justify-center gap-4'>
           <LazyConsultationDialog />
         </div>
       </div>

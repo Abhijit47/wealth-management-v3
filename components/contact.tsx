@@ -42,10 +42,14 @@ export default function Contact() {
         <b className='text-muted-foreground mb-2 uppercase font-semibold text-xs md:text-sm'>
           Contact Us
         </b>
-        <h2 className='text-xl sm:text-2xl md:text-3xl xl:text-4xl font-semibold tracking-tight'>
+        <h2
+          data-aos='fade-down'
+          className='text-xl sm:text-2xl md:text-3xl xl:text-4xl font-semibold tracking-tight'>
           Chat with our friendly team!
         </h2>
-        <p className='text-xs sm:text-sm md:text-base xl:text-lg text-muted-foreground'>
+        <p
+          data-aos='fade-up'
+          className='text-xs sm:text-sm md:text-base xl:text-lg text-muted-foreground'>
           We&apos;d love to hear from you. Please fill out this form or shoot us
           an email.
         </p>

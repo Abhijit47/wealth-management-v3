@@ -13,7 +13,7 @@ export default function Hero() {
       className='min-h-screen flex items-center justify-center px-6'>
       <BackgroundPattern />
 
-      <div className='relative z-10 text-center max-w-3xl'>
+      <div className='relative z-10 text-center max-w-3xl space-y-4 md:space-y-6'>
         <Badge
           variant='secondary'
           className='rounded-full py-1 border-border'
@@ -29,7 +29,8 @@ export default function Hero() {
           </Link>
         </Badge>
         <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter'>
-          Ascent Wealth <br />{' '}
+          <span data-aos='flip-up'>Ascent Wealth</span>
+          <br />{' '}
           <AuroraText
             colors={['#7c6707', '#c5b984', '#968021', '#dcd5b5']}
             speed={2}>

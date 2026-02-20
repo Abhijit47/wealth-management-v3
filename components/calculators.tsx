@@ -16,12 +16,15 @@ export default function Calculators() {
       id='calaculators'
       className='container max-w-(--breakpoint-xl) mx-auto w-full px-4 py-12 sm:py-16 md:py-20 lg:py-24'>
       <div className='space-y-6 lg:space-y-8'>
-        <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-center'>
+        <h2
+          data-aos='fade-up'
+          className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-center'>
           Unleash Your Creativity
         </h2>
         <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
           {calculators.map((calculator) => (
             <Card
+              data-aos='zoom-in-up'
               key={calculator.title}
               className='relative overflow-hidden gap-4'>
               <ShineBorder shineColor={['#A07CFE', '#FE8FB5', '#FFBE7B']} />

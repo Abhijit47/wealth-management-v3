@@ -12,7 +12,9 @@ import { Fragment } from 'react/jsx-runtime';
 import FooterBackgroundGradient from './extends/footer-background-gradient';
 import { LazyTextHoverEffect } from './extends/lazy-components';
 // import LogoSVG from './shared/logo-svg';
-import LogoSVG1 from './shared/logo-svg1';
+import RiskFactor from './risk-factor';
+// import LogoSVG1 from './shared/logo-svg1';
+import Logo from './shared/logo';
 import { Separator } from './ui/separator';
 
 // Footer link data
@@ -143,7 +145,7 @@ export function HoverFooter() {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 lg:gap-16'>
           {/* Brand section */}
           <div className='flex flex-col space-y-4'>
-            <div className='flex items-center space-x-2'>
+            <div className='flex items-center space-x-2 relative'>
               {/* <svg
                 id='logo-7'
                 width='124'
@@ -161,7 +163,12 @@ export function HoverFooter() {
                 />
               </svg> */}
               {/* <LogoSVG /> */}
-              <LogoSVG1 />
+              {/* <LogoSVG1 /> */}
+              <div className={'w-full h-16 relative'}>
+                <div className={'absolute -left-11 top-0'}>
+                  <Logo />
+                </div>
+              </div>
             </div>
             <p className='text-sm leading-relaxed'>
               We are an AMFI registered Mutual Funds Distributor engaged in
@@ -229,30 +236,13 @@ export function HoverFooter() {
 
         <Separator className='' />
 
-        <p className={'text-sm'}>
-          <strong>Risk Factors</strong> &mdash; Investments in Mutual Funds are
-          subject to Market Risks. Read all scheme related documents carefully
-          before investing. Mutual Fund Schemes do not assure or guarantee any
-          returns. Past performances of any Mutual Fund Scheme may or may not be
-          sustained in future. There is no guarantee that the investment
-          objective of any suggested scheme shall be achieved. All existing and
-          prospective investors are advised to check and evaluate the Exit loads
-          and other cost structure (TER) applicable at the time of making the
-          investment before finalizing on any investment decision for Mutual
-          Funds schemes. We deal in Regular Plans only for Mutual Fund Schemes
-          and earn a Trailing Commission on client investments. Disclosure For
-          Commission earnings is made to clients at the time of investments.
-          Option of Direct Plan for every Mutual Fund Scheme is available to
-          investors offering advantage of lower expense ratio. We are not
-          entitled to earn any commission on Direct plans. Hence we do not deal
-          in Direct Plans.
-        </p>
+        <RiskFactor />
 
         <Separator className='' />
 
-        <div className='flex h-5 items-center justify-center space-x-2 text-sm gap-1'>
+        <div className='flex flex-wrap h-5 items-center justify-center space-x-2 text-sm gap-1'>
           <p>Grievance Officer- Ascent Wealth</p>
-          <Separator orientation='vertical' />
+          <Separator orientation='vertical' className='hidden md:block' />
           <Link
             href='mailto:ascentwealth.invest@gmail.com'
             className='underline underline-offset-2 hover:no-underline'>
@@ -260,7 +250,7 @@ export function HoverFooter() {
           </Link>
         </div>
 
-        <Separator className='' />
+        <Separator />
 
         <div className='flex h-5 items-center justify-center flex-wrap space-x-2 text-center gap-1'>
           <span className={'text-sm'}>

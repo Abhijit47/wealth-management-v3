@@ -5,9 +5,9 @@ export default function Blogs() {
   return (
     <section
       id='blogs'
-      className='max-w-(--breakpoint-xl) mx-auto w-full px-6 xl:px-0'>
+      className='max-w-(--breakpoint-xl) mx-auto w-full px-6 xl:px-0 space-y-6'>
       <div className='flex flex-wrap gap-4 items-end justify-between'>
-        <h2 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight'>
+        <h2 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight md:ml-6'>
           Today&apos;s Posts
         </h2>
         <BlogFilter />

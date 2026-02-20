@@ -131,7 +131,9 @@ export default function RiskProfileDialog() {
   return (
     <Dialog open={isOpen} onOpenChange={toggleDialog}>
       <DialogTrigger asChild>
-        <ResponsiveButton className='mt-6 rounded-full gap-3'>
+        <ResponsiveButton
+          data-aos='fade-left'
+          className='mt-6 rounded-full gap-3'>
           Assess Your Risk Profile <ArrowRightIcon />
         </ResponsiveButton>
       </DialogTrigger>

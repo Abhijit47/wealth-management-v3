@@ -35,7 +35,9 @@ export function Accordion02() {
       id='faqs'
       className='max-w-(--breakpoint-xl) mx-auto w-full px-6 xl:px-0 space-y-6 lg:space-y-8 py-12 sm:py-16 md:py-20 lg:py-24'>
       <div className='text-center w-full'>
-        <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
+        <h2
+          data-aos='fade-down'
+          className='text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
           Frequently Asked Questions
         </h2>
       </div>
@@ -183,7 +185,7 @@ export function Accordion02() {
             </Accordion>
           </div>
         </CollapsibleContent>
-        <div className='flex items-center justify-center'>
+        <div data-aos='fade-up' className='flex items-center justify-center'>
           <CollapsibleTrigger
             asChild
             className='flex items-center justify-center data-[state=open]:my-6 data-[state=close]:mb-6'>

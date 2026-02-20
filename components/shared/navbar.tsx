@@ -3,13 +3,14 @@ import { NavigationSheet } from '@/components/shared/navigation-sheet';
 import { buttonVariants } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedThemeToggler } from '../extends/animated-theme-toggler';
-import LogoSVG1 from './logo-svg1';
+// import LogoSVG1 from './logo-svg1';
+import Logo from './logo';
 
 export default function Navbar() {
   return (
     <nav className='fixed z-50 top-6 inset-x-4 h-16 bg-transparent border max-w-(--breakpoint-xl) mx-auto rounded-full backdrop-blur-xl border-border/50 shadow-lg shadow-black/5'>
-      <div className='h-full flex items-center justify-between mx-auto px-4'>
-        <Link href='/' aria-label='Home' className={'block'}>
+      <div className='h-full flex items-center justify-between mx-auto px-4 relative'>
+        <Link href='/' aria-label='Home' className={'absolute -left-6 top-1'}>
           {/* <Image
             src='/ascent-wealth.svg'
             alt='logo'
@@ -17,13 +18,16 @@ export default function Navbar() {
             height={1320}
             className={'w-auto h-12'}
           /> */}
-          <LogoSVG1 />
+          {/* <LogoSVG1 /> */}
+          <Logo />
         </Link>
 
-        {/* Desktop Menu */}
-        <NavMenu className='hidden lg:block' />
+        <div className={'hidden md:block md:mr-32'}>&nbsp;</div>
 
-        <div className='flex items-center gap-3'>
+        {/* Desktop Menu */}
+        <NavMenu className='hidden lg:block ml-auto' />
+
+        <div className='flex items-center gap-3 ml-auto'>
           {/* <ThemeModeToggle /> */}
           <AnimatedThemeToggler />
 

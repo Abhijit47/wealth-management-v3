@@ -71,12 +71,16 @@ export default function TestimonialMarquee() {
 
   return (
     <section className='w-full max-w-(--breakpoint-xl) mx-auto text-center pt-12 sm:pt-16 md:pt-20 lg:pt-24'>
-      <div className={'relative space-y-4'}>
-        <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
+      <div className={'relative space-y-4 px-4 lg:px-0'}>
+        <h2
+          data-aos='fade-down'
+          className='text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.15]! font-semibold tracking-[-0.035em]'>
           What Our Clients Say About Us
         </h2>
 
-        <p className='text-center text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl'>
+        <p
+          data-aos='fade-up'
+          className='text-center text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl'>
           Real stories from people who use and love our product every day
         </p>
 

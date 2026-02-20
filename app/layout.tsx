@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
+import AOSProvider from '@/providers/aos-provider';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 
@@ -81,11 +82,13 @@ export default function RootLayout({
           defaultTheme='system'
           enableSystem
           disableTransitionOnChange>
-          {!isDev ? <DevtoolsBlocker /> : null}
-          <Navbar />
-          {children}
-          <HoverFooter />
-          <Toaster richColors closeButton position='top-center' />
+          <AOSProvider>
+            {!isDev ? <DevtoolsBlocker /> : null}
+            <Navbar />
+            {children}
+            <HoverFooter />
+            <Toaster richColors closeButton position='top-center' />
+          </AOSProvider>
         </ThemeProvider>
       </body>
     </html>

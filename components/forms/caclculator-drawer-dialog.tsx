@@ -132,7 +132,10 @@ export default function CaclculatorDrawerDialog(
     <>
       <Drawer open={open} onOpenChange={setOpen}>
         <DrawerTrigger asChild>
-          <ResponsiveButton variant={'secondary'} className={'w-full'}>
+          <ResponsiveButton
+            data-aos='fade-up'
+            variant={'secondary'}
+            className={'w-full'}>
             Get free calculation <SparklesIcon className={'size-4'} />
           </ResponsiveButton>
         </DrawerTrigger>

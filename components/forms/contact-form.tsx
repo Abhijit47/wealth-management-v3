@@ -261,6 +261,7 @@ export default function ContactForm() {
               </FieldGroup>
             </FieldSet>
             <ResponsiveButton
+              data-aos='fade-down'
               disabled={isPending}
               className='mt-6 w-full'
               type='submit'>

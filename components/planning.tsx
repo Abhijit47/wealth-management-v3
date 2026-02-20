@@ -5,10 +5,14 @@ export default function Planning() {
   return (
     <section id='planning' className='max-w-(--breakpoint-xl) mx-auto w-full'>
       <div className='py-10 px-6'>
-        <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl md:leading-[1.2] font-semibold tracking-[-0.03em] sm:max-w-xl text-pretty sm:mx-auto sm:text-center'>
+        <h2
+          data-aos='fade-down'
+          className='text-xl sm:text-2xl md:text-3xl lg:text-4xl md:leading-[1.2] font-semibold tracking-[-0.03em] sm:max-w-xl text-pretty sm:mx-auto sm:text-center'>
           Your Financial Future, Thoughtfully Planned
         </h2>
-        <p className='mt-2 text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl sm:text-center'>
+        <p
+          data-aos='fade-up'
+          className='mt-2 text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl sm:text-center'>
           Elevate your financial journey with our intuitive tools, crafted to
           empower your decisions and bring your aspirations to life.
         </p>
