@@ -106,3 +106,8 @@ export const LazyBrochureDownload = dynamic(() => import('./brochure-dialog'), {
   loading: () => <Skeleton className='w-48 rounded-full h-11 animate-pulse' />,
   ssr: false,
 });
+
+export const LazyWhatsappWidget = dynamic(() => import('./whatsapp-widget'), {
+  loading: () => null,
+  ssr: false,
+});

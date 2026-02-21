@@ -350,11 +350,21 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
   }
 }
 
-html {
-  scroll-behavior: smooth;
+.styles-module_chatBody__VBxQH {
+  /* @apply overflow-y-scroll scrollbar-thin scrollbar-thumb-muted/50 scrollbar-track-transparent; */
+  overflow-y: scroll !important;
+}
+
+.styles-module_buttonSend__kXjja {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }

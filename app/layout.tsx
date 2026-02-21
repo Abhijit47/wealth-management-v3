@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
+import { LazyWhatsappWidget } from '@/components/lazy-components';
 import AOSProvider from '@/providers/aos-provider';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
@@ -89,6 +90,7 @@ export default function RootLayout({
             <HoverFooter />
             <Toaster richColors closeButton position='top-center' />
           </AOSProvider>
+          <LazyWhatsappWidget />
         </ThemeProvider>
       </body>
     </html>

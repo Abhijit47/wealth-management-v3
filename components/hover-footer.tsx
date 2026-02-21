@@ -101,7 +101,8 @@ const contactInfo = [
   {
     id: crypto.randomUUID(),
     icon: <IconMap2 className='stroke-primary size-6 lg:size-10' />,
-    text: 'Thoraipakkam, Chennai, Tamilnadu - 600097, India',
+    // text: 'Thoraipakkam, Chennai, Tamilnadu - 600097, India',
+    text: 'Perungudi, Chennai, 600096, India',
   },
 ];
 
@@ -244,9 +245,11 @@ export function HoverFooter() {
           <p>Grievance Officer- Ascent Wealth</p>
           <Separator orientation='vertical' className='hidden md:block' />
           <Link
-            href='mailto:ascentwealth.invest@gmail.com'
+            // href='mailto:ascentwealth.invest@gmail.com'
+            href='mailto:info@ascentwealth.in'
             className='underline underline-offset-2 hover:no-underline'>
-            ascentwealth.invest@gmail.com
+            info@ascentwealth.in
+            {/* ascentwealth.invest@gmail.com */}
           </Link>
         </div>
 

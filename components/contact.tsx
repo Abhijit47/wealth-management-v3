@@ -21,7 +21,8 @@ const contactInfo = [
     id: 'office',
     title: 'Office',
     description: 'Come say hello at our office HQ.',
-    href: 'https://www.google.com/maps/place/Thoraipakkam,+Tamil+Nadu+600097/@13.5126456,79.7806643,103588m/data=!3m1!1e3!4m6!3m5!1s0x3a525cfbde1d0251:0xcafd9a078a3c9270!8m2!3d12.9416037!4d80.2362096!16s%2Fm%2F0287fjs?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D',
+    // href: 'https://www.google.com/maps/place/Thoraipakkam,+Tamil+Nadu+600097/@13.5126456,79.7806643,103588m/data=!3m1!1e3!4m6!3m5!1s0x3a525cfbde1d0251:0xcafd9a078a3c9270!8m2!3d12.9416037!4d80.2362096!16s%2Fm%2F0287fjs?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D',
+    href: 'https://maps.app.goo.gl/UggnToKg1n3v7eeS9',
     icon: MapPinIcon,
   },
   {
@@ -69,6 +70,8 @@ export default function Contact() {
                   {contact.description}
                 </p>
                 <Link
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className='font-medium text-primary block'
                   href={contact.href}>
                   {contact.id === 'email'
@@ -76,7 +79,7 @@ export default function Contact() {
                     : contact.id === 'phone'
                       ? '' + contact.href.replace('tel:', '')
                       : contact.id === 'office'
-                        ? 'Thoraipakkam, Chennai, Tamilnadu 600097, India'
+                        ? 'Perungudi, Chennai, 600096, India'
                         : 'Start new chat'}
                 </Link>
               </div>

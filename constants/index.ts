@@ -272,18 +272,34 @@ export const plannings = [
 export const services = [
   {
     id: crypto.randomUUID(),
+    title: 'SIF, AIF, PMS',
+    subtitle: 'Access to Advanced Investment Strategies!',
+    description: [
+      `
+      For investors seeking opportunities beyond traditional mutual funds, Ascent Wealth provides access to Specialised Investment Funds (SIF), Alternative Investment Funds (AIF), and Portfolio Management Services (PMS).
+      `,
+      `
+      These regulated investment solutions are designed for higher ticket allocations and offer exposure to advanced strategies such as long-short equity, private markets, structured opportunities, and concentrated portfolio management.
+      `,
+      `
+        With minimum investment thresholds starting from ₹10 lakhs for SIF, ₹50 lakhs for PMS, and ₹1 crore for AIF (as per regulatory guidelines), these options are suitable for investors looking to diversify, enhance portfolio efficiency, and access professionally managed strategies aligned with their long-term wealth objectives.
+      `,
+    ],
+    cover:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/w_600/v1768586853/9_a7t573.avif',
+    quote: `"Planning is bringing the future into the present so that you can do something about it now" - Alan Lakein`,
+  },
+  {
+    id: crypto.randomUUID(),
     title: 'Mutual Fund',
     subtitle: 'Salutations from Ascent Wealth!',
     description: [
-      // `At Ascent Wealth, we are dedicated to providing you with individualized assistance and services support as you navigate the world of mutual funds.`,
-      // `The smarter way to achieve higher returns and beat inflation will beinvesting in mutual funds through Systematic Investment Plan (SIP).`,
-      // `Equity Mutual Funds over a stretched period of years with flawless goal based financial plan gives us back inflation adjusted returns.`,
-      // `SIP is a way of investing through which Investors can be benefited by rupee cost averaging and power of compounding in the long term. There are benefits such as tax saving and other tax concessions available in investing through mutual funds.
-      // We provide regular updates on your investments and provide rapid and effective customer support throughout your investing journey with us. As your trusted Mutual Funds Distributor, Ascent Wealth can assist you with our long-term actionable solutions that will help you achieve targeted wealth and financial freedom.
-      // Mutual funds are the only investment option which provides you with the ability to invest across different asset classes with minimum to moderate to elevated risk depending upon your risk-taking ability.`,
-      `
-      For investors seeking opportunities beyond traditional mutual funds, Ascent Wealth provides access to Specialised Investment Funds (SIF), Alternative Investment Funds (AIF), and Portfolio Management Services (PMS). These regulated investment solutions are designed for higher ticket allocations and offer exposure to advanced strategies such as long-short equity, private markets, structured opportunities, and concentrated portfolio management. With minimum investment thresholds starting from ₹10 lakhs for SIF, ₹50 lakhs for PMS, and ₹1 crore for AIF (as per regulatory guidelines), these options are suitable for investors looking to diversify, enhance portfolio efficiency, and access professionally managed strategies aligned with their long-term wealth objectives.
-      `,
+      `At Ascent Wealth, we are dedicated to providing you with individualized assistance and services support as you navigate the world of mutual funds.`,
+      `The smarter way to achieve higher returns and beat inflation will beinvesting in mutual funds through Systematic Investment Plan (SIP).`,
+      `Equity Mutual Funds over a stretched period of years with flawless goal based financial plan gives us back inflation adjusted returns.`,
+      `SIP is a way of investing through which Investors can be benefited by rupee cost averaging and power of compounding in the long term. There are benefits such as tax saving and other tax concessions available in investing through mutual funds.
+      We provide regular updates on your investments and provide rapid and effective customer support throughout your investing journey with us. As your trusted Mutual Funds Distributor, Ascent Wealth can assist you with our long-term actionable solutions that will help you achieve targeted wealth and financial freedom.
+      Mutual funds are the only investment option which provides you with the ability to invest across different asset classes with minimum to moderate to elevated risk depending upon your risk-taking ability.`,
     ],
     // cover:
     //   'https://www.ascentwealth.in/Content/ascentwealth.in/UploadedImage/RealImage/176mfa.jpg',
@@ -530,7 +546,7 @@ export const faqs = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Can I nomoinate a Non-Resident Indian as my nominee?',
+    question: 'Can I nominate a Non-Resident Indian as my nominee?',
     answer: `Yes. A non-resident Indian can be a nominee subject to the exchange controls in force, from time to time.`,
   },
   {
