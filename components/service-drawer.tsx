@@ -4,6 +4,7 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
+  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
@@ -25,8 +26,18 @@ export default function ServiceDrawer(props: (typeof services)[number]) {
     delay: 100,
   });
 
+  const handleOpenChange = (open: boolean) => {
+    const servicesSection = document.getElementById('services');
+    if (!servicesSection) return;
+    if (open) {
+      servicesSection.setAttribute('inert', '');
+    } else {
+      servicesSection.removeAttribute('inert');
+    }
+  };
+
   return (
-    <Drawer>
+    <Drawer onOpenChange={handleOpenChange}>
       <DrawerTrigger asChild>
         <ResponsiveButton
           variant={'link'}
@@ -36,7 +47,7 @@ export default function ServiceDrawer(props: (typeof services)[number]) {
           Know more
         </ResponsiveButton>
       </DrawerTrigger>
-      <DrawerContent ref={ref} className={'min-h-fit'}>
+      <DrawerContent ref={ref} className={'min-h-fit'} inert>
         <div className='mx-auto w-full max-w-(--breakpoint-sm) flex flex-col h-full px-4'>
           <div className={'py-0'}>
             <DrawerHeader className={''}>
@@ -52,6 +63,11 @@ export default function ServiceDrawer(props: (typeof services)[number]) {
                   {props.title}
                 </Highlighter>
               </DrawerTitle>
+              <DrawerDescription>
+                When a management with a reputation for brilliance, tackles a
+                business with a reputation for bad economics, it is the
+                reputation of the business that remains intact...
+              </DrawerDescription>
             </DrawerHeader>
           </div>
 

@@ -25,32 +25,37 @@ const footerLinks = [
       {
         id: crypto.randomUUID(),
         label: 'Mutual Funds',
-        href: '#',
+        href: '#services',
+      },
+      {
+        id: crypto.randomUUID(),
+        label: 'SIF, AIF, PMS',
+        href: '#services',
       },
       {
         id: crypto.randomUUID(),
         label: 'Life and Health Insurance',
-        href: '#',
+        href: '#services',
       },
       {
         id: crypto.randomUUID(),
         label: 'Corporate FDs, Bonds and NCDs',
-        href: '#',
+        href: '#services',
       },
       {
         id: crypto.randomUUID(),
         label: 'Estate Planning',
-        href: '#',
+        href: '#services',
       },
       {
         id: crypto.randomUUID(),
         label: 'Equity - De-mat Accounts',
-        href: '#',
+        href: '#services',
       },
       {
         id: crypto.randomUUID(),
         label: 'Goal Based Financial Planning',
-        href: '#',
+        href: '#services',
       },
     ],
   },

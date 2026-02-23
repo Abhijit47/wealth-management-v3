@@ -272,25 +272,6 @@ export const plannings = [
 export const services = [
   {
     id: crypto.randomUUID(),
-    title: 'SIF, AIF, PMS',
-    subtitle: 'Access to Advanced Investment Strategies!',
-    description: [
-      `
-      For investors seeking opportunities beyond traditional mutual funds, Ascent Wealth provides access to Specialised Investment Funds (SIF), Alternative Investment Funds (AIF), and Portfolio Management Services (PMS).
-      `,
-      `
-      These regulated investment solutions are designed for higher ticket allocations and offer exposure to advanced strategies such as long-short equity, private markets, structured opportunities, and concentrated portfolio management.
-      `,
-      `
-        With minimum investment thresholds starting from ₹10 lakhs for SIF, ₹50 lakhs for PMS, and ₹1 crore for AIF (as per regulatory guidelines), these options are suitable for investors looking to diversify, enhance portfolio efficiency, and access professionally managed strategies aligned with their long-term wealth objectives.
-      `,
-    ],
-    cover:
-      'https://res.cloudinary.com/dxgckfhti/image/upload/w_600/v1768586853/9_a7t573.avif',
-    quote: `"Planning is bringing the future into the present so that you can do something about it now" - Alan Lakein`,
-  },
-  {
-    id: crypto.randomUUID(),
     title: 'Mutual Fund',
     subtitle: 'Salutations from Ascent Wealth!',
     description: [
@@ -307,6 +288,25 @@ export const services = [
     cover:
       'https://res.cloudinary.com/dxgckfhti/image/upload/w_600/v1768586853/9_a7t573.avif',
     quote: `"The doorstep to the temple of wisdom is a knowledge of our own ignorance" – Benjamin Franklin`,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'SIF, AIF, PMS',
+    subtitle: 'Access to Advanced Investment Strategies!',
+    description: [
+      `
+      For investors seeking opportunities beyond traditional mutual funds, Ascent Wealth provides access to Specialised Investment Funds (SIF), Alternative Investment Funds (AIF), and Portfolio Management Services (PMS).
+      `,
+      `
+      These regulated investment solutions are designed for higher ticket allocations and offer exposure to advanced strategies such as long-short equity, private markets, structured opportunities, and concentrated portfolio management.
+      `,
+      `
+        With minimum investment thresholds starting from ₹10 lakhs for SIF, ₹50 lakhs for PMS, and ₹1 crore for AIF (as per regulatory guidelines), these options are suitable for investors looking to diversify, enhance portfolio efficiency, and access professionally managed strategies aligned with their long-term wealth objectives.
+      `,
+    ],
+    cover:
+      'https://res.cloudinary.com/dxgckfhti/image/upload/v1771837158/1104819_gfbnfs.jpg',
+    quote: `"Planning is bringing the future into the present so that you can do something about it now" - Alan Lakein`,
   },
   {
     id: crypto.randomUUID(),
