@@ -40,6 +40,12 @@ export async function generateMetadata(
     description: post.summary,
     keywords: post.categories,
     creator: post.author,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${post.slug}`,
+      media: {
+        '(max-width: 600px)': `${post.image}`,
+      },
+    },
     openGraph: {
       determiner: parentInfo.openGraph?.determiner,
       title: post.title,
