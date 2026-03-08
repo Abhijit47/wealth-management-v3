@@ -62,7 +62,19 @@ export async function generateMetadata(
       url: `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${post.slug}`,
       countryName: parentInfo.openGraph?.countryName,
       ttl: parentInfo.openGraph?.ttl,
+      authors: 'Ascent Wealth',
     },
+    authors: [
+      {
+        name: 'Ascent Wealth',
+        url: 'https://www.ascentwealth.in',
+      },
+      { name: 'Abhijit K.', url: 'https://abhijitdev.tech' },
+      {
+        name: 'Shobana R.',
+        url: 'https://leanitech.com',
+      },
+    ],
   };
 }
 
