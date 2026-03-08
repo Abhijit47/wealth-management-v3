@@ -33,12 +33,21 @@ export const metadata: Metadata = {
   description: seo.description,
   keywords: seo.keywords,
   applicationName: 'Ascent Wealth App',
-  authors: [{ name: 'Abhijit K.', url: 'https://abhijitdev.tech' }],
+  authors: [
+    { name: 'Abhijit K.', url: 'https://abhijitdev.tech' },
+    {
+      name: 'Shobana R.',
+      url: 'https://leanitech.com',
+    },
+  ],
   generator: 'Next.js',
   referrer: 'origin',
   creator: 'Abhijit K.',
   publisher: 'Ascent Wealth',
-  metadataBase: new URL('https://wealth-mgmt-next.netlify.app'),
+  metadataBase: 'https://www.ascentwealth.in',
+  alternates: {
+    canonical: 'https://www.ascentwealth.in',
+  },
   openGraph: {
     determiner: 'the',
     title: seo.title,
@@ -52,13 +61,13 @@ export const metadata: Metadata = {
       },
     ],
     phoneNumbers: ['+917305953668'],
-    emails: ['ascentwealth.invest@gmail.com'],
+    emails: ['info@ascentwealth.in', 'ascentwealth.invest@gmail.com'],
     siteName: 'Ascent Wealth',
     locale: 'en_US',
     alternateLocale: ['en-IN', 'hi-IN'],
     type: 'website',
     videos: ['https://www.youtube.com/embed/RKicpV2qvZU'],
-    url: 'https://wealth-mgmt-next.netlify.app',
+    url: 'https://www.ascentwealth.in',
     countryName: 'India',
     ttl: 86400,
   },
@@ -66,6 +75,12 @@ export const metadata: Metadata = {
     'Ascent Wealth - Your Trusted Partner in Financial Growth and Investment Solutions.',
   category: 'Finance',
   classification: 'Business',
+  appLinks: {
+    web: {
+      url: 'https://www.ascentwealth.in',
+      should_fallback: true,
+    },
+  },
 };
 
 const isDev = process.env.NODE_ENV === 'development';

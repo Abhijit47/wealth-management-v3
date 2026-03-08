@@ -82,63 +82,81 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const { base64 } = await getRemoteImage(post.image);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: post.title,
+    image: post.image,
+    description: post.content,
+  };
+
   return (
-    <article className='max-w-4xl mx-auto px-4 py-24'>
-      {/* Header */}
-      <header className='mb-12'>
-        <div className='mb-6'>
-          <Image
-            src={post.image}
-            alt={post.title}
-            width={800}
-            height={400}
-            className='w-full aspect-video object-cover rounded-lg'
-            priority
-            placeholder='blur'
-            blurDataURL={base64}
-          />
-        </div>
-
-        <h1 className='text-4xl font-bold mb-4'>{post.title}</h1>
-
-        <div className='flex flex-wrap gap-2 mb-6'>
-          {post.categories.map((category) => (
-            <Badge key={category}>{category}</Badge>
-          ))}
-        </div>
-
-        <div className='flex items-center justify-between text-sm text-muted-foreground'>
-          <div className='flex items-center gap-3'>
-            <Link
-              href={'/#blogs'}
-              className={buttonVariants({
-                variant: 'outline',
-                size: 'icon-sm',
-                className: 'rounded-full',
-              })}>
-              <ArrowLeftCircle className={'size-4'} />
-            </Link>
-            <Avatar>
-              <AvatarImage src='https://github.com/shadcn.png' alt='author' />
-              <AvatarFallback>AU</AvatarFallback>
-            </Avatar>
-            <span>{post.author}</span>
+    <main>
+      <article className='max-w-4xl mx-auto px-4 py-24'>
+        {/* Header */}
+        <header className='mb-12'>
+          <div className='mb-6'>
+            <Image
+              src={post.image}
+              alt={post.title}
+              width={800}
+              height={400}
+              className='w-full aspect-video object-cover rounded-lg'
+              priority
+              placeholder='blur'
+              blurDataURL={base64}
+            />
           </div>
-          <time>
-            {new Date(post.createdAt).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </time>
-        </div>
-      </header>
 
-      {/* MDX Content */}
-      {/* <MDXRenderer mdx={post.mdx} /> */}
-      <div className='prose prose-sm md:prose-base lg:prose-lg dark:prose-invert max-w-none'>
-        <MDXContent code={post.mdx} />
-      </div>
-    </article>
+          <h1 className='text-4xl font-bold mb-4'>{post.title}</h1>
+
+          <div className='flex flex-wrap gap-2 mb-6'>
+            {post.categories.map((category) => (
+              <Badge key={category}>{category}</Badge>
+            ))}
+          </div>
+
+          <div className='flex items-center justify-between text-sm text-muted-foreground'>
+            <div className='flex items-center gap-3'>
+              <Link
+                href={'/#blogs'}
+                className={buttonVariants({
+                  variant: 'outline',
+                  size: 'icon-sm',
+                  className: 'rounded-full',
+                })}>
+                <ArrowLeftCircle className={'size-4'} />
+              </Link>
+              <Avatar>
+                <AvatarImage src='https://github.com/shadcn.png' alt='author' />
+                <AvatarFallback>AU</AvatarFallback>
+              </Avatar>
+              <span>{post.author}</span>
+            </div>
+            <time>
+              {new Date(post.createdAt).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+          </div>
+        </header>
+
+        {/* MDX Content */}
+        {/* <MDXRenderer mdx={post.mdx} /> */}
+        <div className='prose prose-sm md:prose-base lg:prose-lg dark:prose-invert max-w-none'>
+          <MDXContent code={post.mdx} />
+        </div>
+      </article>
+
+      {/* Add JSON-LD to your page */}
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
+        }}
+      />
+    </main>
   );
 }
