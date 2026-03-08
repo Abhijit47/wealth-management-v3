@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   publisher: 'Ascent Wealth',
   metadataBase: 'https://www.ascentwealth.in',
   alternates: {
-    canonical: 'https://www.ascentwealth.in',
+    canonical: 'https://pridewealth.co.in/index.php',
   },
   openGraph: {
     determiner: 'the',
