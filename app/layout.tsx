@@ -6,6 +6,8 @@ import { seo } from '@/constants';
 import { ThemeProvider } from '@/providers/theme-provider';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
+
 import './globals.css';
 
 import { LazyWhatsappWidget } from '@/components/lazy-components';
@@ -46,7 +48,7 @@ export const metadata: Metadata = {
   publisher: 'Ascent Wealth',
   metadataBase: 'https://www.ascentwealth.in',
   alternates: {
-    canonical: 'https://pridewealth.co.in/index.php',
+    canonical: 'https://wealth-management-v3.vercel.app',
   },
   openGraph: {
     determiner: 'the',
@@ -102,7 +104,7 @@ export default function RootLayout({
           <AOSProvider>
             {!isDev ? <DevtoolsBlocker /> : null}
             <Navbar />
-            {children}
+            <NuqsAdapter>{children}</NuqsAdapter>
             <HoverFooter />
             <Toaster richColors closeButton position='top-center' />
           </AOSProvider>

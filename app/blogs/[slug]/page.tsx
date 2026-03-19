@@ -140,7 +140,9 @@ export default async function BlogPostPage({ params }: PageProps) {
             />
           </div>
 
-          <h1 className='text-4xl font-bold mb-4'>{post.title}</h1>
+          <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4'>
+            {post.title}
+          </h1>
 
           <div className='flex flex-wrap gap-2 mb-6'>
             {post.categories.map((category) => (

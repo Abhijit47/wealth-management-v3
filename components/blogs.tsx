@@ -1,5 +1,4 @@
-import BlogFilter from './blog-filter';
-import { LazyBlogCarousel } from './lazy-components';
+import { LazyBlogCarousel, LazyBlogSort } from './lazy-components';
 
 export default function Blogs() {
   return (
@@ -10,7 +9,7 @@ export default function Blogs() {
         <h2 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight md:ml-6'>
           Today&apos;s Posts
         </h2>
-        <BlogFilter />
+        <LazyBlogSort />
       </div>
 
       <LazyBlogCarousel />

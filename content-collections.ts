@@ -1,5 +1,6 @@
 import { defineCollection, defineConfig } from '@content-collections/core';
 import { compileMDX } from '@content-collections/mdx';
+import remarkGfm from 'remark-gfm';
 import { z } from 'zod';
 
 // const postContentSchema = z.object({
@@ -26,7 +27,9 @@ const posts = defineCollection({
   include: '**/*.md',
   schema: postSchema,
   transform: async (document, context) => {
-    const mdx = await compileMDX(context, document);
+    const mdx = await compileMDX(context, document, {
+      remarkPlugins: [remarkGfm],
+    });
     return {
       ...document,
       mdx,

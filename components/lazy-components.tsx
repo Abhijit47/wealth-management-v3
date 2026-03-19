@@ -13,6 +13,13 @@ import {
 } from './ui/card';
 import { Skeleton } from './ui/skeleton';
 
+export const LazyBlogSort = dynamic(() => import('./blog-sort'), {
+  loading: () => (
+    <Skeleton className='w-full md:w-45 rounded-full h-11 animate-pulse' />
+  ),
+  ssr: false,
+});
+
 export const LazyStatCard = dynamic(() => import('./stat-card'), {
   ssr: false,
   loading: () => (

@@ -11,6 +11,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { cn } from '@/lib/utils';
 
+import { useQueryState } from 'nuqs';
 import BlogCard from './blog-card';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
@@ -94,8 +95,20 @@ export function BlogCarousel() {
     },
   };
 
-  const posts = allPosts.sort((a, b) => {
-    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+  // const posts = allPosts.sort((a, b) => {
+  //   return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+  // });
+  const [sortOrder] = useQueryState('sort', {
+    history: 'replace',
+    defaultValue: 'asc',
+  });
+  const sortedPosts = allPosts.sort((a, b) => {
+    // sort by createdAt: string;
+    if (sortOrder === 'asc') {
+      return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+    } else {
+      return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+    }
   });
 
   return (
@@ -116,7 +129,7 @@ export function BlogCarousel() {
       }
       className='w-full'>
       <CarouselContent className='-ml-1'>
-        {posts.map((post, index) => (
+        {sortedPosts.map((post, index) => (
           <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/3'>
             <div className='p-1'>
               <Card className={'p-0'}>
