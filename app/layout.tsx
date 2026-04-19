@@ -10,6 +10,7 @@ import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 import './globals.css';
 
+import { LazyAnalytics } from '@/components/analytics';
 import { LazyWhatsappWidget } from '@/components/lazy-components';
 import VercelProducts from '@/components/vercel-products';
 import AOSProvider from '@/providers/aos-provider';
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
   publisher: 'Ascent Wealth',
   metadataBase: 'https://www.ascentwealth.in',
   alternates: {
-    canonical: 'https://wealth-management-v3.vercel.app',
+    canonical: 'ascentwealth.in',
   },
   openGraph: {
     determiner: 'the',
@@ -83,6 +84,13 @@ export const metadata: Metadata = {
       should_fallback: true,
     },
   },
+  verification: {
+    google: 'UewwuDpvYm-5Y9gRE5o7TRE1G3FNr8kfEN69qi7tsm4',
+    // yandex: 'yandex-verification=abc123',
+    // other: {
+    //   'facebook-domain-verification': 'abc123',
+    // },
+  },
 };
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -111,6 +119,7 @@ export default function RootLayout({
           <LazyWhatsappWidget />
         </ThemeProvider>
         <VercelProducts />
+        <LazyAnalytics />
       </body>
     </html>
   );

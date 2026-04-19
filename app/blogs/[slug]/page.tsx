@@ -42,7 +42,7 @@ export async function generateMetadata(
     keywords: post.categories,
     creator: post.author,
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_BASE_URL}`,
+      canonical: `ascentwealth.in`,
       media: {
         '(max-width: 600px)': `${post.image}`,
       },
