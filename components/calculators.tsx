@@ -13,7 +13,7 @@ import {
 export default function Calculators() {
   return (
     <section
-      id='calaculators'
+      id='calculators'
       className='container max-w-(--breakpoint-xl) mx-auto w-full px-4 py-12 sm:py-16 md:py-20 lg:py-24'>
       <div className='space-y-6 lg:space-y-8'>
         <h2
