@@ -11,7 +11,12 @@ export const navlinks = [
   {
     id: crypto.randomUUID(),
     label: 'Home',
-    href: '#home',
+    href: '/',
+  },
+  {
+    id: crypto.randomUUID(),
+    label: 'About Us',
+    href: '/about-us',
   },
   {
     id: crypto.randomUUID(),
@@ -26,7 +31,7 @@ export const navlinks = [
   {
     id: crypto.randomUUID(),
     label: 'Blogs',
-    href: '#blogs',
+    href: '/blogs',
   },
   {
     id: crypto.randomUUID(),

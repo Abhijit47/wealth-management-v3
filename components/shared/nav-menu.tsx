@@ -7,17 +7,11 @@ import {
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
 import { navlinks } from '@/constants';
-import { useMediaQuery } from '@/hooks/use-media-query';
+// import { useMediaQuery } from '@/hooks/use-media-query';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useState,
-  type ComponentProps,
-} from 'react';
+import { Dispatch, SetStateAction, type ComponentProps } from 'react';
 
 type NavMenuProps = ComponentProps<typeof NavigationMenu> & {
   onOpenChange?: Dispatch<SetStateAction<boolean>>;
@@ -25,40 +19,68 @@ type NavMenuProps = ComponentProps<typeof NavigationMenu> & {
 
 export default function NavMenu(props: NavMenuProps) {
   const { onOpenChange, ...navigationMenuProps } = props;
-  const [trackHash, setTrackHash] = useState('');
+  // const [trackHash, setTrackHash] = useState('');
 
   const pathname = usePathname();
 
-  const isBlogPage = pathname?.startsWith('/blogs/');
+  // const isBlogsPage = pathname?.startsWith('/blogs');
 
-  const isMobile = useMediaQuery('(max-width: 1024px)');
+  // const isBlogPage = pathname?.startsWith('/blogs/');
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedHash = localStorage.getItem('trackHash');
-      if (storedHash) {
-        // eslint-disable-next-line
-        setTrackHash(storedHash);
+  // const isMobile = useMediaQuery('(max-width: 1024px)');
 
-        if (!isMobile) {
-          window.location.hash = trackHash;
-        }
-      }
-    }
-  }, [isMobile, trackHash]);
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     const storedHash = localStorage.getItem('trackHash');
+  //     if (storedHash) {
+  //       // eslint-disable-next-line
+  //       setTrackHash(storedHash);
+
+  //       if (!isMobile) {
+  //         window.location.hash = trackHash;
+  //       }
+  //     }
+  //   }
+  // }, [isMobile, trackHash]);
+
+  // find which href have #, hashed href's only visible in "/" other page not
+  const hashedLinks = navlinks
+    .filter((link) => link.href.includes('#'))
+    .map((link) => link.href);
+
+  const homepageHashedLinks = navlinks
+    .filter((link) => link.href.includes('#') && link.href.startsWith('#'))
+    .map((link) => link.href);
+
+  // if current path is "/" then only show hashed href's otherwise show all except hashed href's
+  const filteredNavlinks =
+    pathname === '/'
+      ? navlinks
+      : navlinks.filter((link) => !hashedLinks.includes(link.href));
+
+  // if current path is "/" then only show hashed href's which starts with "#" otherwise show all except hashed href's
+  const finalNavlinks =
+    pathname === '/'
+      ? filteredNavlinks
+      : filteredNavlinks.filter(
+          (link) => !homepageHashedLinks.includes(link.href),
+        );
 
   return (
     <NavigationMenu {...navigationMenuProps}>
       <NavigationMenuList className='space-x-0 data-[orientation=vertical]:flex-col lg:gap-4 data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start'>
-        {navlinks.map((link) => (
+        {finalNavlinks.map((link) => (
           <NavigationMenuItem key={link.id}>
             <NavigationMenuLink
               asChild
               className={cn(
-                trackHash === `#${link.href.split('#')[1]}` &&
-                  'border-primary!',
+                // trackHash === `#${link.href.split('#')[1]}` &&
+                //   'border-primary!',
                 // ? 'data-[active=true]:border-primary data-[active=true]:text-accent-foreground'
                 // : 'border-primary',
+
+                pathname === link.href &&
+                  'border-primary! text-accent-foreground!',
 
                 // active styles
                 'data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-transparent data-[active=true]:text-accent-foreground',
@@ -76,20 +98,22 @@ export default function NavMenu(props: NavMenuProps) {
                 "flex flex-col gap-4 px-0 py-1 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 font-semibold rounded-none",
 
                 // animation styles
-                'data-[active=true]:transition-all data-[active=true]:duration-300 data-[active=true]:ease-in-out focus:data-[active=true]:transition-all focus:data-[active=true]:duration-300 focus:data-[active=true]:ease-in-out'
+                'data-[active=true]:transition-all data-[active=true]:duration-300 data-[active=true]:ease-in-out focus:data-[active=true]:transition-all focus:data-[active=true]:duration-300 focus:data-[active=true]:ease-in-out',
               )}>
               <Link
                 scroll={true}
-                href={isBlogPage ? '/' : link.href}
-                prefetch={isBlogPage ? true : false}
-                onClick={() => {
-                  if (onOpenChange && isMobile) {
-                    onOpenChange(false);
-                  }
+                // href={isBlogPage ? '/' : link.href}
+                href={link.href}
+                // prefetch={isBlogPage ? true : false}
+                // onClick={() => {
+                //   if (onOpenChange && isMobile) {
+                //     onOpenChange(false);
+                //   }
 
-                  localStorage.setItem('trackHash', link.href);
-                  return setTrackHash(link.href);
-                }}>
+                //   localStorage.setItem('trackHash', link.href);
+                //   return setTrackHash(link.href);
+                // }}
+              >
                 {link.label}
               </Link>
             </NavigationMenuLink>

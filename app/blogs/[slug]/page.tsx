@@ -153,7 +153,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className='flex items-center justify-between text-sm text-muted-foreground'>
             <div className='flex items-center gap-3'>
               <Link
-                href={'/#blogs'}
+                href={'/blogs'}
+                prefetch
                 className={buttonVariants({
                   variant: 'outline',
                   size: 'icon-sm',

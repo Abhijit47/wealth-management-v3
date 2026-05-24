@@ -1,3 +1,4 @@
+'use client';
 import { PostValues } from '@/content-collections';
 // import Image from 'next/image';
 import Link from 'next/link';
@@ -52,7 +53,7 @@ export default function BlogCard(props: BlogCardProps) {
       </CardHeader>
       <CardContent className='pt-0 pb-5 px-3 lg:px-5 space-y-4'>
         <div className='flex flex-wrap gap-2 line-clamp-1'>
-          {post.categories.slice(0, 3).map((category, index) => (
+          {post.categories.slice(0, 2).map((category, index) => (
             <Badge key={index} variant='outline'>
               {category}
             </Badge>

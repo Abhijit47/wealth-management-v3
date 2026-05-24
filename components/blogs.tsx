@@ -1,4 +1,7 @@
+import { ArrowRightIcon } from 'lucide-react';
+import Link from 'next/link';
 import { LazyBlogCarousel, LazyBlogSort } from './lazy-components';
+import ResponsiveButton from './shared/responsive-button';
 
 export default function Blogs() {
   return (
@@ -13,6 +16,17 @@ export default function Blogs() {
       </div>
 
       <LazyBlogCarousel />
+
+      <div className={'flex items-center justify-center'}>
+        <ResponsiveButton
+          data-aos='fade-bottom'
+          asChild
+          className='rounded-full gap-2'>
+          <Link scroll={true} href={'/blogs'}>
+            Learn More <ArrowRightIcon />
+          </Link>
+        </ResponsiveButton>
+      </div>
     </section>
   );
 }
