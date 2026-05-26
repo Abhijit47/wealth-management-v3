@@ -1,29 +1,25 @@
-import { allPosts } from '@/.content-collections/generated';
-import BlogCard from '@/components/blog-card';
+import BlogsCard from '@/components/blogs-card';
 import { LazyBlogSort } from '@/components/lazy-components';
+import Banner from '@/components/shared/banner';
+import { CTABlock } from '@/components/shared/cta-block';
 
 export default function BlogsPage(props: PageProps<'/blogs'>) {
-  const sortedPosts = allPosts.sort((a, b) => {
-    // sort by createdAt: string;
-    // if (sortOrder === 'asc') {
-    //   return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
-    // } else {
-    //   return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-    // }
-    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-  });
+  // const sortedPosts = allPosts.sort((a, b) => {
+  //   // sort by createdAt: string;
+  //   // if (sortOrder === 'asc') {
+  //   //   return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+  //   // } else {
+  //   //   return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+  //   // }
+  //   return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+  // });
 
   return (
     <main
       className={
-        'max-w-(--breakpoint-xl) mx-auto px-4 2xl:px-0 space-y-8 pb-12 sm:pb-16 md:pb-20 lg:pb-24'
+        'max-w-(--breakpoint-xl) mx-auto px-4 2xl:px-0 space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16 pb-8 sm:pb-10 md:pb-12 lg:pb-16'
       }>
-      <section
-        className={
-          'aspect-video md:aspect-26/9 xl:aspect-30/9 w-full h-full flex items-center justify-center border-border border-2 border-dashed mt-24'
-        }>
-        BANNER/ breadcrumb
-      </section>
+      <Banner />
 
       <section className={'space-y-6'}>
         <div className='flex flex-wrap gap-4 items-end justify-between'>
@@ -32,14 +28,11 @@ export default function BlogsPage(props: PageProps<'/blogs'>) {
           </h2>
           <LazyBlogSort />
         </div>
-        <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'}>
-          {sortedPosts.map((post, index) => (
-            <div key={index} className=''>
-              <BlogCard post={post} />
-            </div>
-          ))}
-        </div>
+
+        <BlogsCard />
       </section>
+
+      <CTABlock />
     </main>
   );
 }

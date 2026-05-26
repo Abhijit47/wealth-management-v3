@@ -1,6 +1,26 @@
 import { Button } from '@/components/ui/button';
-import { CheckCircle2Icon, PencilIcon, SignatureIcon } from 'lucide-react';
+import {
+  BinocularsIcon,
+  CheckCircle2Icon,
+  FootprintsIcon,
+  PencilIcon,
+  RocketIcon,
+  SignatureIcon,
+  SproutIcon,
+} from 'lucide-react';
 import Image from 'next/image';
+
+import Banner from '@/components/shared/banner';
+import { CTABlock } from '@/components/shared/cta-block';
+import GlareEffect from '@/components/shared/glare-effect';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 const aboutListItems = [
   {
@@ -23,28 +43,85 @@ const aboutListItems = [
   },
 ];
 
+const statsList = [
+  {
+    id: crypto.randomUUID(),
+    title: 'Years Of Experience',
+    number: '10+',
+    description:
+      'Delivering trusted financial guidance with expertise and consistency.',
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Trusted Families',
+    number: '150+',
+    description:
+      'Helping families grow, manage, and preserve wealth confidently.',
+  },
+];
+
+/*
+PROCESS SECTION
+ 
+Heading:
+How We Work
+ 
+Subheading:
+Structured financial guidance designed to help individuals and families build, protect, and grow wealth with confidence.
+*/
+
+// https://play.tailwindcss.com/nRy3spfqVd
+
+const processSteps = [
+  {
+    id: crypto.randomUUID(),
+    title: 'Discover',
+    description: 'Understanding your goals, priorities, and financial vision.',
+    icon: BinocularsIcon,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Strategize',
+    description: 'Building a tailored wealth plan aligned to your needs.',
+    icon: FootprintsIcon,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Execute',
+    description: 'Implementing the right financial solutions seamlessly.',
+    icon: RocketIcon,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Grow',
+    description: 'Monitoring, protecting, and growing your wealth long term.',
+    icon: SproutIcon,
+  },
+];
+
 export default function AboutPage() {
   return (
-    <main className={'max-w-(--breakpoint-xl) mx-auto px-4 2xl:px-0 space-y-8'}>
-      <section
-        className={
-          'aspect-video md:aspect-26/9 w-full h-full flex items-center justify-center border-border border-2 border-dashed mt-24'
-        }>
-        BANNER/ breadcrumb
-      </section>
+    <main
+      className={
+        'max-w-(--breakpoint-xl) mx-auto px-4 2xl:px-0 space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16 pb-8 sm:pb-10 md:pb-12 lg:pb-16'
+      }>
+      <Banner />
 
-      <section className={'grid grid-cols-3 gap-4'}>
-        <div
-          className={
-            'col-span-full md:col-span-1 relative aspect-square w-full h-full'
-          }>
-          <Image
-            src='https://placehold.co/600x1200/png?text=Founder+Image'
-            alt='founder'
-            fill
-            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            className={'object-cover rounded-tl-2xl rounded-br-2xl'}
-          />
+      <section className={'grid grid-cols-3 gap-8'}>
+        <div className={'col-span-full md:col-span-1'}>
+          <GlareEffect
+            className={
+              'relative aspect-square w-full h-full rounded-tl-4xl rounded-br-4xl'
+            }>
+            <Image
+              // src='https://placehold.co/600x1200/png?text=Founder+Image'
+              src='/assets/1.jpg'
+              alt='founder'
+              fill
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              className={'object-cover rounded-tl-4xl rounded-br-4xl'}
+            />
+          </GlareEffect>
         </div>
         <div className={'col-span-full md:col-span-2 space-y-4 py-6'}>
           <h2 className={'text-3xl font-bold text-primary'}>
@@ -158,45 +235,143 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={'h-dvh w-full border-border border-2 border-dashed'}>
-        {/* Our Approach
-Start With You
-Every plan begins with understanding:
-your goals
-your financial position
-your risk comfort
-Build With Structure
-We focus on:
-goal-based investing
-disciplined allocation
-long-term thinking
-Keep It Simple
-You should always know:
-what you are doing
-why you are doing it
-Stay Consistent
-We prioritise consistency over constant changes driven by market movement. */}
-        Our Approach Start With You Every plan begins with understanding: your
-        goals your financial position your risk comfort Build With Structure We
-        focus on: goal-based investing disciplined allocation long-term thinking
-        Keep It Simple You should always know: what you are doing why you are
-        doing it Stay Consistent We prioritise consistency over constant changes
-        driven by market movement.
+      <section className={'h-full w-full'}>
+        <div className={'grid grid-cols-12 gap-6'}>
+          <div className={'col-span-12 lg:col-span-6 w-full h-full'}>
+            <GlareEffect
+              className={
+                'relative aspect-video w-full h-full rounded-tl-4xl rounded-br-4xl'
+              }>
+              <Image
+                // src='https://placehold.co/600x1200/png?text=Founder+Image'
+                src='/assets/6.jpg'
+                alt='founder'
+                fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                className={
+                  'object-cover rounded-tl-4xl rounded-br-4xl brightness-50 grayscale'
+                }
+              />
+            </GlareEffect>
+          </div>
+          <div
+            className={
+              'col-span-12 lg:col-span-6 grid grid-cols-subgrid gap-4 w-full h-full'
+            }>
+            {statsList.map((stat) => (
+              <div
+                className={'col-span-full md:col-span-6 lg:col-span-3'}
+                key={stat.id}>
+                <div
+                  className={cn(
+                    'border border-dashed border-border/70 hover:border-primary flex h-full items-start p-1 rounded-xl group transition-colors duration-150 w-full',
+                  )}
+                  key={stat.id}>
+                  <Card className='rounded-lg bg-muted/20 h-full gap-4 p-4 justify-center group-hover:dark:bg-primary group-hover:bg-primary transition-colors duration-150 w-full'>
+                    <CardHeader>
+                      <CardTitle
+                        className={'font-semibold group-hover:text-accent'}>
+                        {stat.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <h3
+                        className={
+                          'text-4xl font-bold text-primary group-hover:text-accent'
+                        }>
+                        {stat.number}
+                      </h3>
+                      {/* <span className='font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight'>
+                        <SlotCounter
+                          dummyCharacterCount={10}
+                          useMonospaceWidth
+                          value={stat.value}
+                          animateOnVisible={{
+                            triggerOnce: false,
+                            rootMargin: '0px 0px -100px 0px',
+                          }}
+                        />
+                        <sup
+                          className={
+                            'text-base sm:text-lg md:text-xl lg:text-2xl'
+                          }>
+                          {stat.suffix}
+                        </sup>
+                      </span> */}
+                    </CardContent>
+                    <CardContent>
+                      <CardDescription>
+                        <p
+                          className={
+                            'font-semibold text-sm group-hover:text-accent'
+                          }>
+                          {stat.description}
+                        </p>
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <section className={'h-dvh w-full border-border border-2 border-dashed'}>
-        {/* What We Do
-We support clients across:
-Mutual fund investments
-Fixed income solutions
-Insurance planning
-Long-term financial structuring
-Portfolio review and tracking
-Our role is to bring all of this together into a clear and manageable plan. */}
-        What We Do We support clients across: Mutual fund investments Fixed
-        income solutions Insurance planning Long-term financial structuring
-        Portfolio review and tracking Our role is to bring all of this together
-        into a clear and manageable plan.
+      <section className={'h-full w-full space-y-4 md:space-y-6 lg:space-y-8'}>
+        <div
+          className={'text-center spayce-y-4 md:space-y-6 max-w-3xl mx-auto'}>
+          <h2
+            className={
+              'text-5xl text-muted-foreground dark:text-foreground font-bold'
+            }>
+            How We <span className={'text-primary'}>Works</span>
+          </h2>
+          <p className={'text-xl'}>
+            Structured financial guidance designed to help individuals and
+            families build, protect, and grow wealth with confidence.
+          </p>
+        </div>
+
+        <div
+          className={
+            'grid grid-cols-1 sm:grid-cols-2 md:grid-col-3 lg:grid-cols-4 gap-4'
+          }>
+          {processSteps.map((step, idx) => (
+            <Card key={step.id}>
+              <CardContent className='relative group w-full cursor-pointer text-center'>
+                {/* <!-- Outer Ring & Icon Container --> */}
+                <div className='relative z-10 inline-flex size-40 items-center justify-center rounded-full border-[1.6px] border-accent group-hover:border-primary transition-all duration-500'>
+                  {/* <!-- The "Absolute Number" / Icon --> */}
+                  <span className='relative z-30 font-normal text-primary transition-colors duration-500 group-hover:text-background'>
+                    <step.icon className={'size-16 stroke-1'} />
+                  </span>
+
+                  {/* <!-- The Expanding Inner Circle (Hover background) --> */}
+                  <div className='absolute inset-0 z-20 m-4.75 scale-0 rounded-full bg-primary opacity-0 transition-all duration-500 ease-out group-hover:scale-110 group-hover:opacity-100'></div>
+
+                  {/* position idx+1 top-right */}
+                  <span
+                    className={cn(
+                      'absolute top-2 right-2 z-40 rounded-full bg-background dark:bg-muted-foreground text-primary size-8 flex items-center justify-center text-sm font-bold shadow-md',
+                    )}>
+                    {idx + 1}
+                  </span>
+                </div>
+
+                {/* <!-- Typography --> */}
+                <CardHeader className={'px-0'}>
+                  <CardTitle className='text-2xl font-semibold text-foreground transition-colors duration-500 group-hover:text-primary'>
+                    {step.title}
+                  </CardTitle>
+
+                  <CardDescription className='text-base leading-relaxed text-muted-foreground'>
+                    {step.description}
+                  </CardDescription>
+                </CardHeader>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </section>
 
       <section className={'grid grid-cols-4 gap-4'}>
@@ -274,9 +449,7 @@ Our role is to bring all of this together into a clear and manageable plan. */}
         </div>
       </section>
 
-      <section className={'h-dvh w-full border-border border-2 border-dashed'}>
-        CTA
-      </section>
+      <CTABlock />
     </main>
   );
 }
