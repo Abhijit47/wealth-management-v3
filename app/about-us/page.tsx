@@ -5,12 +5,11 @@ import {
   FootprintsIcon,
   PencilIcon,
   RocketIcon,
-  SignatureIcon,
   SproutIcon,
 } from 'lucide-react';
 import Image from 'next/image';
 
-import Banner from '@/components/shared/banner';
+// import Banner from '@/components/shared/banner';
 import { CTABlock } from '@/components/shared/cta-block';
 import GlareEffect from '@/components/shared/glare-effect';
 import {
@@ -21,6 +20,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const aboutListItems = [
   {
@@ -103,12 +103,12 @@ export default function AboutPage() {
   return (
     <main
       className={
-        'max-w-(--breakpoint-xl) mx-auto px-4 2xl:px-0 space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16 pb-8 sm:pb-10 md:pb-12 lg:pb-16'
+        'max-w-(--breakpoint-lg) mx-auto px-4 2xl:px-0 space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16 pb-8 sm:pb-10 md:pb-12 lg:pb-16'
       }>
-      <Banner />
+      {/* <Banner /> */}
 
-      <section className={'grid grid-cols-3 gap-8'}>
-        <div className={'col-span-full md:col-span-1'}>
+      <section className={'grid grid-cols-3 gap-8 mt-30'}>
+        {/* <div className={'col-span-full md:col-span-1'}>
           <GlareEffect
             className={
               'relative aspect-square w-full h-full rounded-tl-4xl rounded-br-4xl'
@@ -122,17 +122,24 @@ export default function AboutPage() {
               className={'object-cover rounded-tl-4xl rounded-br-4xl'}
             />
           </GlareEffect>
-        </div>
-        <div className={'col-span-full md:col-span-2 space-y-4 py-6'}>
-          <h2 className={'text-3xl font-bold text-primary'}>
-            <PencilIcon className={'inline-block w-6 h-6 mr-2'} />
+        </div> */}
+        <div className={'col-span-full space-y-2 md:space-y-3'}>
+          <h2
+            className={
+              'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-primary'
+            }>
+            <PencilIcon className={'inline-block size-4 md:size-6 mr-2'} />
             Founder’s Note
           </h2>
 
-          <h3 className={'text-muted-foreground text-2xl font-semibold'}>
+          <h3
+            className={
+              'text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold'
+            }>
             Ascent Wealth was built on a simple observation.
           </h3>
-          <p className={'text-muted-foreground'}>
+          <p
+            className={'text-xs sm:text-sm md:text-base text-muted-foreground'}>
             People were earning well and saving regularly, yet many still felt
             unsure about their financial direction. There was no shortage of
             products. But there was a lack of structure.
@@ -141,7 +148,10 @@ export default function AboutPage() {
           <div className={'grid grid-cols-1 md:grid-cols-2 gap-4'}>
             {aboutListItems.map((list) => (
               <div key={list.id} className={'space-y-2'}>
-                <p className={'text-muted-foreground text-base font-semibold'}>
+                <p
+                  className={
+                    'text-muted-foreground text-xs sm:text-sm md:text-base font-semibold'
+                  }>
                   {list.heading}
                 </p>
                 <ul className={'space-y-2'}>
@@ -149,7 +159,7 @@ export default function AboutPage() {
                     <li
                       key={item}
                       className={
-                        'group flex items-center gap-2 transition-colors duration-200 hover:cursor-pointer'
+                        'group flex items-center gap-2 transition-colors duration-200 hover:cursor-pointer text-xs sm:text-sm md:text-base'
                       }>
                       <CheckCircle2Icon
                         className={
@@ -216,14 +226,15 @@ export default function AboutPage() {
             </div> */}
           </div>
 
-          <p className={'text-muted-foreground'}>
+          <p
+            className={'text-xs sm:text-sm md:text-base text-muted-foreground'}>
             Over the last decade, working with 150+ clients, the approach has
             remained the same. Not chasing complexity, but building consistency.
             Because in the long run, disciplined decisions tend to matter more
             than perfect ones.
           </p>
 
-          <div className={'inline-flex items-center gap-2'}>
+          {/* <div className={'inline-flex items-center gap-2'}>
             <SignatureIcon className={'size-6'} />
             <p
               className={
@@ -231,7 +242,7 @@ export default function AboutPage() {
               }>
               Ascent Wealth
             </p>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -322,11 +333,12 @@ export default function AboutPage() {
           className={'text-center spayce-y-4 md:space-y-6 max-w-3xl mx-auto'}>
           <h2
             className={
-              'text-5xl text-muted-foreground dark:text-foreground font-bold'
+              'text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-muted-foreground dark:text-foreground font-bold'
             }>
-            How We <span className={'text-primary'}>Works</span>
+            How We <span className={'text-primary'}>Work</span>
           </h2>
-          <p className={'text-xl'}>
+          <p
+            className={'text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'}>
             Structured financial guidance designed to help individuals and
             families build, protect, and grow wealth with confidence.
           </p>
@@ -375,9 +387,17 @@ export default function AboutPage() {
       </section>
 
       <section className={'grid grid-cols-4 gap-4'}>
-        <div className={'col-span-full lg:col-span-2 space-y-4 py-6'}>
-          <h2 className={'text-3xl font-bold text-primary'}>Who We Are</h2>
-          <p>
+        <div
+          // className={'col-span-full lg:col-span-2 space-y-4 py-6'}
+          className={'col-span-full py-6 space-y-4'}>
+          <h2
+            className={
+              'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-primary'
+            }>
+            Who We Are
+          </h2>
+          <p
+            className={'text-xs sm:text-sm md:text-base text-muted-foreground'}>
             At Ascent Wealth, we help individuals and families bring structure
             and clarity to their financial lives. With over{' '}
             <strong>10 years of experience</strong> and{' '}
@@ -388,10 +408,16 @@ export default function AboutPage() {
             long-term alignment.
           </p>
 
-          <div className={'grid grid-cols-1 lg:grid-cols-2 gap-4'}>
+          <div
+            className={
+              'grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-4 space-y-4'
+            }>
             <div>
               <h3 className={'font-3xl font-bold'}>Our Mission</h3>
-              <p className={'text-muted-foreground'}>
+              <p
+                className={
+                  'text-muted-foreground text-xs sm:text-sm md:text-base'
+                }>
                 To help individuals make informed financial decisions through
                 structured, goal-based planning. We aim to simplify investing so
                 that people can focus less on market noise and more on steady
@@ -400,7 +426,10 @@ export default function AboutPage() {
             </div>
             <div>
               <h3 className={'font-3xl font-bold'}>Our Vision</h3>
-              <p className={'text-muted-foreground'}>
+              <p
+                className={
+                  'text-muted-foreground text-xs sm:text-sm md:text-base'
+                }>
                 To build a trusted financial services practice where advice is
                 clear, processes are transparent, and relationships are
                 long-term.
@@ -408,16 +437,20 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <Button className={'mt-4'}>Learn More</Button>
+          <Button asChild>
+            <Link prefetch href={'/#contact-us'}>
+              Let&apos;s Connect
+            </Link>
+          </Button>
         </div>
-        <div className={'col-span-full lg:col-span-2 w-full h-full'}>
+        {/* <div className={'col-span-full lg:col-span-2 w-full h-full'}>
           <div className={'grid grid-cols-12 gap-4 w-full h-full'}>
             <div
               className={
                 'col-start-1 col-end-4 col-span-full row-start-1 row-end-6 row-span-full pb-12'
               }>
               <Image
-                src='https://placehold.co/300x600/png?text=some+other+image+1'
+                src='/assets/5.jpg'
                 alt='founder'
                 width={300}
                 height={600}
@@ -434,7 +467,7 @@ export default function AboutPage() {
                 'col-start-4 row-start-1 row-end-6 row-span-full col-end-13 col-span-full grid-span-12'
               }>
               <Image
-                src='https://placehold.co/600x600/png?text=some+other+image+2'
+                src='/assets/3.jpg'
                 alt='founder'
                 width={600}
                 height={600}
@@ -446,7 +479,7 @@ export default function AboutPage() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       <CTABlock />
