@@ -352,19 +352,23 @@ export default function AboutPage() {
             <Card key={step.id}>
               <CardContent className='relative group w-full cursor-pointer text-center'>
                 {/* <!-- Outer Ring & Icon Container --> */}
-                <div className='relative z-10 inline-flex size-40 items-center justify-center rounded-full border-[1.6px] border-accent group-hover:border-primary transition-all duration-500'>
+                <div className='relative z-10 inline-flex size-10 md:size-20 lg:size-30 xl:size-40 items-center justify-center rounded-full border-[1.6px] border-accent group-hover:border-primary transition-all duration-500'>
                   {/* <!-- The "Absolute Number" / Icon --> */}
                   <span className='relative z-30 font-normal text-primary transition-colors duration-500 group-hover:text-background'>
-                    <step.icon className={'size-16 stroke-1'} />
+                    <step.icon
+                      className={
+                        'size-6 md:size-8 lg:size-12 xl:size-16 stroke-1'
+                      }
+                    />
                   </span>
 
                   {/* <!-- The Expanding Inner Circle (Hover background) --> */}
-                  <div className='absolute inset-0 z-20 m-4.75 scale-0 rounded-full bg-primary opacity-0 transition-all duration-500 ease-out group-hover:scale-110 group-hover:opacity-100'></div>
+                  <div className='absolute inset-0 z-20 m-0.4 md:m-2.5 lg:m-4.75 scale-0 rounded-full bg-primary opacity-0 transition-all duration-500 ease-out group-hover:scale-110 group-hover:opacity-100'></div>
 
                   {/* position idx+1 top-right */}
                   <span
                     className={cn(
-                      'absolute top-2 right-2 z-40 rounded-full bg-background dark:bg-muted-foreground text-primary size-8 flex items-center justify-center text-sm font-bold shadow-md',
+                      'absolute top-2 right-2 z-40 translate-x-4 lg:translate-x-2 rounded-full bg-background dark:bg-muted-foreground text-primary size-8 md:flex items-center justify-center text-sm font-bold shadow-md hidden',
                     )}>
                     {idx + 1}
                   </span>
@@ -372,11 +376,11 @@ export default function AboutPage() {
 
                 {/* <!-- Typography --> */}
                 <CardHeader className={'px-0'}>
-                  <CardTitle className='text-2xl font-semibold text-foreground transition-colors duration-500 group-hover:text-primary'>
+                  <CardTitle className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-foreground transition-colors duration-500 group-hover:text-primary'>
                     {step.title}
                   </CardTitle>
 
-                  <CardDescription className='text-base leading-relaxed text-muted-foreground'>
+                  <CardDescription className='text-xs sm:text-base leading-relaxed text-muted-foreground'>
                     {step.description}
                   </CardDescription>
                 </CardHeader>

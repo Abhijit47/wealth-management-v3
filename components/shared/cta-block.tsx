@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ArrowRight, MessageSquare } from 'lucide-react';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 
 export function CTABlock() {
   return (
@@ -26,14 +27,15 @@ export function CTABlock() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}>
-              <h2 className='mb-6 text-3xl font-bold text-foreground md:text-4xl lg:text-5xl'>
-                Ready to Start Your Project?
+              <h2 className='mb-6 text-xl lg:text-2xl xl:text-3xl font-bold text-foreground'>
+                Ready to Build Your Financial Future?
               </h2>
 
-              <p className='mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl'>
-                Let&apos;s turn your ideas into reality. Get in touch today and
-                let&apos;s discuss how we can work together to build something
-                amazing.
+              <p className='mx-auto mb-8 max-w-2xl text-base lg:text-lg text-muted-foreground'>
+                Whether you’re growing wealth, planning for retirement,
+                protecting your family, or creating a lasting legacy, we’re here
+                to help you make confident financial decisions every step of the
+                way.
               </p>
 
               <motion.div
@@ -42,17 +44,25 @@ export function CTABlock() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className='flex flex-col justify-center gap-4 sm:flex-row'>
-                <Button size='lg' className='group w-full gap-2 sm:w-auto'>
-                  Start a Conversation
-                  <MessageSquare className='h-4 w-4 transition-transform group-hover:scale-110' />
+                <Button
+                  size='lg'
+                  className='group w-full gap-2 sm:w-auto'
+                  asChild>
+                  <Link prefetch href={'/#contact-us'}>
+                    Speak with us
+                    <MessageSquare className='h-4 w-4 transition-transform group-hover:scale-110' />
+                  </Link>
                 </Button>
 
                 <Button
                   size='lg'
                   variant='outline'
-                  className='group w-full gap-2 sm:w-auto'>
-                  View My Work
-                  <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                  className='group w-full gap-2 sm:w-auto'
+                  asChild>
+                  <Link prefetch href={'/#serivces'}>
+                    Explore Solutions
+                    <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                  </Link>
                 </Button>
               </motion.div>
 
