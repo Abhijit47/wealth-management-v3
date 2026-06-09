@@ -135,7 +135,8 @@ const socialLinks = [
     id: crypto.randomUUID(),
     icon: <IconBrandLinkedin size={20} />,
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/kannanrangaswamy-39761b8b/',
+    // href: 'https://www.linkedin.com/in/kannanrangaswamy-39761b8b/',
+    href: 'https://www.linkedin.com/company/ascentwealth1',
   },
   {
     id: crypto.randomUUID(),
@@ -215,7 +216,7 @@ export function HoverFooter() {
           ))}
 
           {/* Contact section */}
-          <div>
+          <div className={'space-y-6'}>
             <h4 className='text-primary dark:text-white text-lg font-semibold mb-6'>
               Let&apos;s Connect
             </h4>
@@ -237,6 +238,19 @@ export function HoverFooter() {
                 </li>
               ))}
             </ul>
+
+            <div className='flex flex-wrap space-x-4 text-foreground border border-primary rounded-md p-2 w-max'>
+              {socialLinks.map(({ id, icon, label, href }) => (
+                <Link
+                  key={id}
+                  href={href}
+                  target='_blank'
+                  aria-label={label}
+                  className='hover:text-primary transition-colors'>
+                  {icon}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -302,9 +316,9 @@ export function HoverFooter() {
         <Separator className='mt-18 sm:mt-14 md:mt-9 lg:mt-0' />
 
         {/* Footer bottom */}
-        <div className='flex flex-col md:flex-row justify-between items-center text-sm space-y-4 md:space-y-0'>
+        <div className='flex flex-col md:flex-row justify-center items-center text-sm space-y-4 md:space-y-0'>
           {/* Social icons */}
-          <div className='flex space-x-6 text-foreground'>
+          {/* <div className='flex space-x-6 text-foreground'>
             {socialLinks.map(({ id, icon, label, href }) => (
               <Link
                 key={id}
@@ -315,7 +329,7 @@ export function HoverFooter() {
                 {icon}
               </Link>
             ))}
-          </div>
+          </div> */}
 
           {/* Copyright */}
           <p className='text-center md:text-left'>
